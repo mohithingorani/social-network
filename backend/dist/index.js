@@ -39,7 +39,7 @@ const logger = winston_1.default.createLogger({
 var cors = require("cors");
 // WebSocket Implementation
 const socket_io_1 = require("socket.io");
-const client_1 = require("@prisma/client");
+const client_1 = __importDefault(require("./client"));
 // Create an Express application
 const app = (0, express_1.default)();
 app.use(cors());
@@ -53,11 +53,10 @@ const io = new socket_io_1.Server(server, {
         optionsSuccessStatus: 200,
     },
 });
-const prisma = new client_1.PrismaClient();
 // user Authentication
 app.get("/user", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const userEmail = req.query.email;
-    const userExists = yield prisma.user.findUnique({
+    const userExists = yield client_1.default.user.findUnique({
         where: {
             email: userEmail,
         },
@@ -75,13 +74,13 @@ app.get("/user", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 app.post("/friend/request", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const fromUserId = parseInt(req.body.fromUserId);
     const toUserId = parseInt(req.body.toUserId);
-    const fromUser = yield prisma.user.findFirst({
+    const fromUser = yield client_1.default.user.findFirst({
         where: { id: fromUserId },
     });
-    const toUser = yield prisma.user.findFirst({
+    const toUser = yield client_1.default.user.findFirst({
         where: { id: toUserId },
     });
-    const friendRequestExists = yield prisma.friendRequest.findFirst({
+    const friendRequestExists = yield client_1.default.friendRequest.findFirst({
         where: {
             AND: [
                 {
@@ -104,7 +103,7 @@ app.post("/friend/request", (req, res) => __awaiter(void 0, void 0, void 0, func
             .status(400);
     }
     else if (fromUser && toUser) {
-        const friendRequest = yield prisma.friendRequest.create({
+        const friendRequest = yield client_1.default.friendRequest.create({
             data: {
                 senderId: fromUser.id,
                 receiverId: toUser.id,
@@ -158,7 +157,7 @@ app.post("/upload", upload.single("image"), (req, res) => __awaiter(void 0, void
     const caption = req.body.caption;
     const userId = parseInt(req.body.userId);
     try {
-        const post = yield prisma.post.create({
+        const post = yield client_1.default.post.create({
             data: {
                 image: imageUrl,
                 caption,
@@ -187,7 +186,7 @@ app.post("/uploadWithoutImage", upload.single("image"), (req, res) => __awaiter(
     const caption = req.body.caption;
     const userId = parseInt(req.body.userId);
     try {
-        const post = yield prisma.post.create({
+        const post = yield client_1.default.post.create({
             data: {
                 caption,
                 user: {
@@ -214,7 +213,7 @@ app.get("/getposts", (req, res) => __awaiter(void 0, void 0, void 0, function* (
         return res.status(400).json({ message: "Missing or invalid userId" });
     }
     try {
-        const posts = yield prisma.post.findMany({
+        const posts = yield client_1.default.post.findMany({
             include: {
                 user: {
                     select: {
@@ -266,7 +265,7 @@ app.get("/posts/count", (req, res) => __awaiter(void 0, void 0, void 0, function
             })
                 .status(500);
         }
-        const numPosts = yield prisma.post.findMany({
+        const numPosts = yield client_1.default.post.findMany({
             where: {
                 userId: Number(userId),
             },
@@ -290,7 +289,7 @@ app.post("/likePost", (req, res) => __awaiter(void 0, void 0, void 0, function* 
     const username = req.body.username;
     const postId = req.body.postId;
     try {
-        const user = yield prisma.user.findUnique({
+        const user = yield client_1.default.user.findUnique({
             where: { id: username },
             select: { id: true },
         });
@@ -298,7 +297,7 @@ app.post("/likePost", (req, res) => __awaiter(void 0, void 0, void 0, function* 
             return res.status(404).json({ message: "User not found" });
         }
         // ✅ Check if already liked
-        const existingLike = yield prisma.like.findUnique({
+        const existingLike = yield client_1.default.like.findUnique({
             where: {
                 userId_postId: {
                     userId: user.id,
@@ -309,7 +308,7 @@ app.post("/likePost", (req, res) => __awaiter(void 0, void 0, void 0, function* 
         if (existingLike) {
             return res.status(409).json({ message: "User already liked this post" });
         }
-        const like = yield prisma.like.create({
+        const like = yield client_1.default.like.create({
             data: {
                 userId: user.id,
                 postId: postId,
@@ -327,7 +326,7 @@ app.post("/likePost", (req, res) => __awaiter(void 0, void 0, void 0, function* 
 }));
 app.post("/deletePost", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const postId = req.body.postId;
-    const post = yield prisma.post.delete({
+    const post = yield client_1.default.post.delete({
         where: {
             id: postId,
         },
@@ -340,14 +339,14 @@ app.post("/deletePost", (req, res) => __awaiter(void 0, void 0, void 0, function
 app.post("/unlikePost", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { userId, postId } = req.body;
     try {
-        const user = yield prisma.user.findUnique({
+        const user = yield client_1.default.user.findUnique({
             where: { id: userId },
             select: { id: true },
         });
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
-        yield prisma.like.delete({
+        yield client_1.default.like.delete({
             where: {
                 userId_postId: {
                     userId: user.id,
@@ -374,7 +373,7 @@ app.post("/friend/requests", (req, res) => __awaiter(void 0, void 0, void 0, fun
     const userId = parseInt(req.body.userId);
     // logger.info("username is " + username);
     try {
-        const users = yield prisma.friendRequest.findMany({
+        const users = yield client_1.default.friendRequest.findMany({
             where: {
                 receiver: {
                     id: userId,
@@ -419,13 +418,13 @@ app.post("/friend/accept", (req, res) => __awaiter(void 0, void 0, void 0, funct
     }
     try {
         // Update friend request status
-        const friendRequest = yield prisma.friendRequest.update({
+        const friendRequest = yield client_1.default.friendRequest.update({
             where: { id: requestId },
             data: { status: "accepted" },
             include: { sender: true, receiver: true },
         });
         // Check if the friend entries already exist
-        const friendExists = yield prisma.friend.findFirst({
+        const friendExists = yield client_1.default.friend.findFirst({
             where: {
                 OR: [
                     { userId: senderId, friendId: receiverId },
@@ -435,7 +434,7 @@ app.post("/friend/accept", (req, res) => __awaiter(void 0, void 0, void 0, funct
         });
         if (!friendExists) {
             // Add bidirectional friendship
-            yield prisma.friend.createMany({
+            yield client_1.default.friend.createMany({
                 data: [
                     { userId: senderId, friendId: receiverId },
                     { userId: receiverId, friendId: senderId },
@@ -458,7 +457,7 @@ app.post("/users/search", (req, res) => __awaiter(void 0, void 0, void 0, functi
     logger.info("username is " + username);
     logger.info("self username is " + selfUsername);
     try {
-        const users = yield prisma.user.findMany({
+        const users = yield client_1.default.user.findMany({
             where: {
                 username: {
                     contains: username,
@@ -489,7 +488,7 @@ app.post("/suggestions", (req, res) => __awaiter(void 0, void 0, void 0, functio
     logger.info("username is " + username);
     logger.info("self username is " + selfUsername);
     try {
-        const self = yield prisma.user.findUnique({
+        const self = yield client_1.default.user.findUnique({
             where: {
                 id: userId,
             },
@@ -498,7 +497,7 @@ app.post("/suggestions", (req, res) => __awaiter(void 0, void 0, void 0, functio
             return res.status(404).json({ error: "User not found" });
         }
         // Get all friends (both directions)
-        const friendsList = yield prisma.friend.findMany({
+        const friendsList = yield client_1.default.friend.findMany({
             where: {
                 OR: [{ userId: userId }, { friendId: userId }],
             },
@@ -506,7 +505,7 @@ app.post("/suggestions", (req, res) => __awaiter(void 0, void 0, void 0, functio
         // Properly extract the friend IDs
         const friendIds = friendsList.map((f) => f.userId === userId ? f.friendId : f.userId);
         // Find users matching username, excluding self and friends
-        const users = yield prisma.user.findMany({
+        const users = yield client_1.default.user.findMany({
             where: {
                 username: {
                     contains: username,
@@ -539,7 +538,7 @@ app.get("/user/friends", (req, res) => __awaiter(void 0, void 0, void 0, functio
         return res.status(400).send({ message: "User ID is required" });
     }
     try {
-        const friends = yield prisma.friend.findMany({
+        const friends = yield client_1.default.friend.findMany({
             where: {
                 userId: Number(userId),
             },
@@ -569,7 +568,7 @@ app.get("/user/friends", (req, res) => __awaiter(void 0, void 0, void 0, functio
 app.get("/user/details", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const email = req.query.email;
     try {
-        const userDetails = yield prisma.user.findUnique({
+        const userDetails = yield client_1.default.user.findUnique({
             where: {
                 email: email,
             },
@@ -588,7 +587,7 @@ app.post("/createUser", (req, res) => __awaiter(void 0, void 0, void 0, function
     const picture = req.body.picture;
     let randomNumber = Math.floor(Math.random() * 1000);
     let userName = name.split(" ")[0].toLowerCase() + randomNumber;
-    const userNameExists = yield prisma.user.findFirst({
+    const userNameExists = yield client_1.default.user.findFirst({
         where: {
             username: userName,
         },
@@ -598,7 +597,7 @@ app.post("/createUser", (req, res) => __awaiter(void 0, void 0, void 0, function
         userName = name.split(" ")[0].toLowerCase() + randomNumber;
     }
     try {
-        const user = yield prisma.user.create({
+        const user = yield client_1.default.user.create({
             data: {
                 picture: picture,
                 email: email,
@@ -622,7 +621,7 @@ app.post("/create/message", (req, res) => __awaiter(void 0, void 0, void 0, func
     logger.info("create/message body:", req.body);
     const time = req.body.time;
     try {
-        const chat = yield prisma.chat.create({
+        const chat = yield client_1.default.chat.create({
             data: {
                 message,
                 userName,
@@ -641,7 +640,7 @@ app.post("/onlinestatus", (req, res) => {
     const date = new Date();
     const email = req.body.email;
     try {
-        const lastActive = prisma.user.update({
+        const lastActive = client_1.default.user.update({
             where: {
                 email: email,
             },
@@ -664,7 +663,7 @@ app.post("/onlinestatus", (req, res) => {
 app.get("/messages", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const roomName = req.query.roomName;
     try {
-        const chats = yield prisma.chat.findMany({
+        const chats = yield client_1.default.chat.findMany({
             where: {
                 roomName,
             },
@@ -699,7 +698,7 @@ app.post("/friend/remove", (req, res) => __awaiter(void 0, void 0, void 0, funct
     const myUserName = req.body.myUserName;
     const friendUserName = req.body.friendUserName;
     try {
-        const removeFriend = prisma.friend.deleteMany({
+        const removeFriend = client_1.default.friend.deleteMany({
             where: {
                 OR: [
                     {
@@ -733,7 +732,7 @@ app.post("/comment/add", (req, res) => __awaiter(void 0, void 0, void 0, functio
     const text = req.body.text;
     const postId = req.body.postId;
     try {
-        const comment = yield prisma.comment.create({
+        const comment = yield client_1.default.comment.create({
             data: {
                 text,
                 postId,
@@ -762,7 +761,7 @@ app.post("/comment/add", (req, res) => __awaiter(void 0, void 0, void 0, functio
 app.post("/comments/all", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const postId = req.body.postId;
     try {
-        const comments = yield prisma.comment.findMany({
+        const comments = yield client_1.default.comment.findMany({
             where: {
                 postId,
             },
@@ -797,7 +796,7 @@ app.post("/story/add", upload.single("image"), (req, res) => __awaiter(void 0, v
     try {
         const { userId } = req.body;
         const imageUrl = `${req.protocol}://${req.headers.host}/uploads/${req.file.filename}`;
-        const story = yield prisma.story.create({
+        const story = yield client_1.default.story.create({
             data: {
                 image: imageUrl,
                 userId: parseInt(userId),
@@ -826,7 +825,7 @@ app.post("/stories/all", (req, res) => __awaiter(void 0, void 0, void 0, functio
     logger.info(userId);
     try {
         // Finding all friends involving user
-        const friendShips = yield prisma.friend.findMany({
+        const friendShips = yield client_1.default.friend.findMany({
             where: {
                 OR: [{ userId }, { friendId: userId }],
             },
@@ -835,7 +834,7 @@ app.post("/stories/all", (req, res) => __awaiter(void 0, void 0, void 0, functio
         const friendIds = friendShips.map((f) => f.userId === userId ? f.friendId : f.userId);
         logger.info("FriendshipIds", friendIds);
         // Get all stories from friends
-        const stories = yield prisma.story.findMany({
+        const stories = yield client_1.default.story.findMany({
             where: {
                 userId: {
                     in: friendIds,
@@ -870,13 +869,13 @@ app.post("/stories/all", (req, res) => __awaiter(void 0, void 0, void 0, functio
 }));
 app.post("/graph", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const usernames = yield prisma.user.findMany({
+        const usernames = yield client_1.default.user.findMany({
             select: { username: true },
         });
         const nodes = usernames.map((u) => ({
             data: { id: u.username, label: u.username },
         }));
-        const friends = yield prisma.friend.findMany({
+        const friends = yield client_1.default.friend.findMany({
             select: {
                 user: { select: { username: true } },
                 friend: { select: { username: true } },
@@ -908,8 +907,10 @@ app.post("/graph", (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 // Start the server
 const PORT = parseInt(process.env.PORT) || 3000;
 if (!process.env.VERCEL) {
-    server.listen(PORT, () => {
+    server.listen(PORT, () => __awaiter(void 0, void 0, void 0, function* () {
+        yield client_1.default.$connect();
+        console.log("Connected");
         logger.info(`Server listening on port ${PORT}`);
-    });
+    }));
 }
 exports.default = app;

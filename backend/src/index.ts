@@ -31,6 +31,7 @@ var cors = require("cors");
 // WebSocket Implementation
 import { Server as SocketIOServer, Socket } from "socket.io";
 import { PrismaClient } from "@prisma/client";
+import prisma from "./client";
 // Create an Express application
 const app = express();
 app.use(cors());
@@ -48,7 +49,8 @@ const io = new SocketIOServer(server, {
   },
 });
 
-const prisma = new PrismaClient();
+
+
 
 // user Authentication
 app.get("/user", async (req, res) => {
@@ -984,7 +986,11 @@ app.post("/graph", async (req, res) => {
 // Start the server
 const PORT: number = parseInt(process.env.PORT as string) || 3000;
 if (!process.env.VERCEL) {
-  server.listen(PORT, () => {
+
+
+  server.listen(PORT, async () => {
+  await prisma.$connect();
+  console.log("Connected");
     logger.info(`Server listening on port ${PORT}`);
   });
 }
