@@ -53,7 +53,7 @@ export default function Chats() {
     const fetchMessages = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/messages?roomName=${roomName}`
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/messages/allMessages?roomName=${roomName}`
         );
         setInbox(response.data.chats || []);
       } catch (err) {
@@ -68,7 +68,7 @@ export default function Chats() {
     console.log("Sending message");
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/create/message`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/messages/create`,
         {
           message,
           userName: name,

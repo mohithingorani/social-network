@@ -102,7 +102,7 @@ export default function Home() {
         console.log("Searching for user Data");
         if (session.data?.user?.email) {
           const { data } = await axios.get(
-            `${process.env.NEXT_PUBLIC_BACKEND_URL}/user/details?email=${session.data.user.email}`
+            `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/details?email=${session.data.user.email}`
           );
           console.log("API response:", data);
           setUserData(data);
@@ -124,7 +124,7 @@ export default function Home() {
     try {
       if (userDataValue.id != 0) {
         const posts = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/getposts?userId=${userDataValue?.id}`
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/getPosts?userId=${userDataValue?.id}`
         );
 
         console.log(posts);
@@ -141,7 +141,7 @@ export default function Home() {
 
   async function searchFriends(name: string) {
     const friends = await axios.post(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/search`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/search`,
       {
         username: name,
         selfUserName: userData?.username,
@@ -168,7 +168,7 @@ export default function Home() {
   }
   async function searchSuggestedFriends(name: string) {
     const friends = await axios.post(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/suggestions`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/suggestions`,
       {
         username: name,
         selfUserName: userData?.username,
@@ -191,7 +191,7 @@ export default function Home() {
   async function getFriendRequests() {
     if (userDataValue.id != 0) {
       const friendRequests = await axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/friend/requests`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/requests`,
         {
           userId: userDataValue.id,
         }
@@ -208,7 +208,7 @@ export default function Home() {
     const updateLastActive = async () => {
       try {
         const { data } = await axios.post(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/onlinestatus`,
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/onlinestatus`,
           {
             email: userData?.email,
           }
@@ -252,7 +252,7 @@ export default function Home() {
 
   async function sendFriendRequest(friendId: number) {
     const friendRequest = await axios.post(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/friend/request`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/request`,
       {
         fromUserId: userDataValue.id,
         toUserId: friendId,
@@ -266,7 +266,7 @@ export default function Home() {
 
   async function acceptFriendRequest(senderId: number, requestId: number) {
     const request = await axios.post(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/friend/accept`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/accept`,
       {
         senderId,
         receiverId: userDataValue.id,
@@ -356,7 +356,7 @@ async function getStories() {
                                 try {
                                   if (post.isLikedByUser) {
                                     await axios.post(
-                                      `${process.env.NEXT_PUBLIC_BACKEND_URL}/unlikePost`,
+                                      `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/unlikePost`,
                                       {
                                         userId: userDataValue.id, // or session?.user?.id
                                         postId: post.id,
@@ -365,7 +365,7 @@ async function getStories() {
                                     console.log("Unliked post " + post.id);
                                   } else {
                                     await axios.post(
-                                      `${process.env.NEXT_PUBLIC_BACKEND_URL}/likePost`,
+                                      `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/likePost`,
                                       {
                                         username: userDataValue.id,
                                         postId: post.id,

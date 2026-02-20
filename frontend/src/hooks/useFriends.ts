@@ -14,12 +14,12 @@ export const useFriends = () => {
     try {
       if (session?.user?.email) {
         const { data: userData } = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/user/details?email=${session.user.email}`
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/details?email=${session.user.email}`,
         );
         const userId = userData.id;
 
         const { data: friendsData } = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/user/friends?userId=${userId}`
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/all?userId=${userId}`,
         );
 
         setFriends(friendsData.friends);

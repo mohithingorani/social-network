@@ -43,7 +43,7 @@ export const AddPost = ({
       try {
         setIsUploading(true);
         const post = await axios.post(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/uploadWithoutImage`,
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/uploadWithoutImage`,
           {
             caption,
             userId: userId,

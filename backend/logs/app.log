@@ -36850,3 +36850,1183 @@ Please make sure your database server is running at `64.227.155.243:5432`.
 2026-02-17 23:40:40 [[32minfo[39m]: FriendshipIds
 2026-02-17 23:40:40 [[32minfo[39m]: Stories sent successfully
 2026-02-17 23:40:40 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:10:24 [[32minfo[39m]: Server listening on port 3000
+2026-02-20 22:18:32 [[32minfo[39m]: 0
+2026-02-20 22:18:32 [[32minfo[39m]: username is 
+2026-02-20 22:18:32 [[32minfo[39m]: self username is undefined
+2026-02-20 22:18:32 [[32minfo[39m]: 0
+2026-02-20 22:18:32 [[32minfo[39m]: username is 
+2026-02-20 22:18:32 [[32minfo[39m]: self username is undefined
+2026-02-20 22:18:32 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/index.js:828:59
+
+  825 logger.info(userId);
+  826 try {
+  827     // Finding all friends involving user
+→ 828     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-20 22:18:32 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/index.js:460:51
+
+  457 logger.info("username is " + username);
+  458 logger.info("self username is " + selfUsername);
+  459 try {
+→ 460     const users = yield client_1.default.user.findMany(
+
+2026-02-20 22:18:32 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/index.js:828:59
+
+  825 logger.info(userId);
+  826 try {
+  827     // Finding all friends involving user
+→ 828     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-20 22:18:32 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/index.js:460:51
+
+  457 logger.info("username is " + username);
+  458 logger.info("self username is " + selfUsername);
+  459 try {
+→ 460     const users = yield client_1.default.user.findMany(
+
+2026-02-20 22:20:51 [[32minfo[39m]: Server listening on port 3000
+2026-02-20 22:30:13 [[32minfo[39m]: Server listening on port 3000
+2026-02-20 22:30:27 [[32minfo[39m]: Server listening on port 3000
+2026-02-20 22:32:56 [[32minfo[39m]: 0
+2026-02-20 22:32:56 [[32minfo[39m]: username is 
+2026-02-20 22:32:56 [[32minfo[39m]: self username is undefined
+2026-02-20 22:32:56 [[32minfo[39m]: 0
+2026-02-20 22:32:56 [[32minfo[39m]: username is 
+2026-02-20 22:32:56 [[32minfo[39m]: self username is undefined
+2026-02-20 22:32:56 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:32:56 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:32:56 [[32minfo[39m]: Users fetched successfully
+2026-02-20 22:32:56 [[32minfo[39m]: Users fetched successfully
+2026-02-20 22:32:56 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:32:56 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:36:24 [[32minfo[39m]: 0
+2026-02-20 22:36:24 [[32minfo[39m]: username is 
+2026-02-20 22:36:24 [[32minfo[39m]: self username is undefined
+2026-02-20 22:36:24 [[32minfo[39m]: 0
+2026-02-20 22:36:24 [[32minfo[39m]: username is 
+2026-02-20 22:36:24 [[32minfo[39m]: self username is undefined
+2026-02-20 22:36:24 [[32minfo[39m]: Users fetched successfully
+2026-02-20 22:36:24 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:36:24 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:36:24 [[32minfo[39m]: Users fetched successfully
+2026-02-20 22:36:24 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:36:24 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:38:54 [[32minfo[39m]: 0
+2026-02-20 22:38:54 [[32minfo[39m]: 0
+2026-02-20 22:38:54 [[32minfo[39m]: username is 
+2026-02-20 22:38:54 [[32minfo[39m]: self username is undefined
+2026-02-20 22:38:54 [[32minfo[39m]: username is 
+2026-02-20 22:38:54 [[32minfo[39m]: self username is undefined
+2026-02-20 22:38:54 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:38:54 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:38:54 [[32minfo[39m]: Users fetched successfully
+2026-02-20 22:38:54 [[32minfo[39m]: Users fetched successfully
+2026-02-20 22:38:54 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:38:54 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:40:05 [[32minfo[39m]: Server listening on port 3000
+2026-02-20 22:40:14 [[32minfo[39m]: 0
+2026-02-20 22:40:14 [[32minfo[39m]: username is 
+2026-02-20 22:40:14 [[32minfo[39m]: self username is undefined
+2026-02-20 22:40:14 [[32minfo[39m]: 0
+2026-02-20 22:40:14 [[32minfo[39m]: username is 
+2026-02-20 22:40:14 [[32minfo[39m]: self username is undefined
+2026-02-20 22:40:14 [[32minfo[39m]: Users fetched successfully
+2026-02-20 22:40:14 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:40:14 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:40:14 [[32minfo[39m]: Users fetched successfully
+2026-02-20 22:40:14 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:40:14 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:42:07 [[32minfo[39m]: User does not exist
+2026-02-20 22:42:07 [[32minfo[39m]: User created successfully
+2026-02-20 22:42:07 [[32minfo[39m]: 0
+2026-02-20 22:42:07 [[32minfo[39m]: username is 
+2026-02-20 22:42:07 [[32minfo[39m]: self username is undefined
+2026-02-20 22:42:07 [[32minfo[39m]: 0
+2026-02-20 22:42:07 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:42:07 [[32minfo[39m]: username is 
+2026-02-20 22:42:07 [[32minfo[39m]: self username is undefined
+2026-02-20 22:42:07 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:42:07 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:42:07 [[32minfo[39m]: Users fetched successfully
+2026-02-20 22:42:07 [[32minfo[39m]: Users fetched successfully
+2026-02-20 22:42:07 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:42:07 [[32minfo[39m]: User details fetched successfully
+2026-02-20 22:42:07 [[32minfo[39m]: User details fetched successfully
+2026-02-20 22:42:07 [[32minfo[39m]: User details fetched successfully
+2026-02-20 22:42:07 [[32minfo[39m]: User details fetched successfully
+2026-02-20 22:42:07 [[32minfo[39m]: User details fetched successfully
+2026-02-20 22:42:08 [[32minfo[39m]: 1
+2026-02-20 22:42:08 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:42:08 [[32minfo[39m]: username is 
+2026-02-20 22:42:08 [[32minfo[39m]: self username is undefined
+2026-02-20 22:42:08 [[32minfo[39m]: 
+2026-02-20 22:42:08 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:42:08 [[32minfo[39m]: Users fetched successfully
+2026-02-20 22:42:35 [[32minfo[39m]: [object Object]
+2026-02-20 22:48:03 [[32minfo[39m]: Server listening on port 3000
+2026-02-20 22:48:09 [[32minfo[39m]: User details fetched successfully
+2026-02-20 22:48:09 [[32minfo[39m]: User details fetched successfully
+2026-02-20 22:48:10 [[32minfo[39m]: 0
+2026-02-20 22:48:10 [[32minfo[39m]: 0
+2026-02-20 22:48:10 [[32minfo[39m]: username is 
+2026-02-20 22:48:10 [[32minfo[39m]: self username is undefined
+2026-02-20 22:48:10 [[32minfo[39m]: username is 
+2026-02-20 22:48:10 [[32minfo[39m]: self username is undefined
+2026-02-20 22:48:10 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:48:10 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:48:10 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:48:10 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:48:10 [[32minfo[39m]: Users fetched successfully
+2026-02-20 22:48:10 [[32minfo[39m]: User details fetched successfully
+2026-02-20 22:48:10 [[32minfo[39m]: Users fetched successfully
+2026-02-20 22:48:10 [[32minfo[39m]: User details fetched successfully
+2026-02-20 22:48:10 [[32minfo[39m]: 1
+2026-02-20 22:48:10 [[32minfo[39m]: username is 
+2026-02-20 22:48:10 [[32minfo[39m]: self username is undefined
+2026-02-20 22:48:10 [[32minfo[39m]: User details fetched successfully
+2026-02-20 22:48:10 [[32minfo[39m]: FriendshipIds
+2026-02-20 22:48:10 [[32minfo[39m]: User details fetched successfully
+2026-02-20 22:48:10 [[32minfo[39m]: Stories sent successfully
+2026-02-20 22:48:10 [[32minfo[39m]: User details fetched successfully
+2026-02-20 22:48:10 [[32minfo[39m]: User details fetched successfully
+2026-02-20 22:48:11 [[32minfo[39m]: 
+2026-02-20 22:48:11 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:41:02 [[32minfo[39m]: Server listening on port 3000
+2026-02-20 23:41:07 [[32minfo[39m]: 0
+2026-02-20 23:41:07 [[32minfo[39m]: username is 
+2026-02-20 23:41:07 [[32minfo[39m]: self username is undefined
+2026-02-20 23:41:07 [[32minfo[39m]: 0
+2026-02-20 23:41:07 [[32minfo[39m]: username is 
+2026-02-20 23:41:07 [[32minfo[39m]: self username is undefined
+2026-02-20 23:41:07 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:41:07 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:41:07 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:41:07 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:41:07 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:07 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:07 [[32minfo[39m]: 1
+2026-02-20 23:41:07 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:41:07 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:41:07 [[32minfo[39m]: username is 
+2026-02-20 23:41:07 [[32minfo[39m]: self username is undefined
+2026-02-20 23:41:07 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:07 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:41:07 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:07 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:41:07 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:41:07 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:07 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:07 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:07 [[32minfo[39m]: 
+2026-02-20 23:41:07 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:10 [[32minfo[39m]: 0
+2026-02-20 23:41:10 [[32minfo[39m]: username is 
+2026-02-20 23:41:10 [[32minfo[39m]: self username is undefined
+2026-02-20 23:41:10 [[32minfo[39m]: 0
+2026-02-20 23:41:10 [[32minfo[39m]: username is 
+2026-02-20 23:41:10 [[32minfo[39m]: self username is undefined
+2026-02-20 23:41:10 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:41:10 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:41:10 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:41:10 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:41:11 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:41:11 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:41:17 [[32minfo[39m]: User exists
+2026-02-20 23:41:18 [[32minfo[39m]: 0
+2026-02-20 23:41:18 [[32minfo[39m]: 0
+2026-02-20 23:41:18 [[32minfo[39m]: username is 
+2026-02-20 23:41:18 [[32minfo[39m]: self username is undefined
+2026-02-20 23:41:18 [[32minfo[39m]: username is 
+2026-02-20 23:41:18 [[32minfo[39m]: self username is undefined
+2026-02-20 23:41:18 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:41:18 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:41:18 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:41:18 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:41:18 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:41:18 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:41:18 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:18 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:18 [[32minfo[39m]: 1
+2026-02-20 23:41:18 [[32minfo[39m]: username is 
+2026-02-20 23:41:18 [[32minfo[39m]: self username is undefined
+2026-02-20 23:41:18 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:18 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:41:18 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:18 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:18 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:41:18 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:18 [[32minfo[39m]: 
+2026-02-20 23:41:18 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:41:34 [[32minfo[39m]: 0
+2026-02-20 23:41:34 [[32minfo[39m]: username is 
+2026-02-20 23:41:34 [[32minfo[39m]: self username is undefined
+2026-02-20 23:41:34 [[32minfo[39m]: 0
+2026-02-20 23:41:34 [[32minfo[39m]: username is 
+2026-02-20 23:41:34 [[32minfo[39m]: self username is undefined
+2026-02-20 23:41:34 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:41:34 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:41:34 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:41:34 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:41:34 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:34 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:34 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:41:34 [[32minfo[39m]: 1
+2026-02-20 23:41:34 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:41:34 [[32minfo[39m]: username is 
+2026-02-20 23:41:34 [[32minfo[39m]: self username is undefined
+2026-02-20 23:41:34 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:34 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:41:34 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:34 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:34 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:41:34 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:41:34 [[32minfo[39m]: 
+2026-02-20 23:41:34 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:41:43 [[32minfo[39m]: [object Object]
+2026-02-20 23:43:03 [[32minfo[39m]: username is 
+2026-02-20 23:43:03 [[32minfo[39m]: self username is undefined
+2026-02-20 23:43:03 [[32minfo[39m]: 0
+2026-02-20 23:43:03 [[32minfo[39m]: 0
+2026-02-20 23:43:03 [[32minfo[39m]: username is 
+2026-02-20 23:43:03 [[32minfo[39m]: self username is undefined
+2026-02-20 23:43:03 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:43:03 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:43:03 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:43:03 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:43:03 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:43:03 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:43:03 [[32minfo[39m]: 1
+2026-02-20 23:43:03 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:43:03 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:43:03 [[32minfo[39m]: username is 
+2026-02-20 23:43:03 [[32minfo[39m]: self username is undefined
+2026-02-20 23:43:03 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:43:03 [[32minfo[39m]: FriendshipIds
+2026-02-20 23:43:03 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:43:03 [[32minfo[39m]: Stories sent successfully
+2026-02-20 23:43:03 [[32minfo[39m]: Users fetched successfully
+2026-02-20 23:43:03 [[32minfo[39m]: User details fetched successfully
+2026-02-20 23:43:04 [[32minfo[39m]: 
+2026-02-20 23:43:08 [[32minfo[39m]: User connected
+2026-02-20 23:43:08 [[32minfo[39m]: Joining room: mohit69-mohit95
+2026-02-20 23:43:08 [[32minfo[39m]: mohit69 entered room: mohit69-mohit95
+2026-02-20 23:43:11 [[32minfo[39m]: hu
+2026-02-20 23:43:11 [[32minfo[39m]: create/message body: hu
+2026-02-20 23:45:48 [[32minfo[39m]: 0
+2026-02-20 23:45:48 [[32minfo[39m]: 0
+2026-02-20 23:45:48 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:45:48 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:47:56 [[32minfo[39m]: 0
+2026-02-20 23:47:56 [[32minfo[39m]: 0
+2026-02-20 23:47:56 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:47:56 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:48:32 [[32minfo[39m]: 0
+2026-02-20 23:48:32 [[32minfo[39m]: 0
+2026-02-20 23:48:32 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:48:32 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:50:48 [[32minfo[39m]: 0
+2026-02-20 23:50:48 [[32minfo[39m]: 0
+2026-02-20 23:50:48 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:50:48 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:50:48 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:50:48 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:50:48 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:50:48 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:77:54
+
+  74     })
+  75         .status(500);
+  76 }
+→ 77 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-20 23:50:48 [[32minfo[39m]: undefined
+2026-02-20 23:50:48 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:50:48 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:50:48 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:51:30 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:51:34 [[32minfo[39m]: 0
+2026-02-20 23:51:34 [[32minfo[39m]: username is 
+2026-02-20 23:51:34 [[32minfo[39m]: self username is undefined
+2026-02-20 23:51:34 [[32minfo[39m]: 0
+2026-02-20 23:51:34 [[32minfo[39m]: username is 
+2026-02-20 23:51:34 [[32minfo[39m]: self username is undefined
+2026-02-20 23:51:34 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:51:34 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:51:34 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:51:34 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:51:34 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:51:34 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:51:34 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:51:34 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:77:54
+
+  74     })
+  75         .status(500);
+  76 }
+→ 77 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-20 23:51:34 [[32minfo[39m]: undefined
+2026-02-20 23:51:34 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:51:34 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:51:34 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:52:21 [[32minfo[39m]: 0
+2026-02-20 23:52:21 [[32minfo[39m]: username is 
+2026-02-20 23:52:21 [[32minfo[39m]: self username is undefined
+2026-02-20 23:52:21 [[32minfo[39m]: 0
+2026-02-20 23:52:21 [[32minfo[39m]: username is 
+2026-02-20 23:52:21 [[32minfo[39m]: self username is undefined
+2026-02-20 23:52:21 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:52:21 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:52:21 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:52:21 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:52:21 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:52:21 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:52:21 [[32minfo[39m]: undefined
+2026-02-20 23:52:21 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:77:54
+
+  74     })
+  75         .status(500);
+  76 }
+→ 77 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-20 23:52:21 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:52:21 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:52:21 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:52:21 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:52:57 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:52:57 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:05 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:05 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-20 23:53:05 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:05 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-20 23:53:29 [[32minfo[39m]: 0
+2026-02-20 23:53:29 [[32minfo[39m]: username is 
+2026-02-20 23:53:29 [[32minfo[39m]: self username is undefined
+2026-02-20 23:53:29 [[32minfo[39m]: 0
+2026-02-20 23:53:29 [[32minfo[39m]: username is 
+2026-02-20 23:53:29 [[32minfo[39m]: self username is undefined
+2026-02-20 23:53:29 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:29 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:29 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:29 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:29 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:29 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-20 23:53:29 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:29 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:29 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:77:54
+
+  74     })
+  75         .status(500);
+  76 }
+→ 77 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-20 23:53:29 [[32minfo[39m]: undefined
+2026-02-20 23:53:29 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-20 23:53:29 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:29 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:29 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-20 23:53:29 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:29 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-20 23:53:29 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:53:29 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-20 23:54:39 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:54:42 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:54:56 [[32minfo[39m]: 0
+2026-02-20 23:54:56 [[32minfo[39m]: 0
+2026-02-20 23:54:56 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:54:56 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:54:56 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:54:56 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:54:56 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:54:56 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:77:54
+
+  74     })
+  75         .status(500);
+  76 }
+→ 77 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-20 23:54:56 [[32minfo[39m]: undefined
+2026-02-20 23:54:56 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:54:56 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:54:56 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:54:56 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:55:11 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:55:13 [[32minfo[39m]: 0
+2026-02-20 23:55:13 [[32minfo[39m]: username is 
+2026-02-20 23:55:13 [[32minfo[39m]: self username is undefined
+2026-02-20 23:55:13 [[32minfo[39m]: 0
+2026-02-20 23:55:13 [[32minfo[39m]: username is 
+2026-02-20 23:55:13 [[32minfo[39m]: self username is undefined
+2026-02-20 23:55:13 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:55:13 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:55:13 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:55:13 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:55:13 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:55:13 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:55:13 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:55:13 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:77:54
+
+  74     })
+  75         .status(500);
+  76 }
+→ 77 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-20 23:55:13 [[32minfo[39m]: undefined
+2026-02-20 23:55:13 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:55:13 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:55:13 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:56:12 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:56:18 [[32minfo[39m]: 0
+2026-02-20 23:56:18 [[32minfo[39m]: username is 
+2026-02-20 23:56:18 [[32minfo[39m]: self username is undefined
+2026-02-20 23:56:18 [[32minfo[39m]: 0
+2026-02-20 23:56:18 [[32minfo[39m]: username is 
+2026-02-20 23:56:18 [[32minfo[39m]: self username is undefined
+2026-02-20 23:56:18 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:56:18 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:56:18 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:56:18 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:56:18 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:56:18 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:56:18 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:56:18 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:77:54
+
+  74     })
+  75         .status(500);
+  76 }
+→ 77 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-20 23:56:18 [[32minfo[39m]: undefined
+2026-02-20 23:56:18 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:56:18 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:56:18 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:56:18 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:21 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:27 [[32minfo[39m]: username is 
+2026-02-20 23:57:27 [[32minfo[39m]: self username is undefined
+2026-02-20 23:57:27 [[32minfo[39m]: 0
+2026-02-20 23:57:27 [[32minfo[39m]: 0
+2026-02-20 23:57:27 [[32minfo[39m]: username is 
+2026-02-20 23:57:27 [[32minfo[39m]: self username is undefined
+2026-02-20 23:57:27 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:27 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:27 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:27 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:28 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:28 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:28 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:28 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:77:54
+
+  74     })
+  75         .status(500);
+  76 }
+→ 77 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-20 23:57:28 [[32minfo[39m]: undefined
+2026-02-20 23:57:28 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:28 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:28 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:28 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:32 [[32minfo[39m]: 0
+2026-02-20 23:57:32 [[32minfo[39m]: username is 
+2026-02-20 23:57:32 [[32minfo[39m]: self username is undefined
+2026-02-20 23:57:32 [[32minfo[39m]: 0
+2026-02-20 23:57:32 [[32minfo[39m]: username is 
+2026-02-20 23:57:32 [[32minfo[39m]: self username is undefined
+2026-02-20 23:57:32 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:32 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:32 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:32 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:32 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:32 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:32 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:32 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:77:54
+
+  74     })
+  75         .status(500);
+  76 }
+→ 77 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-20 23:57:32 [[32minfo[39m]: undefined
+2026-02-20 23:57:32 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:32 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:57:32 [[32minfo[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:58:49 [[32minfo[39m]: 0
+2026-02-20 23:58:49 [[32minfo[39m]: username is 
+2026-02-20 23:58:49 [[32minfo[39m]: self username is undefined
+2026-02-20 23:58:49 [[32minfo[39m]: 0
+2026-02-20 23:58:49 [[32minfo[39m]: username is 
+2026-02-20 23:58:49 [[32minfo[39m]: self username is undefined
+2026-02-20 23:58:49 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:58:49 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:58:49 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-20 23:58:49 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:06:31 [[32minfo[39m]: 0
+2026-02-21 00:06:31 [[32minfo[39m]: username is 
+2026-02-21 00:06:31 [[32minfo[39m]: self username is undefined
+2026-02-21 00:06:31 [[32minfo[39m]: 0
+2026-02-21 00:06:31 [[32minfo[39m]: username is 
+2026-02-21 00:06:31 [[32minfo[39m]: self username is undefined
+2026-02-21 00:06:31 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:06:31 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:06:31 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:06:31 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:13:20 [[31merror[39m]: Error checking user existence
+2026-02-21 00:13:22 [[31merror[39m]: Error checking user existence
+2026-02-21 00:14:04 [[31merror[39m]: Error checking user existence
+2026-02-21 00:14:55 [[32minfo[39m]: username is 
+2026-02-21 00:14:55 [[32minfo[39m]: self username is undefined
+2026-02-21 00:14:55 [[32minfo[39m]: 0
+2026-02-21 00:14:55 [[32minfo[39m]: username is 
+2026-02-21 00:14:55 [[32minfo[39m]: self username is undefined
+2026-02-21 00:14:55 [[32minfo[39m]: 0
+2026-02-21 00:14:55 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:14:55 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:14:55 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:14:55 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:15:04 [[31merror[39m]: Error checking user existence
+2026-02-21 00:18:53 [[32minfo[39m]: 0
+2026-02-21 00:18:53 [[32minfo[39m]: username is 
+2026-02-21 00:18:53 [[32minfo[39m]: self username is undefined
+2026-02-21 00:18:53 [[32minfo[39m]: 0
+2026-02-21 00:18:53 [[32minfo[39m]: username is 
+2026-02-21 00:18:53 [[32minfo[39m]: self username is undefined
+2026-02-21 00:18:53 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:18:53 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:18:53 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:18:53 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:19:02 [[31merror[39m]: Error checking user existence
+2026-02-21 00:20:22 [[31merror[39m]: Error checking user existence
+2026-02-21 00:21:19 [[31merror[39m]: Error checking user existence
+2026-02-21 00:22:05 [[32minfo[39m]: username is 
+2026-02-21 00:22:05 [[32minfo[39m]: self username is undefined
+2026-02-21 00:22:05 [[32minfo[39m]: 0
+2026-02-21 00:22:05 [[32minfo[39m]: 0
+2026-02-21 00:22:05 [[32minfo[39m]: username is 
+2026-02-21 00:22:05 [[32minfo[39m]: self username is undefined
+2026-02-21 00:22:05 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:22:05 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:22:05 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:22:05 [[31merror[39m]: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+2026-02-21 00:22:47 [[31merror[39m]: Error checking user existence
+2026-02-21 00:24:19 [[31merror[39m]: Error checking user existence
+2026-02-21 00:24:28 [[32minfo[39m]: 0
+2026-02-21 00:24:28 [[32minfo[39m]: username is 
+2026-02-21 00:24:28 [[32minfo[39m]: self username is undefined
+2026-02-21 00:24:28 [[32minfo[39m]: 0
+2026-02-21 00:24:28 [[32minfo[39m]: username is 
+2026-02-21 00:24:28 [[32minfo[39m]: self username is undefined
+2026-02-21 00:24:28 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:24:28 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:24:28 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:24:28 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:24:28 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:24:28 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:24:35 [[32minfo[39m]: User existence check successful
+2026-02-21 00:24:35 [[32minfo[39m]: User exists
+2026-02-21 00:24:35 [[32minfo[39m]: 0
+2026-02-21 00:24:35 [[32minfo[39m]: 0
+2026-02-21 00:24:35 [[32minfo[39m]: username is 
+2026-02-21 00:24:35 [[32minfo[39m]: self username is undefined
+2026-02-21 00:24:35 [[32minfo[39m]: username is 
+2026-02-21 00:24:35 [[32minfo[39m]: self username is undefined
+2026-02-21 00:24:35 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:24:35 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:24:35 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:24:35 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:24:35 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:24:35 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:24:36 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:24:36 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:24:36 [[32minfo[39m]: 1
+2026-02-21 00:24:36 [[32minfo[39m]: username is 
+2026-02-21 00:24:36 [[32minfo[39m]: self username is undefined
+2026-02-21 00:24:36 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:24:36 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:24:36 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:24:36 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:24:36 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:24:36 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:24:36 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:24:36 [[32minfo[39m]: 
+2026-02-21 00:24:43 [[32minfo[39m]: 0
+2026-02-21 00:24:43 [[32minfo[39m]: 0
+2026-02-21 00:24:43 [[32minfo[39m]: username is 
+2026-02-21 00:24:43 [[32minfo[39m]: self username is undefined
+2026-02-21 00:24:43 [[32minfo[39m]: username is 
+2026-02-21 00:24:43 [[32minfo[39m]: self username is undefined
+2026-02-21 00:24:43 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:24:43 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:24:43 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:24:43 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:24:43 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:24:43 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:24:43 [[32minfo[39m]: 1
+2026-02-21 00:24:43 [[32minfo[39m]: username is 
+2026-02-21 00:24:43 [[32minfo[39m]: self username is undefined
+2026-02-21 00:24:43 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:24:43 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:24:43 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:24:43 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:24:43 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:24:43 [[32minfo[39m]: 
+2026-02-21 00:24:43 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:24:43 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:24:43 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:25:30 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:30 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:32 [[32minfo[39m]: 0
+2026-02-21 00:25:32 [[32minfo[39m]: username is 
+2026-02-21 00:25:32 [[32minfo[39m]: self username is undefined
+2026-02-21 00:25:32 [[32minfo[39m]: 0
+2026-02-21 00:25:32 [[32minfo[39m]: username is 
+2026-02-21 00:25:32 [[32minfo[39m]: self username is undefined
+2026-02-21 00:25:32 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:25:32 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:25:32 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:32 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:25:32 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:32 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:32 [[32minfo[39m]: 1
+2026-02-21 00:25:32 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:25:32 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:25:32 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:25:32 [[32minfo[39m]: username is 
+2026-02-21 00:25:32 [[32minfo[39m]: self username is undefined
+2026-02-21 00:25:32 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:32 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:25:32 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:25:32 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:32 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:25:32 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:32 [[32minfo[39m]: 
+2026-02-21 00:25:40 [[32minfo[39m]: create/message body: hi
+2026-02-21 00:25:41 [[32minfo[39m]: 1
+2026-02-21 00:25:41 [[32minfo[39m]: username is 
+2026-02-21 00:25:41 [[32minfo[39m]: self username is undefined
+2026-02-21 00:25:41 [[32minfo[39m]: username is 
+2026-02-21 00:25:41 [[32minfo[39m]: self username is undefined
+2026-02-21 00:25:41 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:41 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:25:41 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:25:41 [[32minfo[39m]: 1
+2026-02-21 00:25:41 [[32minfo[39m]: username is 
+2026-02-21 00:25:41 [[32minfo[39m]: self username is undefined
+2026-02-21 00:25:41 [[32minfo[39m]: username is 
+2026-02-21 00:25:41 [[32minfo[39m]: self username is undefined
+2026-02-21 00:25:41 [[32minfo[39m]: 
+2026-02-21 00:25:41 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:25:41 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:25:41 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:25:41 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:25:41 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:42 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:25:42 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:25:42 [[32minfo[39m]: 1
+2026-02-21 00:25:42 [[32minfo[39m]: username is 
+2026-02-21 00:25:42 [[32minfo[39m]: self username is undefined
+2026-02-21 00:25:42 [[32minfo[39m]: 
+2026-02-21 00:25:42 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:42 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:25:42 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:42 [[32minfo[39m]: 
+2026-02-21 00:25:42 [[32minfo[39m]: 1
+2026-02-21 00:25:42 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:42 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:25:42 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:25:42 [[32minfo[39m]: username is 
+2026-02-21 00:25:42 [[32minfo[39m]: self username is undefined
+2026-02-21 00:25:42 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:25:42 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:42 [[32minfo[39m]: 
+2026-02-21 00:25:42 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:25:42 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:25:45 [[32minfo[39m]: create/message body: asdfadsf
+2026-02-21 00:25:46 [[32minfo[39m]: 0
+2026-02-21 00:25:46 [[32minfo[39m]: username is 
+2026-02-21 00:25:46 [[32minfo[39m]: self username is undefined
+2026-02-21 00:25:46 [[32minfo[39m]: 0
+2026-02-21 00:25:46 [[32minfo[39m]: username is 
+2026-02-21 00:25:46 [[32minfo[39m]: self username is undefined
+2026-02-21 00:25:46 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:46 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:25:46 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:25:46 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:25:46 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:25:46 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:46 [[32minfo[39m]: 1
+2026-02-21 00:25:46 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:46 [[32minfo[39m]: username is 
+2026-02-21 00:25:46 [[32minfo[39m]: self username is undefined
+2026-02-21 00:25:46 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:25:46 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:25:47 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:25:47 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:47 [[32minfo[39m]: 
+2026-02-21 00:25:47 [[32minfo[39m]: 1
+2026-02-21 00:25:47 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:25:47 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:47 [[32minfo[39m]: username is 
+2026-02-21 00:25:47 [[32minfo[39m]: self username is undefined
+2026-02-21 00:25:47 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:25:47 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:25:47 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:25:47 [[32minfo[39m]: 
+2026-02-21 00:25:47 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:25:47 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:25:55 [[32minfo[39m]: create/message body: adsfasdf
+2026-02-21 00:26:02 [[32minfo[39m]: create/message body: asdfasdf
+2026-02-21 00:26:09 [[32minfo[39m]: 0
+2026-02-21 00:26:09 [[32minfo[39m]: username is 
+2026-02-21 00:26:09 [[32minfo[39m]: self username is undefined
+2026-02-21 00:26:09 [[32minfo[39m]: 0
+2026-02-21 00:26:09 [[32minfo[39m]: username is 
+2026-02-21 00:26:09 [[32minfo[39m]: self username is undefined
+2026-02-21 00:26:09 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:26:10 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:26:10 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:26:10 [[32minfo[39m]: 1
+2026-02-21 00:26:10 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:26:10 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:26:10 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:26:10 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:26:10 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:26:10 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:26:10 [[32minfo[39m]: username is 
+2026-02-21 00:26:10 [[32minfo[39m]: self username is undefined
+2026-02-21 00:26:10 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:26:10 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:26:10 [[32minfo[39m]: 1
+2026-02-21 00:26:10 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:26:10 [[32minfo[39m]: username is 
+2026-02-21 00:26:10 [[32minfo[39m]: self username is undefined
+2026-02-21 00:26:10 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:26:10 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:26:10 [[32minfo[39m]: 
+2026-02-21 00:26:10 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:26:10 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:26:10 [[32minfo[39m]: 
+2026-02-21 00:26:10 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:26:10 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:26:26 [[32minfo[39m]: 0
+2026-02-21 00:26:26 [[32minfo[39m]: 0
+2026-02-21 00:26:26 [[32minfo[39m]: username is 
+2026-02-21 00:26:26 [[32minfo[39m]: self username is undefined
+2026-02-21 00:26:26 [[32minfo[39m]: username is 
+2026-02-21 00:26:26 [[32minfo[39m]: self username is undefined
+2026-02-21 00:26:26 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:26:26 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:26:26 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:26:26 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:26:26 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:26:26 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:26:31 [[32minfo[39m]: User existence check successful
+2026-02-21 00:26:31 [[32minfo[39m]: User exists
+2026-02-21 00:26:31 [[32minfo[39m]: 0
+2026-02-21 00:26:31 [[32minfo[39m]: username is 
+2026-02-21 00:26:31 [[32minfo[39m]: self username is undefined
+2026-02-21 00:26:31 [[32minfo[39m]: 0
+2026-02-21 00:26:31 [[32minfo[39m]: username is 
+2026-02-21 00:26:31 [[32minfo[39m]: self username is undefined
+2026-02-21 00:26:31 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:26:31 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:26:31 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:26:31 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:26:31 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:26:31 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:26:31 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:26:31 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:26:31 [[32minfo[39m]: 1
+2026-02-21 00:26:31 [[32minfo[39m]: username is 
+2026-02-21 00:26:31 [[32minfo[39m]: self username is undefined
+2026-02-21 00:26:31 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:26:31 [[32minfo[39m]: FriendshipIds
+2026-02-21 00:26:31 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:26:31 [[32minfo[39m]: Stories sent successfully
+2026-02-21 00:26:31 [[32minfo[39m]: Users fetched successfully
+2026-02-21 00:26:31 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:26:32 [[32minfo[39m]: User details fetched successfully
+2026-02-21 00:26:32 [[32minfo[39m]: 
+2026-02-21 00:27:07 [[32minfo[39m]: [object Object]

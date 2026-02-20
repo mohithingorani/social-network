@@ -51,12 +51,12 @@ export const NEXT_AUTH = {
       console.log(234);
       try {
         const userExists = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/user?email=${email}`
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/getUser?email=${email}`
         );
         console.log(1234);
         if (!userExists.data) {
           try {
-            await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/createUser`, {
+            await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/users/createUser`, {
               email: email,
               name: name,
               picture: picture,
