@@ -11,8 +11,6 @@ import { useFriends } from "@/hooks/useFriends";
 import axios from "axios";
 
 export default function NavBar({ userName }: { userName: string }) {
-  const [searchFriend, setSearchFriend] = useState("");
-  const [debouncedSearch, setDebouncedSearch] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const session = useSession();
   const [currPage, setCurrPage] = useRecoilState(pageAtom);
@@ -20,11 +18,7 @@ export default function NavBar({ userName }: { userName: string }) {
   const [currKey, setCurrKey] = useState(0);
   const [numPosts, setNumPosts] = useState<number | null>(null);
   const userData = useRecoilValue(userDataAtom);
-  // Debounce search input (if used later – you can keep original logic)
-  useEffect(() => {
-    const handler = setTimeout(() => setDebouncedSearch(searchFriend), 1500);
-    return () => clearTimeout(handler);
-  }, [searchFriend]);
+
 
   const getNumPosts = async () => {
     if(userData.id!=0){
@@ -89,8 +83,7 @@ export default function NavBar({ userName }: { userName: string }) {
               </div>
               <div className="text-sm text-white/70">College Student</div>
               <p className="text-xs text-white/60 mt-2 px-4">
-                Guiding the next generation through the journey of health and
-                knowledge!
+                Building the next generation social network
               </p>
             </div>
 
@@ -111,7 +104,7 @@ export default function NavBar({ userName }: { userName: string }) {
             </div>
 
             {/* Navigation Links */}
-            <div className="space-y-2 border border-y-1 border-x-0 py-4 border-gray-500 text-start">
+            <div className="space-y-2 py-4 border-gray-500 text-start">
               {[
                 { name: "Feed", image: "icon_01" },
                 { name: "Messages", image: "icon_02" },
@@ -154,7 +147,7 @@ export default function NavBar({ userName }: { userName: string }) {
             </div>
 
             {/* Contacts */}
-            <div className="mt-6 ">
+            {/* <div className="mt-6 ">
               <div className="font-bold text-lg mb-2 md:ml-2">Contacts</div>
               <div className="space-y-3 max-h-[17vh] lg:max-h-[25vh] overflow-y-auto">
                 <ContactCard avatar="avatar_01" time="3s" name="Jack Lozano" />
@@ -171,7 +164,7 @@ export default function NavBar({ userName }: { userName: string }) {
                   name="Extra Contact"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

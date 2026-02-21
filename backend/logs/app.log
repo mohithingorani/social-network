@@ -38030,3 +38030,351 @@ Argument `userId` is missing.
 2026-02-21 00:26:32 [[32minfo[39m]: User details fetched successfully
 2026-02-21 00:26:32 [[32minfo[39m]: 
 2026-02-21 00:27:07 [[32minfo[39m]: [object Object]
+2026-02-21 20:26:31 [[32minfo[39m]: 0
+2026-02-21 20:26:31 [[32minfo[39m]: username is 
+2026-02-21 20:26:31 [[32minfo[39m]: self username is undefined
+2026-02-21 20:26:31 [[32minfo[39m]: 0
+2026-02-21 20:26:31 [[32minfo[39m]: username is 
+2026-02-21 20:26:31 [[32minfo[39m]: self username is undefined
+2026-02-21 20:26:31 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 20:26:31 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 20:26:31 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 20:26:31 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 20:26:38 [[31merror[39m]: Error checking user existence
+2026-02-21 20:27:23 [[32minfo[39m]: 0
+2026-02-21 20:27:23 [[32minfo[39m]: username is 
+2026-02-21 20:27:23 [[32minfo[39m]: self username is undefined
+2026-02-21 20:27:23 [[32minfo[39m]: 0
+2026-02-21 20:27:23 [[32minfo[39m]: username is 
+2026-02-21 20:27:23 [[32minfo[39m]: self username is undefined
+2026-02-21 20:27:23 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:27:23 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:27:23 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:27:23 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:27:23 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:27:23 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:27:28 [[32minfo[39m]: User existence check successful
+2026-02-21 20:27:28 [[32minfo[39m]: User exists
+2026-02-21 20:27:28 [[32minfo[39m]: 0
+2026-02-21 20:27:28 [[32minfo[39m]: 0
+2026-02-21 20:27:28 [[32minfo[39m]: username is 
+2026-02-21 20:27:28 [[32minfo[39m]: self username is undefined
+2026-02-21 20:27:28 [[32minfo[39m]: username is 
+2026-02-21 20:27:28 [[32minfo[39m]: self username is undefined
+2026-02-21 20:27:28 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:27:28 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:27:28 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:27:28 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:27:28 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:27:28 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:27:28 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:27:28 [[32minfo[39m]: 1
+2026-02-21 20:27:28 [[32minfo[39m]: username is 
+2026-02-21 20:27:28 [[32minfo[39m]: self username is undefined
+2026-02-21 20:27:28 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:27:29 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:27:29 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:27:29 [[32minfo[39m]: 
+2026-02-21 20:27:31 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:27:31 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:27:34 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:27:34 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:27:36 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:27:36 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:27:48 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:27:48 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:27:49 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:27:49 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:27:52 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:27:52 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:28:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:28:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:28:16 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:28:16 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:28:55 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:28:55 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:29:25 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:29:25 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:29:39 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:29:39 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:29:44 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:29:44 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:29:49 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:29:49 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:30:05 [[32minfo[39m]: 0
+2026-02-21 20:30:05 [[32minfo[39m]: username is 
+2026-02-21 20:30:05 [[32minfo[39m]: self username is undefined
+2026-02-21 20:30:05 [[32minfo[39m]: 0
+2026-02-21 20:30:05 [[32minfo[39m]: username is 
+2026-02-21 20:30:05 [[32minfo[39m]: self username is undefined
+2026-02-21 20:30:06 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:30:06 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:30:06 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:30:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:30:06 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:30:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:30:06 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:30:06 [[32minfo[39m]: 1
+2026-02-21 20:30:06 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:30:06 [[32minfo[39m]: username is 
+2026-02-21 20:30:06 [[32minfo[39m]: self username is undefined
+2026-02-21 20:30:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:30:06 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:30:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:30:06 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:30:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:30:06 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:30:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:30:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:30:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:30:06 [[32minfo[39m]: 
+2026-02-21 20:33:44 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:33:49 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:34:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:34:09 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:34:40 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:34:43 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:34:47 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:34:51 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:35:10 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:35:12 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:35:33 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:36:05 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:36:23 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:36:27 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:36:31 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:36:34 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:36:38 [[32minfo[39m]: 0
+2026-02-21 20:36:38 [[32minfo[39m]: username is 
+2026-02-21 20:36:38 [[32minfo[39m]: self username is undefined
+2026-02-21 20:36:38 [[32minfo[39m]: 0
+2026-02-21 20:36:38 [[32minfo[39m]: username is 
+2026-02-21 20:36:38 [[32minfo[39m]: self username is undefined
+2026-02-21 20:36:38 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:36:38 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:36:38 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:36:38 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:36:38 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:36:38 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:36:38 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:36:38 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:36:38 [[32minfo[39m]: 1
+2026-02-21 20:36:38 [[32minfo[39m]: username is 
+2026-02-21 20:36:38 [[32minfo[39m]: self username is undefined
+2026-02-21 20:36:38 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:36:38 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:36:38 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:36:38 [[32minfo[39m]: 
+2026-02-21 20:36:38 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:36:39 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:36:39 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:36:39 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:37:17 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:38:13 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:38:16 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:38:20 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:39:25 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:39:50 [[32minfo[39m]: 0
+2026-02-21 20:39:50 [[32minfo[39m]: username is 
+2026-02-21 20:39:50 [[32minfo[39m]: self username is undefined
+2026-02-21 20:39:50 [[32minfo[39m]: 0
+2026-02-21 20:39:50 [[32minfo[39m]: username is 
+2026-02-21 20:39:50 [[32minfo[39m]: self username is undefined
+2026-02-21 20:39:51 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:39:51 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:39:51 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:39:51 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:39:51 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:39:51 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:39:51 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:39:51 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:39:51 [[32minfo[39m]: 1
+2026-02-21 20:39:51 [[32minfo[39m]: username is 
+2026-02-21 20:39:51 [[32minfo[39m]: self username is undefined
+2026-02-21 20:39:51 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:39:51 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:39:51 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:39:51 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:39:51 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:39:51 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:39:51 [[32minfo[39m]: 
+2026-02-21 20:39:51 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:40:04 [[32minfo[39m]: 0
+2026-02-21 20:40:04 [[32minfo[39m]: username is 
+2026-02-21 20:40:04 [[32minfo[39m]: self username is undefined
+2026-02-21 20:40:04 [[32minfo[39m]: 0
+2026-02-21 20:40:04 [[32minfo[39m]: username is 
+2026-02-21 20:40:04 [[32minfo[39m]: self username is undefined
+2026-02-21 20:40:04 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:40:04 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:40:04 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:40:04 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:40:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:40:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:40:04 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:40:04 [[32minfo[39m]: 1
+2026-02-21 20:40:04 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:40:04 [[32minfo[39m]: username is 
+2026-02-21 20:40:04 [[32minfo[39m]: self username is undefined
+2026-02-21 20:40:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:40:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:40:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:40:04 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:40:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:40:04 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:40:04 [[32minfo[39m]: 
+2026-02-21 20:40:04 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:41:36 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:41:47 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:42:05 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:42:05 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:42:05 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:42:09 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:42:14 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:42:46 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:42:51 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:42:56 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:43:14 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:43:18 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:43:20 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:43:23 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:43:37 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:43:59 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:44:01 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:44:07 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:44:12 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:44:19 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:44:54 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:44:57 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:45:00 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:45:43 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:45:46 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:46:29 [[32minfo[39m]: username is 
+2026-02-21 20:46:29 [[32minfo[39m]: self username is undefined
+2026-02-21 20:46:29 [[32minfo[39m]: 0
+2026-02-21 20:46:29 [[32minfo[39m]: username is 
+2026-02-21 20:46:29 [[32minfo[39m]: self username is undefined
+2026-02-21 20:46:29 [[32minfo[39m]: 0
+2026-02-21 20:46:29 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:46:29 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:46:29 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:46:29 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:46:29 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:46:29 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:46:29 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:46:29 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:46:29 [[32minfo[39m]: 1
+2026-02-21 20:46:29 [[32minfo[39m]: username is 
+2026-02-21 20:46:29 [[32minfo[39m]: self username is undefined
+2026-02-21 20:46:29 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:46:29 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:46:29 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:46:30 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:46:30 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:46:30 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:46:30 [[32minfo[39m]: 
+2026-02-21 20:46:30 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:46:34 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:47:10 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:48:06 [[32minfo[39m]: 0
+2026-02-21 20:48:06 [[32minfo[39m]: username is 
+2026-02-21 20:48:06 [[32minfo[39m]: self username is undefined
+2026-02-21 20:48:06 [[32minfo[39m]: 0
+2026-02-21 20:48:06 [[32minfo[39m]: username is 
+2026-02-21 20:48:06 [[32minfo[39m]: self username is undefined
+2026-02-21 20:48:06 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:48:06 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:48:06 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:48:06 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:48:06 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:48:06 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:48:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:48:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:48:06 [[32minfo[39m]: 1
+2026-02-21 20:48:06 [[32minfo[39m]: username is 
+2026-02-21 20:48:06 [[32minfo[39m]: self username is undefined
+2026-02-21 20:48:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:48:06 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:48:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:48:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:48:06 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:48:06 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:48:06 [[32minfo[39m]: 
+2026-02-21 20:48:06 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:48:35 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:48:55 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:48:57 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:49:01 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:49:29 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:49:38 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:49:40 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:49:41 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:49:56 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:49:59 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:50:11 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:50:13 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:50:16 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:50:18 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:50:23 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:50:32 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:51:16 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:51:20 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:51:52 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:52:16 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:56:54 [[32minfo[39m]: username is 
+2026-02-21 20:56:54 [[32minfo[39m]: self username is undefined
+2026-02-21 20:56:54 [[32minfo[39m]: 0
+2026-02-21 20:56:54 [[32minfo[39m]: 0
+2026-02-21 20:56:54 [[32minfo[39m]: username is 
+2026-02-21 20:56:54 [[32minfo[39m]: self username is undefined
+2026-02-21 20:56:54 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:56:54 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:56:54 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:56:54 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:56:54 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:56:54 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:56:54 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:56:54 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:56:54 [[32minfo[39m]: 1
+2026-02-21 20:56:54 [[32minfo[39m]: username is 
+2026-02-21 20:56:54 [[32minfo[39m]: self username is undefined
+2026-02-21 20:56:54 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:56:54 [[32minfo[39m]: FriendshipIds
+2026-02-21 20:56:54 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:56:54 [[32minfo[39m]: 
+2026-02-21 20:56:54 [[32minfo[39m]: Stories sent successfully
+2026-02-21 20:56:55 [[32minfo[39m]: User details fetched successfully
+2026-02-21 20:56:55 [[32minfo[39m]: Users fetched successfully
+2026-02-21 20:56:55 [[32minfo[39m]: User details fetched successfully

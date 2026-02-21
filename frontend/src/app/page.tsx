@@ -35,9 +35,6 @@ import StoryPage from "./components/StoryPage";
 // import ChickShower from "./components/surprise";
 // import ReminderModal from "./components/surprise";
 
-
-
-
 export interface userData {
   email: string;
   name: string;
@@ -71,7 +68,7 @@ export default function Home() {
   const { friends, loading, refetch } = useFriends();
   const [friendRequests, setFriendRequests] = useState<[any] | null>(null);
   const [searchedFriends, setSearchedFriends] = useState<
-  searchedFriends[] | null
+    searchedFriends[] | null
   >(null);
   const [commentsPostId, setCommentsPostId] = useState<number | null>(null);
   const [posts, setPosts] = useState<PostInterface[] | null>(null);
@@ -84,12 +81,13 @@ export default function Home() {
   // const [friendsList, setFriendsList] = useState<any>();
   const [storyPreview, setStoryPreview] = useRecoilState(storyPreviewAtom);
   const filteredFriends = friends?.filter((f: any) =>
-    f.username?.toLowerCase().includes(searchFriendsInput.toLowerCase())
+    f.username?.toLowerCase().includes(searchFriendsInput.toLowerCase()),
   );
-  const [storyFile, setStoryFile]= useRecoilState(selectedFileForStory);
-  const [groupedStories, setGroupedStories] = useState<
-    Record<number, StoryInterface[]> | null
-  >(null);
+  const [storyFile, setStoryFile] = useRecoilState(selectedFileForStory);
+  const [groupedStories, setGroupedStories] = useState<Record<
+    number,
+    StoryInterface[]
+  > | null>(null);
   const filteredSuggestFriends = searchedFriends?.filter((f: any) => {
     return f.username
       ?.toLowerCase()
@@ -102,7 +100,7 @@ export default function Home() {
         console.log("Searching for user Data");
         if (session.data?.user?.email) {
           const { data } = await axios.get(
-            `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/details?email=${session.data.user.email}`
+            `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/details?email=${session.data.user.email}`,
           );
           console.log("API response:", data);
           setUserData(data);
@@ -124,7 +122,7 @@ export default function Home() {
     try {
       if (userDataValue.id != 0) {
         const posts = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/getPosts?userId=${userDataValue?.id}`
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/getPosts?userId=${userDataValue?.id}`,
         );
 
         console.log(posts);
@@ -145,7 +143,7 @@ export default function Home() {
       {
         username: name,
         selfUserName: userData?.username,
-      }
+      },
     );
     if (friends) {
       console.log("====================================");
@@ -173,7 +171,7 @@ export default function Home() {
         username: name,
         selfUserName: userData?.username,
         userId: userDataValue.id,
-      }
+      },
     );
     if (friends) {
       console.log("====================================");
@@ -194,7 +192,7 @@ export default function Home() {
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/requests`,
         {
           userId: userDataValue.id,
-        }
+        },
       );
       setFriendRequests(friendRequests.data.requests);
     }
@@ -211,7 +209,7 @@ export default function Home() {
           `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/onlinestatus`,
           {
             email: userData?.email,
-          }
+          },
         );
         return data;
       } catch (err) {
@@ -256,7 +254,7 @@ export default function Home() {
       {
         fromUserId: userDataValue.id,
         toUserId: friendId,
-      }
+      },
     );
     const notify = () => toast(friendRequest.data.message);
 
@@ -271,7 +269,7 @@ export default function Home() {
         senderId,
         receiverId: userDataValue.id,
         requestId,
-      }
+      },
     );
     const notify = () => toast(request.data.message);
     getFriendRequests();
@@ -280,13 +278,12 @@ export default function Home() {
     return acceptFriendRequest;
   }
 
-
-async function getStories() {
+  async function getStories() {
     if (!userDataValue) return;
 
     const response = await axios.post<{ stories: StoryInterface[] }>(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/stories/all`,
-      { userId:userDataValue.id }
+      { userId: userDataValue.id },
     );
 
     const storiesData: StoryInterface[] = response.data.stories;
@@ -297,19 +294,17 @@ async function getStories() {
         acc[story.userId].push(story);
         return acc;
       },
-      {}
+      {},
     );
 
     setGroupedStories(grouped);
   }
 
-  
-
 
 
   return (
-    loggedIn && (
-      <>
+    
+  <div className="max-h-screen overflow-hidden">
         {showComments && (
           <CommentsModal
             userId={userDataValue.id}
@@ -317,23 +312,30 @@ async function getStories() {
             postId={commentsPostId}
             username={userDataValue.username}
           />
-        )}{" "}
-        <div className="grid grid-cols-1 md:grid-cols-6 overflow-hidden ">
-          {storyPreview && storyFile &&<StoryPage storyFile={storyFile} onClickClose={()=>{
-            setStoryPreview(undefined);
-            setStoryFile(undefined);
-          }} userName={userDataValue.username} userId={userDataValue.id} userImage={userDataValue.picture} storyImage={storyPreview}/>}
+        )}
+        <div className="grid grid-cols-1 md:grid-cols-6 overflow-hidden max-h-fit ">
+          {storyPreview && storyFile && (
+            <StoryPage
+              storyFile={storyFile}
+              onClickClose={() => {
+                setStoryPreview(undefined);
+                setStoryFile(undefined);
+              }}
+              userName={userDataValue.username}
+              userId={userDataValue.id}
+              userImage={userDataValue.picture}
+              storyImage={storyPreview}
+            />
+          )}
           <div className="col-span-1">
             <NavBar userName={userNameValue} />
           </div>
-          <div className="flex-grow col-span-5 m-3 md:m-4  border border-white/20 max-h-max text-white rounded-3xl bg-gradient-to-t from-[#18181A]  to-[#202020]">
-            <div className="w-full grid grid-cols-3 rounded-3xl">
+          <div className="flex-grow col-span-5 m-3 md:m-4  border border-white/20 max-h-max text-white rounded-3xl bg-gradient-to-t from-[#18181A]  to-[#202020] ">
+            <div className="w-full grid grid-cols-3 rounded-3xl h-[95vh]">
               <div className="col-span-3 md:col-span-2  rounded-l-3xl p-4 md:px-8 md:pt-8 md:pb-1 flex h-[92vh] flex-col overflow-y-scroll">
                 {currPage === "home" && (
                   <div>
-                    <div className="mb-8">
-                      {/* {groupedStories&&<StoriesCard groupedStories={groupedStories} />} */}
-                    </div>
+              
                     <div>
                       {userDataValue.id != 0 && (
                         <AddPost
@@ -360,7 +362,7 @@ async function getStories() {
                                       {
                                         userId: userDataValue.id, // or session?.user?.id
                                         postId: post.id,
-                                      }
+                                      },
                                     );
                                     console.log("Unliked post " + post.id);
                                   } else {
@@ -369,7 +371,7 @@ async function getStories() {
                                       {
                                         username: userDataValue.id,
                                         postId: post.id,
-                                      }
+                                      },
                                     );
                                     console.log("Like Post " + post.id);
                                   }
@@ -400,7 +402,7 @@ async function getStories() {
                         <input
                           type="text"
                           placeholder="Search Friends"
-                          className="w-full py-4  px-6 bg-transparent outline-none"
+                          className="w-full px-3 py-2 2xl:py-4 text-sm 2xl:px-6 bg-transparent outline-none"
                         />
                         <button>
                           <Image
@@ -440,10 +442,9 @@ async function getStories() {
                 )}
               </div>
 
-              <div className=" md:col-span-1 hidden   rounded-r-3xl p-8  border border-l-white/20 border-y-0 border-r-0 md:grid grid-rows-2">
-                <div className="row-span-1">
-                  <div className="flex justify-between items-end">
-                    <div className={`font-medium text-xl`}>Friends</div>
+              <div className=" md:col-span-1 hidden   rounded-r-3xl p-3 2xl:p-8  border border-l-white/20 border-y-0 border-r-0  md:flex md:flex-col h-[95vh]">
+                  <div className="font-medium text-lg 2xl:text-xl ">
+                      Friends
                   </div>
                   <div className=" bg-[#161616] border border-white/20  rounded-[8px] w-full flex mt-4">
                     <input
@@ -451,7 +452,7 @@ async function getStories() {
                       placeholder="Search...."
                       value={searchFriendsInput}
                       onChange={(e) => setSearchFriendsInput(e.target.value)}
-                      className="w-full py-4  px-6 bg-transparent outline-none"
+                      className="w-full px-3 py-2 2xl:py-4  2xl:px-6 bg-transparent outline-none"
                     />
                     <button>
                       <Image
@@ -488,7 +489,7 @@ async function getStories() {
                   </div>
 
                   {menuOpen == showFriendsMenu.showFriends && (
-                    <div className="mt-2 overflow-y-auto  h-[27vh]">
+                    <div className="mt-2 overflow-y-auto  h-full">
                       {loading ? (
                         <div>Loading...</div>
                       ) : (
@@ -520,7 +521,7 @@ async function getStories() {
                               acceptRequest={() =>
                                 acceptFriendRequest(
                                   request.sender.id,
-                                  request.id
+                                  request.id,
                                 )
                               }
                               name={request.sender.username || "Unknown"}
@@ -534,8 +535,10 @@ async function getStories() {
                   )}
                 </div>
 
-                <div className="row-span-1 pt-4">
-                  <div className="font-medium text-xl">Suggestions</div>
+                {/* <div className="row-span-1 pt-4">
+                  <div className="font-medium text-lg 2xl:text-xl">
+                    Suggestions
+                  </div>
                   <div className=" bg-[#161616] border border-white/20 rounded-[8px] mt-4 w-full flex ">
                     <input
                       type="text"
@@ -544,7 +547,7 @@ async function getStories() {
                         setSuggestedFriendsInput(e.target.value as string);
                       }}
                       placeholder="Add Friends"
-                      className="w-full py-4  px-6 bg-transparent outline-none"
+                      className="w-full px-3 py-2 2xl:py-4  2xl:px-6 bg-transparent outline-none"
                     />
                     <button>
                       <Image
@@ -574,12 +577,11 @@ async function getStories() {
                       <div>Loading....</div>
                     )}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         </div>
-      </>
-    )
+    
   );
 }
