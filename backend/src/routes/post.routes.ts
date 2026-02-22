@@ -1,5 +1,5 @@
 import Router from "express";
-import { deletePost, getPosts, likePost, postCount, unlikePost, uploadPost, uploadWithoutImage } from "../controllers/post.controller";
+import { deletePost, generateUploadUrl, getPosts, likePost, postCount, unlikePost, uploadPost, uploadWithoutImage } from "../controllers/post.controller";
 const router = Router();
 
 router.get("/getPosts",getPosts);
@@ -9,5 +9,6 @@ router.post("/deletePost",deletePost);
 router.post("/unlikePost", unlikePost);
 router.post("/uploadPost",uploadPost);
 router.post("/uploadWithoutImage",uploadWithoutImage);
+router.post("/generateUploadUrl",generateUploadUrl);
 
 export default router;

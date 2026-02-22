@@ -1,7 +1,12 @@
 import { Request, Response } from "express";
 import prisma from "../prisma/client";
 import logger from "../utils/logger";
-
+import {v4 as uuid} from "uuid";
+import { PutObjectCommand, S3 } from "@aws-sdk/client-s3";
+import { bucketName, s3 } from "../utils/s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import dotenv from "dotenv";
+dotenv.config();
 // get Post
 export const getPosts = async (req:Request, res:Response) => {
   const userId = parseInt(req.query.userId as string); // e.g., /getposts?userId=1
@@ -188,14 +193,13 @@ export const unlikePost = async (req:Request, res:Response) => {
 
 export const uploadPost = async (req:Request, res:Response) => {
   logger.info("got image post request");
+  console.log("Received file:", req.file?.buffer);
+  console.log("Received body:", req.body);
 
-  if (!req.file) {
-    return res.status(400).json({ message: "No file uploaded" });
-  }
 
-  const imageUrl = `${req.protocol}://${req.headers.host}/uploads/${req.file.filename}`;
+  const imageUrl = req.body.imageUrl;
   const caption = req.body.caption;
-  const userId = parseInt(req.body.userId);
+  const userId = Number(req.body.userId);
 
   try {
     const post = await prisma.post.create({
@@ -222,7 +226,7 @@ export const uploadPost = async (req:Request, res:Response) => {
 export const uploadWithoutImage = async (req:Request, res:Response) => {
 
   const caption = req.body.caption;
-  const userId = parseInt(req.body.userId);
+  const userId = Number(req.body.userId);
 
   try {
     const post = await prisma.post.create({
@@ -244,4 +248,31 @@ export const uploadWithoutImage = async (req:Request, res:Response) => {
   }
 }
 
+export const generateUploadUrl = async (req:Request, res:Response) => {
+  console.log("R2_ACCESS_KEY_ID:", process.env.R2_ACCESS_KEY_ID);
+console.log("R2_SECRET_ACCESS_KEY:", process.env.R2_SECRET_ACCESS_KEY);
+  try {
+    const {fileType} = req.body;
 
+    const key = `posts/${uuid()}`;
+
+    const command = new PutObjectCommand({
+      Bucket:bucketName,
+      Key: key,
+      ContentType: fileType,
+    });
+
+    const signedUrl = await getSignedUrl(s3, command, {expiresIn: 3600});
+
+  const publicUrl = `https://photos.mohit-hingorani.tech/${key}`;
+
+    res.json({
+      signedUrl,
+      publicUrl,
+    });
+  } catch (error) {
+    console.error("Error generating signed URL:", error);
+    res.status(500).json({ message: "Could not generate upload URL" });
+ 
+  }
+}

@@ -38378,3 +38378,3511 @@ Invalid `client_1.default.user.findMany()` invocation in
 2026-02-21 20:56:55 [[32minfo[39m]: User details fetched successfully
 2026-02-21 20:56:55 [[32minfo[39m]: Users fetched successfully
 2026-02-21 20:56:55 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:06:28 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:06:28 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:06:28 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:06:28 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:07:35 [[32minfo[39m]: 0
+2026-02-21 21:07:35 [[32minfo[39m]: username is 
+2026-02-21 21:07:35 [[32minfo[39m]: self username is undefined
+2026-02-21 21:07:35 [[32minfo[39m]: 0
+2026-02-21 21:07:35 [[32minfo[39m]: username is 
+2026-02-21 21:07:35 [[32minfo[39m]: self username is undefined
+2026-02-21 21:07:35 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 21:07:35 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 21:07:35 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 21:07:35 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 21:07:35 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:07:35 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:07:35 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:07:35 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:07:35 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:07:35 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:77:54
+
+  74     })
+  75         .status(500);
+  76 }
+→ 77 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-21 21:07:35 [[32minfo[39m]: undefined
+2026-02-21 21:07:35 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:07:35 [[32minfo[39m]: 
+Invalid `client_1.default.friendRequest.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:22:60
+
+  19 const userId = parseInt(req.body.userId);
+  20 // logger.info("username is " + username);
+  21 try {
+→ 22     const users = yield client_1.default.friendRequest.findMany({
+           where: {
+             receiver: {
+               id: NaN,
+               ~~
+         ?     is?: UserWhereInput,
+         ?     isNot?: UserWhereInput
+             },
+             status: "pending"
+           },
+           select: {
+             status: true,
+             id: true,
+             sender: {
+               select: {
+                 username: true,
+                 picture: true,
+                 id: true
+               }
+             },
+             receiver: {
+               select: {
+                 username: true,
+                 picture: true,
+                 id: true
+               }
+             }
+           }
+         })
+
+Unknown argument `id`. Did you mean `is`? Available options are marked with ?.
+2026-02-21 21:07:35 [[32minfo[39m]: username is 
+2026-02-21 21:07:35 [[32minfo[39m]: self username is undefined
+2026-02-21 21:07:35 [[31merror[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:172:50
+
+  169 logger_1.default.info("username is " + username);
+  170 logger_1.default.info("self username is " + selfUsername);
+  171 try {
+→ 172     const self = yield client_1.default.user.findUnique({
+            where: {
+          +   id: Int
+            }
+          })
+
+Argument `id` is missing.
+2026-02-21 21:07:35 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:07:35 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 21:07:35 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:07:35 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:07:35 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:07:35 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:00 [[32minfo[39m]: 0
+2026-02-21 21:08:00 [[32minfo[39m]: username is 
+2026-02-21 21:08:00 [[32minfo[39m]: self username is undefined
+2026-02-21 21:08:00 [[32minfo[39m]: 0
+2026-02-21 21:08:00 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 21:08:00 [[32minfo[39m]: username is 
+2026-02-21 21:08:00 [[32minfo[39m]: self username is undefined
+2026-02-21 21:08:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:00 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 21:08:00 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 21:08:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:00 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 21:08:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:00 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:77:54
+
+  74     })
+  75         .status(500);
+  76 }
+→ 77 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-21 21:08:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:00 [[32minfo[39m]: undefined
+2026-02-21 21:08:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:00 [[32minfo[39m]: username is 
+2026-02-21 21:08:00 [[32minfo[39m]: self username is undefined
+2026-02-21 21:08:00 [[31merror[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:172:50
+
+  169 logger_1.default.info("username is " + username);
+  170 logger_1.default.info("self username is " + selfUsername);
+  171 try {
+→ 172     const self = yield client_1.default.user.findUnique({
+            where: {
+          +   id: Int
+            }
+          })
+
+Argument `id` is missing.
+2026-02-21 21:08:00 [[32minfo[39m]: 
+Invalid `client_1.default.friendRequest.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:22:60
+
+  19 const userId = parseInt(req.body.userId);
+  20 // logger.info("username is " + username);
+  21 try {
+→ 22     const users = yield client_1.default.friendRequest.findMany({
+           where: {
+             receiver: {
+               id: NaN,
+               ~~
+         ?     is?: UserWhereInput,
+         ?     isNot?: UserWhereInput
+             },
+             status: "pending"
+           },
+           select: {
+             status: true,
+             id: true,
+             sender: {
+               select: {
+                 username: true,
+                 picture: true,
+                 id: true
+               }
+             },
+             receiver: {
+               select: {
+                 username: true,
+                 picture: true,
+                 id: true
+               }
+             }
+           }
+         })
+
+Unknown argument `id`. Did you mean `is`? Available options are marked with ?.
+2026-02-21 21:08:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:00 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 21:08:01 [[32minfo[39m]: 0
+2026-02-21 21:08:01 [[32minfo[39m]: username is 
+2026-02-21 21:08:01 [[32minfo[39m]: self username is undefined
+2026-02-21 21:08:01 [[32minfo[39m]: 0
+2026-02-21 21:08:01 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 21:08:01 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 21:08:01 [[32minfo[39m]: username is 
+2026-02-21 21:08:01 [[32minfo[39m]: self username is undefined
+2026-02-21 21:08:01 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 21:08:01 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 21:08:01 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:01 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:01 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:01 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:01 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:77:54
+
+  74     })
+  75         .status(500);
+  76 }
+→ 77 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-21 21:08:01 [[32minfo[39m]: undefined
+2026-02-21 21:08:01 [[32minfo[39m]: username is 
+2026-02-21 21:08:01 [[32minfo[39m]: self username is undefined
+2026-02-21 21:08:01 [[31merror[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:172:50
+
+  169 logger_1.default.info("username is " + username);
+  170 logger_1.default.info("self username is " + selfUsername);
+  171 try {
+→ 172     const self = yield client_1.default.user.findUnique({
+            where: {
+          +   id: Int
+            }
+          })
+
+Argument `id` is missing.
+2026-02-21 21:08:01 [[32minfo[39m]: 
+Invalid `client_1.default.friendRequest.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:22:60
+
+  19 const userId = parseInt(req.body.userId);
+  20 // logger.info("username is " + username);
+  21 try {
+→ 22     const users = yield client_1.default.friendRequest.findMany({
+           where: {
+             receiver: {
+               id: NaN,
+               ~~
+         ?     is?: UserWhereInput,
+         ?     isNot?: UserWhereInput
+             },
+             status: "pending"
+           },
+           select: {
+             status: true,
+             id: true,
+             sender: {
+               select: {
+                 username: true,
+                 picture: true,
+                 id: true
+               }
+             },
+             receiver: {
+               select: {
+                 username: true,
+                 picture: true,
+                 id: true
+               }
+             }
+           }
+         })
+
+Unknown argument `id`. Did you mean `is`? Available options are marked with ?.
+2026-02-21 21:08:01 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:01 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 21:08:01 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:01 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:01 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:01 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:01 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:01 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:10 [[32minfo[39m]: 0
+2026-02-21 21:08:10 [[32minfo[39m]: username is 
+2026-02-21 21:08:10 [[32minfo[39m]: self username is undefined
+2026-02-21 21:08:10 [[32minfo[39m]: 0
+2026-02-21 21:08:10 [[32minfo[39m]: username is 
+2026-02-21 21:08:10 [[32minfo[39m]: self username is undefined
+2026-02-21 21:08:10 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 21:08:10 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 21:08:10 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 21:08:10 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 21:08:10 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:10 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:10 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:10 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:10 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:10 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:77:54
+
+  74     })
+  75         .status(500);
+  76 }
+→ 77 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-21 21:08:10 [[32minfo[39m]: undefined
+2026-02-21 21:08:10 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:10 [[32minfo[39m]: username is 
+2026-02-21 21:08:10 [[32minfo[39m]: self username is undefined
+2026-02-21 21:08:10 [[31merror[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:172:50
+
+  169 logger_1.default.info("username is " + username);
+  170 logger_1.default.info("self username is " + selfUsername);
+  171 try {
+→ 172     const self = yield client_1.default.user.findUnique({
+            where: {
+          +   id: Int
+            }
+          })
+
+Argument `id` is missing.
+2026-02-21 21:08:10 [[32minfo[39m]: 
+Invalid `client_1.default.friendRequest.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:22:60
+
+  19 const userId = parseInt(req.body.userId);
+  20 // logger.info("username is " + username);
+  21 try {
+→ 22     const users = yield client_1.default.friendRequest.findMany({
+           where: {
+             receiver: {
+               id: NaN,
+               ~~
+         ?     is?: UserWhereInput,
+         ?     isNot?: UserWhereInput
+             },
+             status: "pending"
+           },
+           select: {
+             status: true,
+             id: true,
+             sender: {
+               select: {
+                 username: true,
+                 picture: true,
+                 id: true
+               }
+             },
+             receiver: {
+               select: {
+                 username: true,
+                 picture: true,
+                 id: true
+               }
+             }
+           }
+         })
+
+Unknown argument `id`. Did you mean `is`? Available options are marked with ?.
+2026-02-21 21:08:10 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:10 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 21:08:10 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:10 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:10 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 21:08:10 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 21:08:17 [[32minfo[39m]: 0
+2026-02-21 21:08:17 [[32minfo[39m]: username is 
+2026-02-21 21:08:17 [[32minfo[39m]: self username is undefined
+2026-02-21 21:08:17 [[32minfo[39m]: 0
+2026-02-21 21:08:17 [[32minfo[39m]: username is 
+2026-02-21 21:08:17 [[32minfo[39m]: self username is undefined
+2026-02-21 21:08:17 [[32minfo[39m]: FriendshipIds
+2026-02-21 21:08:17 [[32minfo[39m]: Users fetched successfully
+2026-02-21 21:08:17 [[32minfo[39m]: FriendshipIds
+2026-02-21 21:08:17 [[32minfo[39m]: Users fetched successfully
+2026-02-21 21:08:17 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:08:17 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:08:17 [[32minfo[39m]: 1
+2026-02-21 21:08:17 [[32minfo[39m]: username is 
+2026-02-21 21:08:17 [[32minfo[39m]: self username is undefined
+2026-02-21 21:08:17 [[32minfo[39m]: Stories sent successfully
+2026-02-21 21:08:17 [[32minfo[39m]: Stories sent successfully
+2026-02-21 21:08:17 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:08:17 [[32minfo[39m]: FriendshipIds
+2026-02-21 21:08:17 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:08:17 [[32minfo[39m]: Stories sent successfully
+2026-02-21 21:08:17 [[32minfo[39m]: 
+2026-02-21 21:08:17 [[32minfo[39m]: Users fetched successfully
+2026-02-21 21:10:03 [[32minfo[39m]: 0
+2026-02-21 21:10:03 [[32minfo[39m]: username is 
+2026-02-21 21:10:03 [[32minfo[39m]: self username is undefined
+2026-02-21 21:10:03 [[32minfo[39m]: 0
+2026-02-21 21:10:03 [[32minfo[39m]: username is 
+2026-02-21 21:10:03 [[32minfo[39m]: self username is undefined
+2026-02-21 21:10:03 [[32minfo[39m]: FriendshipIds
+2026-02-21 21:10:03 [[32minfo[39m]: Users fetched successfully
+2026-02-21 21:10:03 [[32minfo[39m]: FriendshipIds
+2026-02-21 21:10:03 [[32minfo[39m]: Users fetched successfully
+2026-02-21 21:10:04 [[32minfo[39m]: Stories sent successfully
+2026-02-21 21:10:04 [[32minfo[39m]: Stories sent successfully
+2026-02-21 21:10:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:10:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:10:04 [[32minfo[39m]: 1
+2026-02-21 21:10:04 [[32minfo[39m]: username is 
+2026-02-21 21:10:04 [[32minfo[39m]: self username is undefined
+2026-02-21 21:10:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:10:04 [[32minfo[39m]: FriendshipIds
+2026-02-21 21:10:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:10:04 [[32minfo[39m]: Stories sent successfully
+2026-02-21 21:10:04 [[32minfo[39m]: 
+2026-02-21 21:10:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:10:04 [[32minfo[39m]: Users fetched successfully
+2026-02-21 21:10:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:10:58 [[32minfo[39m]: got image post request
+2026-02-21 21:11:03 [[32minfo[39m]: got image post request
+2026-02-21 21:12:45 [[32minfo[39m]: got image post request
+2026-02-21 21:13:37 [[32minfo[39m]: 0
+2026-02-21 21:13:37 [[32minfo[39m]: username is 
+2026-02-21 21:13:37 [[32minfo[39m]: self username is undefined
+2026-02-21 21:13:37 [[32minfo[39m]: 0
+2026-02-21 21:13:37 [[32minfo[39m]: username is 
+2026-02-21 21:13:37 [[32minfo[39m]: self username is undefined
+2026-02-21 21:13:37 [[32minfo[39m]: FriendshipIds
+2026-02-21 21:13:37 [[32minfo[39m]: Users fetched successfully
+2026-02-21 21:13:37 [[32minfo[39m]: FriendshipIds
+2026-02-21 21:13:37 [[32minfo[39m]: Users fetched successfully
+2026-02-21 21:13:38 [[32minfo[39m]: Stories sent successfully
+2026-02-21 21:13:38 [[32minfo[39m]: Stories sent successfully
+2026-02-21 21:13:38 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:13:38 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:13:38 [[32minfo[39m]: 1
+2026-02-21 21:13:38 [[32minfo[39m]: username is 
+2026-02-21 21:13:38 [[32minfo[39m]: self username is undefined
+2026-02-21 21:13:38 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:13:38 [[32minfo[39m]: FriendshipIds
+2026-02-21 21:13:38 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:13:38 [[32minfo[39m]: Stories sent successfully
+2026-02-21 21:13:38 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:13:38 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:13:38 [[32minfo[39m]: 
+2026-02-21 21:13:38 [[32minfo[39m]: Users fetched successfully
+2026-02-21 21:13:46 [[32minfo[39m]: got image post request
+2026-02-21 21:14:51 [[32minfo[39m]: got image post request
+2026-02-21 21:17:33 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:17:33 [[32minfo[39m]: 0
+2026-02-21 21:17:33 [[32minfo[39m]: 0
+2026-02-21 21:17:33 [[32minfo[39m]: username is 
+2026-02-21 21:17:33 [[32minfo[39m]: self username is undefined
+2026-02-21 21:17:33 [[32minfo[39m]: username is 
+2026-02-21 21:17:33 [[32minfo[39m]: self username is undefined
+2026-02-21 21:17:33 [[32minfo[39m]: FriendshipIds
+2026-02-21 21:17:33 [[32minfo[39m]: Stories sent successfully
+2026-02-21 21:17:34 [[32minfo[39m]: FriendshipIds
+2026-02-21 21:17:34 [[32minfo[39m]: Users fetched successfully
+2026-02-21 21:17:34 [[32minfo[39m]: Users fetched successfully
+2026-02-21 21:17:34 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:17:34 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:17:34 [[32minfo[39m]: 1
+2026-02-21 21:17:34 [[32minfo[39m]: Stories sent successfully
+2026-02-21 21:17:34 [[32minfo[39m]: username is 
+2026-02-21 21:17:34 [[32minfo[39m]: self username is undefined
+2026-02-21 21:17:34 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:17:34 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:17:34 [[32minfo[39m]: User details fetched successfully
+2026-02-21 21:17:34 [[32minfo[39m]: Users fetched successfully
+2026-02-21 21:17:34 [[32minfo[39m]: FriendshipIds
+2026-02-21 21:17:34 [[32minfo[39m]: 
+2026-02-21 21:17:34 [[32minfo[39m]: Stories sent successfully
+2026-02-21 21:17:40 [[32minfo[39m]: got image post request
+2026-02-21 22:55:18 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 22:55:18 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 22:55:18 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 22:55:18 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:05:02 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:05:02 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:05:02 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:05:02 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:05:07 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:05:07 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:05:07 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:05:07 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:10:29 [[32minfo[39m]: 0
+2026-02-21 23:10:29 [[32minfo[39m]: username is 
+2026-02-21 23:10:29 [[32minfo[39m]: self username is undefined
+2026-02-21 23:10:29 [[32minfo[39m]: username is 
+2026-02-21 23:10:29 [[32minfo[39m]: self username is undefined
+2026-02-21 23:10:29 [[32minfo[39m]: 0
+2026-02-21 23:10:29 [[32minfo[39m]: FriendshipIds
+2026-02-21 23:10:29 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:10:29 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:10:29 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:10:29 [[32minfo[39m]: FriendshipIds
+2026-02-21 23:10:29 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:10:29 [[32minfo[39m]: 1
+2026-02-21 23:10:29 [[32minfo[39m]: Stories sent successfully
+2026-02-21 23:10:29 [[32minfo[39m]: Stories sent successfully
+2026-02-21 23:10:29 [[32minfo[39m]: username is 
+2026-02-21 23:10:29 [[32minfo[39m]: self username is undefined
+2026-02-21 23:10:29 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:10:29 [[32minfo[39m]: FriendshipIds
+2026-02-21 23:10:30 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:10:30 [[32minfo[39m]: 
+2026-02-21 23:10:30 [[32minfo[39m]: Stories sent successfully
+2026-02-21 23:10:30 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:10:30 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:10:30 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:10:30 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:10:30 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:13:14 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:13:14 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:13:15 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:13:15 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:16:22 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:16:22 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:16:22 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:16:22 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:17:35 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:17:35 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:17:35 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:17:35 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:18:04 [[32minfo[39m]: 1
+2026-02-21 23:18:04 [[32minfo[39m]: username is 
+2026-02-21 23:18:04 [[32minfo[39m]: self username is undefined
+2026-02-21 23:18:04 [[32minfo[39m]: 1
+2026-02-21 23:18:04 [[32minfo[39m]: username is 
+2026-02-21 23:18:04 [[32minfo[39m]: self username is undefined
+2026-02-21 23:18:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:18:04 [[32minfo[39m]: FriendshipIds
+2026-02-21 23:18:04 [[32minfo[39m]: FriendshipIds
+2026-02-21 23:18:04 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:18:04 [[32minfo[39m]: username is 
+2026-02-21 23:18:04 [[32minfo[39m]: self username is undefined
+2026-02-21 23:18:04 [[32minfo[39m]: username is 
+2026-02-21 23:18:04 [[32minfo[39m]: self username is undefined
+2026-02-21 23:18:04 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:18:04 [[32minfo[39m]: 
+2026-02-21 23:18:04 [[32minfo[39m]: Stories sent successfully
+2026-02-21 23:18:04 [[32minfo[39m]: Stories sent successfully
+2026-02-21 23:18:04 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:18:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:18:04 [[32minfo[39m]: 
+2026-02-21 23:18:04 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:18:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:18:04 [[32minfo[39m]: 1
+2026-02-21 23:18:04 [[32minfo[39m]: username is 
+2026-02-21 23:18:04 [[32minfo[39m]: self username is undefined
+2026-02-21 23:18:04 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:18:04 [[32minfo[39m]: FriendshipIds
+2026-02-21 23:18:05 [[32minfo[39m]: 
+2026-02-21 23:18:05 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:18:05 [[32minfo[39m]: 1
+2026-02-21 23:18:05 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:18:05 [[32minfo[39m]: Stories sent successfully
+2026-02-21 23:18:05 [[32minfo[39m]: username is 
+2026-02-21 23:18:05 [[32minfo[39m]: self username is undefined
+2026-02-21 23:18:05 [[32minfo[39m]: FriendshipIds
+2026-02-21 23:18:05 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:18:05 [[32minfo[39m]: Stories sent successfully
+2026-02-21 23:18:05 [[32minfo[39m]: 
+2026-02-21 23:18:05 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:18:07 [[32minfo[39m]: 1
+2026-02-21 23:18:07 [[32minfo[39m]: username is 
+2026-02-21 23:18:07 [[32minfo[39m]: self username is undefined
+2026-02-21 23:18:07 [[32minfo[39m]: username is 
+2026-02-21 23:18:07 [[32minfo[39m]: self username is undefined
+2026-02-21 23:18:07 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:18:07 [[32minfo[39m]: FriendshipIds
+2026-02-21 23:18:07 [[32minfo[39m]: 1
+2026-02-21 23:18:07 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:18:07 [[32minfo[39m]: username is 
+2026-02-21 23:18:07 [[32minfo[39m]: self username is undefined
+2026-02-21 23:18:07 [[32minfo[39m]: FriendshipIds
+2026-02-21 23:18:07 [[32minfo[39m]: 
+2026-02-21 23:18:07 [[32minfo[39m]: username is 
+2026-02-21 23:18:07 [[32minfo[39m]: self username is undefined
+2026-02-21 23:18:07 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:18:07 [[32minfo[39m]: Stories sent successfully
+2026-02-21 23:18:07 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:18:07 [[32minfo[39m]: Stories sent successfully
+2026-02-21 23:18:07 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:18:07 [[32minfo[39m]: 
+2026-02-21 23:18:07 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:18:07 [[32minfo[39m]: 1
+2026-02-21 23:18:07 [[32minfo[39m]: username is 
+2026-02-21 23:18:07 [[32minfo[39m]: self username is undefined
+2026-02-21 23:18:07 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:18:07 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:18:07 [[32minfo[39m]: FriendshipIds
+2026-02-21 23:18:07 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:18:07 [[32minfo[39m]: 1
+2026-02-21 23:18:07 [[32minfo[39m]: 
+2026-02-21 23:18:07 [[32minfo[39m]: username is 
+2026-02-21 23:18:07 [[32minfo[39m]: self username is undefined
+2026-02-21 23:18:07 [[32minfo[39m]: FriendshipIds
+2026-02-21 23:18:07 [[32minfo[39m]: Stories sent successfully
+2026-02-21 23:18:07 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:18:07 [[32minfo[39m]: User details fetched successfully
+2026-02-21 23:18:07 [[32minfo[39m]: Stories sent successfully
+2026-02-21 23:18:07 [[32minfo[39m]: 
+2026-02-21 23:18:07 [[32minfo[39m]: Users fetched successfully
+2026-02-21 23:26:00 [[32minfo[39m]: 0
+2026-02-21 23:26:00 [[32minfo[39m]: username is 
+2026-02-21 23:26:00 [[32minfo[39m]: self username is undefined
+2026-02-21 23:26:00 [[32minfo[39m]: 0
+2026-02-21 23:26:00 [[32minfo[39m]: username is 
+2026-02-21 23:26:00 [[32minfo[39m]: self username is undefined
+2026-02-21 23:26:00 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 23:26:00 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 23:26:00 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 23:26:00 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 23:26:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:26:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:26:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:26:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:26:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:26:00 [[32minfo[39m]: undefined
+2026-02-21 23:26:00 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:83:54
+
+  80     })
+  81         .status(500);
+  82 }
+→ 83 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-21 23:26:00 [[32minfo[39m]: username is 
+2026-02-21 23:26:00 [[32minfo[39m]: self username is undefined
+2026-02-21 23:26:00 [[31merror[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:172:50
+
+  169 logger_1.default.info("username is " + username);
+  170 logger_1.default.info("self username is " + selfUsername);
+  171 try {
+→ 172     const self = yield client_1.default.user.findUnique({
+            where: {
+          +   id: Int
+            }
+          })
+
+Argument `id` is missing.
+2026-02-21 23:26:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:26:00 [[32minfo[39m]: 
+Invalid `client_1.default.friendRequest.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:22:60
+
+  19 const userId = parseInt(req.body.userId);
+  20 // logger.info("username is " + username);
+  21 try {
+→ 22     const users = yield client_1.default.friendRequest.findMany({
+           where: {
+             receiver: {
+               id: NaN,
+               ~~
+         ?     is?: UserWhereInput,
+         ?     isNot?: UserWhereInput
+             },
+             status: "pending"
+           },
+           select: {
+             status: true,
+             id: true,
+             sender: {
+               select: {
+                 username: true,
+                 picture: true,
+                 id: true
+               }
+             },
+             receiver: {
+               select: {
+                 username: true,
+                 picture: true,
+                 id: true
+               }
+             }
+           }
+         })
+
+Unknown argument `id`. Did you mean `is`? Available options are marked with ?.
+2026-02-21 23:26:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:26:00 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 23:26:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:26:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:26:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:26:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:26:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:26:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:26:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:26:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:26:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:26:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:26:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:26:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:33:06 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:33:06 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:33:06 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:33:06 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:33:06 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:33:06 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:33:06 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:33:06 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:33:16 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:33:16 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:33:16 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:33:16 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:33:16 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:33:16 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:33:16 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:33:16 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:38:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:38:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:38:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:38:00 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:38:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:38:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:38:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:38:00 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:38:07 [[32minfo[39m]: 0
+2026-02-21 23:38:07 [[32minfo[39m]: 0
+2026-02-21 23:38:07 [[32minfo[39m]: username is 
+2026-02-21 23:38:07 [[32minfo[39m]: self username is undefined
+2026-02-21 23:38:07 [[32minfo[39m]: username is 
+2026-02-21 23:38:07 [[32minfo[39m]: self username is undefined
+2026-02-21 23:38:07 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 23:38:07 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 23:38:07 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 23:38:07 [[31merror[39m]: 
+Invalid `client_1.default.user.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:140:51
+
+  137 logger_1.default.info("username is " + username);
+  138 logger_1.default.info("self username is " + selfUsername);
+  139 try {
+→ 140     const users = yield client_1.default.user.findMany(
+
+2026-02-21 23:38:07 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:38:07 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:38:07 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:38:07 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:38:07 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:38:07 [[31merror[39m]: 
+Invalid `client_1.default.post.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/post.controller.js:83:54
+
+  80     })
+  81         .status(500);
+  82 }
+→ 83 const numPosts = yield client_1.default.post.findMany({
+       where: {
+     +   userId: {
+     +     equals: Int | IntFieldRefInput,
+     +     in: Int[] | ListIntFieldRefInput,
+     +     notIn: Int[] | ListIntFieldRefInput,
+     +     lt: Int | IntFieldRefInput,
+     +     lte: Int | IntFieldRefInput,
+     +     gt: Int | IntFieldRefInput,
+     +     gte: Int | IntFieldRefInput,
+     +     not: Int | NestedIntFilter
+     +   }
+       }
+     })
+
+Argument `userId` is missing.
+2026-02-21 23:38:07 [[32minfo[39m]: undefined
+2026-02-21 23:38:07 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:38:07 [[32minfo[39m]: username is 
+2026-02-21 23:38:07 [[32minfo[39m]: self username is undefined
+2026-02-21 23:38:07 [[31merror[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:172:50
+
+  169 logger_1.default.info("username is " + username);
+  170 logger_1.default.info("self username is " + selfUsername);
+  171 try {
+→ 172     const self = yield client_1.default.user.findUnique({
+            where: {
+          +   id: Int
+            }
+          })
+
+Argument `id` is missing.
+2026-02-21 23:38:07 [[32minfo[39m]: 
+Invalid `client_1.default.friendRequest.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:22:60
+
+  19 const userId = parseInt(req.body.userId);
+  20 // logger.info("username is " + username);
+  21 try {
+→ 22     const users = yield client_1.default.friendRequest.findMany({
+           where: {
+             receiver: {
+               id: NaN,
+               ~~
+         ?     is?: UserWhereInput,
+         ?     isNot?: UserWhereInput
+             },
+             status: "pending"
+           },
+           select: {
+             status: true,
+             id: true,
+             sender: {
+               select: {
+                 username: true,
+                 picture: true,
+                 id: true
+               }
+             },
+             receiver: {
+               select: {
+                 username: true,
+                 picture: true,
+                 id: true
+               }
+             }
+           }
+         })
+
+Unknown argument `id`. Did you mean `is`? Available options are marked with ?.
+2026-02-21 23:38:07 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:38:07 [[31merror[39m]: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/story.controller.js:57:59
+
+  54 logger_1.default.info(userId);
+  55 try {
+  56     // Finding all friends involving user
+→ 57     const friendShips = yield client_1.default.friend.findMany(
+
+2026-02-21 23:38:07 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:38:07 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:38:07 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:38:07 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:38:07 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:38:07 [[32minfo[39m]: 
+Invalid `client_1.default.user.findUnique()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/user.controller.js:46:57
+
+  43 const getDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+  44     const email = req.query.email;
+  45     try {
+→ 46         const userDetails = yield client_1.default.user.findUnique(
+
+2026-02-21 23:38:07 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-21 23:38:07 [[31merror[39m]: Error fetching friends: 
+Invalid `client_1.default.friend.findMany()` invocation in
+/Users/mohithingorani/Documents/social-network/SOCIAL-NETWORK/backend/dist/controllers/friend.controller.js:222:55
+
+  219     return res.status(400).send({ message: "User ID is required" });
+  220 }
+  221 try {
+→ 222     const friends = yield client_1.default.friend.findMany({
+            where: {
+          +   userId: {
+          +     equals: Int | IntFieldRefInput,
+          +     in: Int[] | ListIntFieldRefInput,
+          +     notIn: Int[] | ListIntFieldRefInput,
+          +     lt: Int | IntFieldRefInput,
+          +     lte: Int | IntFieldRefInput,
+          +     gt: Int | IntFieldRefInput,
+          +     gte: Int | IntFieldRefInput,
+          +     not: Int | NestedIntFilter
+          +   }
+            },
+            select: {
+              friend: {
+                select: {
+                  username: true,
+                  picture: true,
+                  id: true,
+                  name: true,
+                  onlineStatus: true
+                }
+              }
+            }
+          })
+
+Argument `userId` is missing.
+2026-02-22 16:47:46 [[32minfo[39m]: 0
+2026-02-22 16:47:46 [[32minfo[39m]: username is 
+2026-02-22 16:47:46 [[32minfo[39m]: self username is undefined
+2026-02-22 16:47:46 [[32minfo[39m]: 0
+2026-02-22 16:47:46 [[32minfo[39m]: username is 
+2026-02-22 16:47:46 [[32minfo[39m]: self username is undefined
+2026-02-22 16:47:46 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:47:46 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:47:46 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:47:46 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:47:46 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:47:46 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:47:47 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:47:47 [[32minfo[39m]: 1
+2026-02-22 16:47:47 [[32minfo[39m]: username is 
+2026-02-22 16:47:47 [[32minfo[39m]: self username is undefined
+2026-02-22 16:47:47 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:47:47 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:47:47 [[32minfo[39m]: 
+2026-02-22 16:47:47 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:48:18 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:48:18 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:48:23 [[32minfo[39m]: [object Object]
+2026-02-22 16:48:57 [[32minfo[39m]: 0
+2026-02-22 16:48:57 [[32minfo[39m]: username is 
+2026-02-22 16:48:57 [[32minfo[39m]: self username is undefined
+2026-02-22 16:48:57 [[32minfo[39m]: 0
+2026-02-22 16:48:57 [[32minfo[39m]: username is 
+2026-02-22 16:48:57 [[32minfo[39m]: self username is undefined
+2026-02-22 16:48:57 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:48:57 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:48:57 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:48:57 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:48:57 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:48:57 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:48:57 [[32minfo[39m]: 1
+2026-02-22 16:48:57 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:48:57 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:48:57 [[32minfo[39m]: username is 
+2026-02-22 16:48:57 [[32minfo[39m]: self username is undefined
+2026-02-22 16:48:57 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:48:57 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:48:57 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:48:57 [[32minfo[39m]: 
+2026-02-22 16:48:57 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:48:57 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:48:57 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:48:57 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:49:30 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:49:30 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:53:15 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:53:15 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:55:21 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:55:21 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:55:24 [[32minfo[39m]: got image post request
+2026-02-22 16:55:50 [[32minfo[39m]: [object Object]
+2026-02-22 16:55:55 [[32minfo[39m]: [object Object]
+2026-02-22 16:56:22 [[32minfo[39m]: 0
+2026-02-22 16:56:22 [[32minfo[39m]: username is 
+2026-02-22 16:56:22 [[32minfo[39m]: self username is undefined
+2026-02-22 16:56:22 [[32minfo[39m]: username is 
+2026-02-22 16:56:22 [[32minfo[39m]: self username is undefined
+2026-02-22 16:56:22 [[32minfo[39m]: 0
+2026-02-22 16:56:23 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:56:23 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:56:23 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:56:23 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:56:23 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:56:23 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:56:23 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:56:23 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:56:23 [[32minfo[39m]: 1
+2026-02-22 16:56:23 [[32minfo[39m]: username is 
+2026-02-22 16:56:23 [[32minfo[39m]: self username is undefined
+2026-02-22 16:56:23 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:56:23 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:56:23 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:56:23 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:56:23 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:56:23 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:56:23 [[32minfo[39m]: 
+2026-02-22 16:56:23 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:56:40 [[32minfo[39m]: got image post request
+2026-02-22 16:58:44 [[32minfo[39m]: 0
+2026-02-22 16:58:44 [[32minfo[39m]: username is 
+2026-02-22 16:58:44 [[32minfo[39m]: self username is undefined
+2026-02-22 16:58:44 [[32minfo[39m]: 0
+2026-02-22 16:58:44 [[32minfo[39m]: username is 
+2026-02-22 16:58:44 [[32minfo[39m]: self username is undefined
+2026-02-22 16:58:44 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:58:44 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:58:44 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:58:44 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:58:44 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:58:44 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:58:44 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:58:44 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:58:44 [[32minfo[39m]: 1
+2026-02-22 16:58:44 [[32minfo[39m]: username is 
+2026-02-22 16:58:44 [[32minfo[39m]: self username is undefined
+2026-02-22 16:58:44 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:58:44 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:58:45 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:58:45 [[32minfo[39m]: 
+2026-02-22 16:58:45 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:58:45 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:58:45 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:58:45 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:58:51 [[32minfo[39m]: got image post request
+2026-02-22 16:58:51 [[32minfo[39m]: [object Object]
+2026-02-22 16:59:47 [[32minfo[39m]: 0
+2026-02-22 16:59:47 [[32minfo[39m]: username is 
+2026-02-22 16:59:47 [[32minfo[39m]: self username is undefined
+2026-02-22 16:59:47 [[32minfo[39m]: 0
+2026-02-22 16:59:47 [[32minfo[39m]: username is 
+2026-02-22 16:59:47 [[32minfo[39m]: self username is undefined
+2026-02-22 16:59:47 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:59:47 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:59:47 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:59:47 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:59:47 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:59:47 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:59:47 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:59:47 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:59:47 [[32minfo[39m]: 1
+2026-02-22 16:59:47 [[32minfo[39m]: username is 
+2026-02-22 16:59:47 [[32minfo[39m]: self username is undefined
+2026-02-22 16:59:47 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:59:47 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:59:47 [[32minfo[39m]: 
+2026-02-22 16:59:47 [[32minfo[39m]: FriendshipIds
+2026-02-22 16:59:48 [[32minfo[39m]: User details fetched successfully
+2026-02-22 16:59:48 [[32minfo[39m]: Stories sent successfully
+2026-02-22 16:59:48 [[32minfo[39m]: Users fetched successfully
+2026-02-22 16:59:48 [[32minfo[39m]: User details fetched successfully

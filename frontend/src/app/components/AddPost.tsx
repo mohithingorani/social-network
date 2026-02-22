@@ -38,66 +38,54 @@ export const AddPost = ({
     };
   }, [preview]);
 
-  const handleUpload = async () => {
-    if (!file) {
-      try {
-        setIsUploading(true);
-        const post = await axios.post(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/uploadWithoutImage`,
-          {
-            caption,
-            userId: userId,
-          }
-        );
+const handleUpload = async () => {
+  if (!caption.trim() && !file) return;
 
-        const notify = () => toast("Uploaded successfully!");
-        notify();
+  try {
+    setIsUploading(true);
 
-        return post;
-      } catch (err) {
-        console.log(err);
-        return;
-      } finally {
-        setIsUploading(false);
+    let imageUrl: string | null = null;
 
-        refreshPosts();
-        setCaption("");
-        return;
-      }
-    }
     if (file) {
-      const formData = new FormData();
-      formData.append("userId", userId.toString());
-      if (file) formData.append("image", file);
-      formData.append("caption", caption);
+      const { data } = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/generateUploadUrl`,
+        { fileType: file.type }
+      );
 
-      try {
-        setIsUploading(true);
-        const res = await axios.post(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/upload`,
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        );
+      const { signedUrl, publicUrl } = data;
 
-        console.log("Uploaded image:", res.data);
-        const notify = () => toast(res.data.message);
+      await axios.put(signedUrl, file, {
+        headers: {
+          "Content-Type": file.type,
+        },
+      });
 
-        notify();
-        refreshPosts();
-        setCaption("");
-        setPreview(null);
-        setFile(null);
-      } catch (error) {
-        console.error("Upload failed:", error);
-      } finally {
-        setIsUploading(false);
-      }
+      imageUrl = publicUrl;
     }
-  };
+
+    await axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/uploadPost`,
+      {
+        caption,
+        userId,
+        imageUrl,
+      } 
+    );
+
+    toast("Uploaded successfully!");
+    refreshPosts();
+
+    setCaption("");
+    setFile(null);
+    setPreview(null);
+
+  } catch (error) {
+    console.error("Upload failed:", error);
+    toast.error("Upload failed");
+  } finally {
+    setIsUploading(false);
+  }
+};
 
   return (
     <div className="bg-[#101010] p-6 rounded-3xl shadow-md w-full text-white">
@@ -163,25 +151,7 @@ export const AddPost = ({
             <div className="hidden lg:block">Media Content</div>
           </div>
 
-          {/* <div className="flex items-center gap-1 opacity-70 hover:opacity-100 cursor-pointer">
-            <Image
-              src="/hashtag_05.png"
-              alt="hashtag image"
-              width={30}
-              height={30}
-            />
-            <div className="hidden lg:block">Hashtags</div>
-          </div>
-
-          <div className="flex items-center gap-1 opacity-70 hover:opacity-100 cursor-pointer">
-            <Image
-              src="/schedule_05.png"
-              alt="schedule image"
-              width={30}
-              height={30}
-            />
-            <div className="hidden lg:block">Schedule</div>
-          </div> */}
+          
         </div>
 
         {/* Submit Button */}
