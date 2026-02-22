@@ -131,7 +131,7 @@ export default function NavBar({ userName }: { userName: string }) {
                   key={key}
                   className={`hover:bg-[#242627] ${
                     key == currKey && "bg-[#242627]"
-                  }  flex items-center gap-2  px-3 py-2 rounded-xl w-full text-start`}
+                  }  flex items-center gap-1 px-2 py-1 lg:gap-2  2xl:px-3 2xl:py-2 rounded-xl w-full text-start`}
                 >
                   <div>
                     <Image
@@ -141,7 +141,7 @@ export default function NavBar({ userName }: { userName: string }) {
                       height={"30"}
                     />
                   </div>
-                  <div>{label.name}</div>
+                  <div className="text-sm 2xl:text-lg">{label.name}</div>
                 </button>
               ))}
             </div>

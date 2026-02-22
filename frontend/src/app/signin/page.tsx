@@ -82,7 +82,7 @@ export default function Signin() {
                     className="ml-2"
                   >
                     <Image
-                      src={showPassword ? "/closedeye.svg" : "/openeye.png"}
+                      src={showPassword ? "password/eye-close.svg" : "password/eye-open.svg"}
                       alt={showPassword ? "Hide password" : "Show password"}
                       width={20}
                       height={20}

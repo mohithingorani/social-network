@@ -403,6 +403,7 @@ export default function Home() {
                           type="text"
                           placeholder="Search Friends"
                           className="w-full px-3 py-2 2xl:py-4 text-sm 2xl:px-6 bg-transparent outline-none"
+                          onChange ={(e) => setSearchFriendsInput(e.target.value)}
                         />
                         <button>
                           <Image
@@ -469,7 +470,7 @@ export default function Home() {
                       onClick={() => {
                         setMenuOpen(showFriendsMenu.showFriends);
                       }}
-                      className={`text-white h-8  text-sm ${
+                      className={`text-white h-8 ${
                         menuOpen == showFriendsMenu.showFriends && "underline"
                       } hover:underline`}
                     >

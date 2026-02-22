@@ -49,7 +49,7 @@ export default function CommentsModal({
   async function postComment() {
     if(text==="") return;
     const comment = await axios.post(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/comment/add`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/comments/add`,
       {
         userId,
         text,
