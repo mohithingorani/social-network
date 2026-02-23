@@ -30,10 +30,6 @@ import Spinner from "./components/Spinner";
 import CommentsModal from "./components/CommentsModal";
 import StoryPage from "./components/StoryPage";
 
-// import ReminderModal from "./components/Surprise";
-// import ChickShower from "./components/surprise";
-// import ChickShower from "./components/surprise";
-// import ReminderModal from "./components/surprise";
 
 export interface userData {
   email: string;
@@ -65,6 +61,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState<number>(showFriendsMenu.showFriends);
   const [currPage, setCurrPage] = useRecoilState(pageAtom);
   const router = useRouter();
+  
   const { friends, loading, refetch } = useFriends();
   const [friendRequests, setFriendRequests] = useState<[any] | null>(null);
   const [searchedFriends, setSearchedFriends] = useState<
@@ -332,7 +329,7 @@ export default function Home() {
           </div>
           <div className="flex-grow col-span-5 m-3 md:m-4  border border-white/20 max-h-max text-white rounded-3xl bg-gradient-to-t from-[#18181A]  to-[#202020] ">
             <div className="w-full grid grid-cols-3 rounded-3xl h-[95vh]">
-              <div className="col-span-3 md:col-span-2  rounded-l-3xl p-4 md:px-8 md:pt-8 md:pb-1 flex h-[92vh] flex-col overflow-y-scroll">
+              <div className="col-span-3 md:col-span-2  rounded-l-3xl p-4 md:px-4 md:pt-4 md:pb-1 flex h-[92vh] flex-col overflow-y-scroll">
                 {currPage === "home" && (
                   <div>
               
@@ -465,14 +462,14 @@ export default function Home() {
                       />
                     </button>
                   </div>
-                  <div className="flex justify-between mt-4">
+                  <div className="flex justify-around gap-1 w-full mt-4">
                     <button
                       onClick={() => {
                         setMenuOpen(showFriendsMenu.showFriends);
                       }}
-                      className={`text-white h-8 ${
-                        menuOpen == showFriendsMenu.showFriends && "underline"
-                      } hover:underline`}
+                      className={` w-full  hover:bg-white/10 ${
+                        menuOpen == showFriendsMenu.showFriends && "bg-gray-200/10"
+                      } px-4 py-2`}
                     >
                       Primary
                     </button>
@@ -480,12 +477,12 @@ export default function Home() {
                       onClick={() => {
                         setMenuOpen(showFriendsMenu.showRequests);
                       }}
-                      className={`text-sm text-[#EDAD2C] ${
-                        menuOpen == showFriendsMenu.showRequests && "underline"
-                      } hover:underline h-8`}
+                      className={` w-full  hover:bg-white/10 ${
+                        menuOpen == showFriendsMenu.showRequests && "bg-gray-200/10"
+                      } px-4 py-2`}
                     >
-                      Requests ({friendRequests && (friendRequests.length || 0)}
-                      )
+                      Requests
+                      
                     </button>
                   </div>
 
