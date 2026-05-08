@@ -31,10 +31,7 @@ export default function Signin() {
             <div className="p-8 lg:p-12">
               {/* Logo */}
               <div className="flex items-center gap-2 mb-8">
-                <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
-                  <span className="text-black font-bold text-sm">U</span>
-                </div>
-                <span className="text-white font-medium">UNIVO CHAT</span>
+                <Image src="/newlogo.svg" width={40} height={40} alt="logo" />
               </div>
 
               {/* Heading */}
