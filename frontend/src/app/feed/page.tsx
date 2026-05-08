@@ -1,0 +1,535 @@
+"use client";
+
+import "../globals.css";
+import NavBar from "../components/AppBar";
+import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
+import axios from "axios";
+import { useRecoilState, useRecoilValue } from "recoil";
+import {
+  isOnlineAtom,
+  modalOpenAtom,
+  pageAtom,
+  selectedFileAtom,
+  selectedFileForStory,
+  storyPreviewAtom,
+  userDataAtom,
+  userNameAtom,
+} from "../atoms";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Post from "../components/Post";
+import { AddPost } from "../components/AddPost";
+import { MessageCard } from "../components/MessageCard";
+import { StoriesCard } from "../components/CircleStoriesCard";
+import { useFriends } from "@/hooks/useFriends";
+import { PostInterface, StoryInterface } from "@/types/types";
+import { toast } from "react-toastify";
+import { MessageCardForRequests } from "../components/MessageCardForRequests";
+import Spinner from "../components/Spinner";
+import CommentsModal from "../components/CommentsModal";
+import StoryPage from "../components/StoryPage";
+
+
+export interface userData {
+  email: string;
+  name: string;
+  picture: string;
+  username: string;
+  id: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface searchedFriends {
+  username: string;
+  picture: string;
+  id: number;
+}
+
+enum showFriendsMenu {
+  showFriends = 0,
+  showRequests = 1,
+}
+
+export default function Home() {
+  const session = useSession();
+  const [userData, setUserData] = useState<userData | null>(null);
+  const [userDataValue, setUserDataValue] = useRecoilState(userDataAtom);
+  const [userNameValue, setUserNameValue] = useRecoilState(userNameAtom);
+  const [isOnline, setIsOnline] = useRecoilState(isOnlineAtom);
+  const [menuOpen, setMenuOpen] = useState<number>(showFriendsMenu.showFriends);
+  const [currPage, setCurrPage] = useRecoilState(pageAtom);
+  const router = useRouter();
+  
+  const { friends, loading, refetch } = useFriends();
+  const [friendRequests, setFriendRequests] = useState<[any] | null>(null);
+  const [searchedFriends, setSearchedFriends] = useState<
+    searchedFriends[] | null
+  >(null);
+  const [commentsPostId, setCommentsPostId] = useState<number | null>(null);
+  const [posts, setPosts] = useState<PostInterface[] | null>(null);
+  const [showComments, setShowComments] = useRecoilState(modalOpenAtom);
+  const [currentPostImage, setCurrentPostImage] = useState<string | null>(null);
+  const [searchFriendsInput, setSearchFriendsInput] = useState<string>("");
+  const [suggestedFriendsInput, setSuggestedFriendsInput] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [storyPreview, setStoryPreview] = useRecoilState(storyPreviewAtom);
+  const filteredFriends = friends?.filter((f: any) =>
+    f.username?.toLowerCase().includes(searchFriendsInput.toLowerCase()),
+  );
+  const [storyFile, setStoryFile] = useRecoilState(selectedFileForStory);
+  const [groupedStories, setGroupedStories] = useState<Record<
+    number,
+    StoryInterface[]
+  > | null>(null);
+  const filteredSuggestFriends = searchedFriends?.filter((f: any) => {
+    return f.username
+      ?.toLowerCase()
+      .includes(suggestedFriendsInput.toLocaleLowerCase());
+  });
+
+  useEffect(() => {
+    const getInfo = async () => {
+      try {
+        console.log("Searching for user Data");
+        if (session.data?.user?.email) {
+          const { data } = await axios.get(
+            `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/details?email=${session.data.user.email}`,
+          );
+          console.log("API response:", data);
+          setUserData(data);
+          setUserDataValue(data);
+          if (data?.username) {
+            setUserNameValue(data.username);
+          } else {
+            console.error("Username not found in API response.");
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+    getInfo();
+  }, [session.data?.user?.email]);
+
+  async function getPosts() {
+    try {
+      if (userDataValue.id != 0) {
+        const posts = await axios.get(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/getPosts?userId=${userDataValue?.id}`,
+        );
+
+        console.log(posts);
+        setPosts(posts.data.posts);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect(() => {
+    getPosts();
+    getStories();
+  }, [userDataValue]);
+
+  async function searchFriends(name: string) {
+    const friends = await axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/search`,
+      {
+        username: name,
+        selfUserName: userData?.username,
+      },
+    );
+    if (friends) {
+      console.log("====================================");
+      console.log("Friends searched");
+      console.log(friends.data);
+      console.log("====================================");
+      setSearchedFriends(friends.data);
+    }
+  }
+
+  useEffect(() => {
+    searchFriends("");
+  }, []);
+
+  function showCommentsModal(postId: number, image: string | null) {
+    setShowComments(true);
+    setCommentsPostId(postId);
+    setCurrentPostImage(image);
+  }
+  async function searchSuggestedFriends(name: string) {
+    const friends = await axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/suggestions`,
+      {
+        username: name,
+        selfUserName: userData?.username,
+        userId: userDataValue.id,
+      },
+    );
+    if (friends) {
+      console.log("====================================");
+      console.log("Friends searched");
+      console.log(friends.data);
+      console.log("====================================");
+      setSearchedFriends(friends.data);
+    }
+  }
+
+  useEffect(() => {
+    if (userDataValue.id != 0) searchSuggestedFriends("");
+  }, [userDataValue]);
+
+  async function getFriendRequests() {
+    if (userDataValue.id != 0) {
+      const friendRequests = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/requests`,
+        {
+          userId: userDataValue.id,
+        },
+      );
+      setFriendRequests(friendRequests.data.requests);
+    }
+  }
+
+  useEffect(() => {
+    getFriendRequests();
+  }, [userDataValue]);
+
+  useEffect(() => {
+    const updateLastActive = async () => {
+      try {
+        const { data } = await axios.post(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/onlinestatus`,
+          {
+            email: userData?.email,
+          },
+        );
+        return data;
+      } catch (err) {
+        console.log("Error updating last active");
+        console.log(err);
+      }
+    };
+    updateLastActive();
+    const interval = setInterval(() => {
+      console.log(friends);
+      updateLastActive();
+    }, 25000);
+
+    return () => clearInterval(interval);
+  }, [userData?.email]);
+
+  useEffect(() => {
+    if (session.data?.user && session.status === "authenticated") {
+      setLoggedIn(true);
+      console.log("Session data:", session.data);
+    } else if (session.status === "unauthenticated") {
+      console.log("No session data found");
+      router.push("/signin");
+    }
+  }, [session]);
+
+  if (!loggedIn) {
+    return (
+      <div className="text-white flex h-screen w-full justify-center items-center">
+        <Spinner />
+      </div>
+    );
+  }
+  function openChat(friend: any) {
+    const room = [userDataValue.username, friend.username].sort().join("-");
+    router.push(`/chat/?room=${room}&name=${userDataValue.username}`);
+  }
+
+  async function sendFriendRequest(friendId: number) {
+    const friendRequest = await axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/request`,
+      {
+        fromUserId: userDataValue.id,
+        toUserId: friendId,
+      },
+    );
+    const notify = () => toast(friendRequest.data.message);
+
+    notify();
+    return friendRequest;
+  }
+
+  async function acceptFriendRequest(senderId: number, requestId: number) {
+    const request = await axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/friends/accept`,
+      {
+        senderId,
+        receiverId: userDataValue.id,
+        requestId,
+      },
+    );
+    const notify = () => toast(request.data.message);
+    getFriendRequests();
+    notify();
+    refetch();
+    return acceptFriendRequest;
+  }
+
+  async function getStories() {
+    if (!userDataValue) return;
+
+    const response = await axios.post<{ stories: StoryInterface[] }>(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/stories/all`,
+      { userId: userDataValue.id },
+    );
+
+    const storiesData: StoryInterface[] = response.data.stories;
+
+    const grouped = storiesData.reduce(
+      (acc: Record<number, StoryInterface[]>, story: StoryInterface) => {
+        if (!acc[story.userId]) acc[story.userId] = [];
+        acc[story.userId].push(story);
+        return acc;
+      },
+      {},
+    );
+
+    setGroupedStories(grouped);
+  }
+
+
+
+  return (
+    
+  <div className="max-h-screen overflow-hidden">
+        {showComments && (
+          <CommentsModal
+            userId={userDataValue.id}
+            currentPostImage={currentPostImage}
+            postId={commentsPostId}
+            username={userDataValue.username}
+          />
+        )}
+        <div className="grid grid-cols-1 md:grid-cols-6 overflow-hidden max-h-fit ">
+          {storyPreview && storyFile && (
+            <StoryPage
+              storyFile={storyFile}
+              onClickClose={() => {
+                setStoryPreview(undefined);
+                setStoryFile(undefined);
+              }}
+              userName={userDataValue.username}
+              userId={userDataValue.id}
+              userImage={userDataValue.picture}
+              storyImage={storyPreview}
+            />
+          )}
+          <div className="col-span-1">
+            <NavBar userName={userNameValue} />
+          </div>
+          <div className="flex-grow col-span-5 m-3 md:m-4  border border-white/20 max-h-max text-white rounded-3xl bg-gradient-to-t from-[#18181A]  to-[#202020] ">
+            <div className="w-full grid grid-cols-3 rounded-3xl h-[95vh]">
+              <div className="col-span-3 md:col-span-2  rounded-l-3xl p-4 md:px-4 md:pt-4 md:pb-1 flex h-[92vh] flex-col overflow-y-scroll">
+                {currPage === "home" && (
+                  <div>
+              
+                    <div>
+                      {userDataValue.id != 0 && (
+                        <AddPost
+                          userId={userDataValue.id}
+                          refreshPosts={getPosts}
+                        />
+                      )}
+                    </div>
+                    <div className="mt-6 md:overflow-y-scroll flex flex-col gap-6">
+                      {posts &&
+                        posts.map((post, index) => {
+                          return (
+                            <Post
+                              commentButtonOnClick={() => {
+                                showCommentsModal(post.id, post.image || null);
+                              }}
+                              isLikedByUser={post.isLikedByUser}
+                              likePost={async () => {
+                                try {
+                                  if (post.isLikedByUser) {
+                                    await axios.post(
+                                      `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/unlikePost`,
+                                      {
+                                        userId: userDataValue.id,
+                                        postId: post.id,
+                                      },
+                                    );
+                                    console.log("Unliked post " + post.id);
+                                  } else {
+                                    await axios.post(
+                                      `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/likePost`,
+                                      {
+                                        username: userDataValue.id,
+                                        postId: post.id,
+                                      },
+                                    );
+                                    console.log("Like Post " + post.id);
+                                  }
+                                  getPosts();
+                                } catch (error) {
+                                  console.error("Like/unlike failed:", error);
+                                }
+                              }}
+                              likesCount={post._count.likes}
+                              commentsCount={post._count.comments}
+                              username={post.user.username}
+                              picture={post.user.picture}
+                              createdAt={post.createdAt}
+                              key={post.id}
+                              image={post.image || null}
+                              caption={post.caption}
+                            />
+                          );
+                        })}
+                    </div>
+                  </div>
+                )}
+                {currPage === "messages" && (
+                  <>
+                    <div>
+                      <div className=" bg-[#161616] border border-white/20 rounded-[8px] mt-4 w-full flex ">
+                        <input
+                          type="text"
+                          placeholder="Search Friends"
+                          className="w-full px-3 py-2 2xl:py-4 text-sm 2xl:px-6 bg-transparent outline-none"
+                          onChange ={(e) => setSearchFriendsInput(e.target.value)}
+                        />
+                        <button>
+                          <Image
+                            src={"/mic_logo.png"}
+                            className=" mr-4 opacity-50 hover:opacity-100"
+                            width={"22"}
+                            height={"22"}
+                            alt="mic"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="mt-6 ">
+                      {loading ? (
+                        <div className="text-white flex justify-center items-center">
+                          Loading...
+                        </div>
+                      ) : (
+                        filteredFriends.map((friend: any, index: number) => (
+                          <div
+                            className="cursor-pointer"
+                            key={index}
+                            onClick={() => openChat(friend)}
+                          >
+                            <MessageCard
+                              sendRequest={() => sendFriendRequest(friend.id)}
+                              name={friend.username || "Unknown"}
+                              location="Jaipur"
+                              suggestion={false}
+                              avatar={friend.picture}
+                            />
+                          </div>
+                        ))
+                      )}
+                    </div>
+                  </>
+                )}
+              </div>
+
+              <div className=" md:col-span-1 hidden   rounded-r-3xl p-3 2xl:p-8  border border-l-white/20 border-y-0 border-r-0  md:flex md:flex-col h-[95vh]">
+                  <div className="font-medium text-lg 2xl:text-xl ">
+                      Friends
+                  </div>
+                  <div className=" bg-[#161616] border border-white/20  rounded-[8px] w-full flex mt-4">
+                    <input
+                      type="text"
+                      placeholder="Search...."
+                      value={searchFriendsInput}
+                      onChange={(e) => setSearchFriendsInput(e.target.value)}
+                      className="w-full px-3 py-2 2xl:py-4  2xl:px-6 bg-transparent outline-none"
+                    />
+                    <button>
+                      <Image
+                        src={"/mic_logo.png"}
+                        className=" mr-4 opacity-50 hover:opacity-100"
+                        width={"22"}
+                        height={"22"}
+                        alt="mic"
+                      />
+                    </button>
+                  </div>
+                  <div className="flex justify-around gap-1 w-full mt-4">
+                    <button
+                      onClick={() => {
+                        setMenuOpen(showFriendsMenu.showFriends);
+                      }}
+                      className={` w-full  hover:bg-white/10 ${
+                        menuOpen == showFriendsMenu.showFriends && "bg-gray-200/10"
+                      } px-4 py-2`}
+                    >
+                      Primary
+                    </button>
+                    <button
+                      onClick={() => {
+                        setMenuOpen(showFriendsMenu.showRequests);
+                      }}
+                      className={` w-full  hover:bg-white/10 ${
+                        menuOpen == showFriendsMenu.showRequests && "bg-gray-200/10"
+                      } px-4 py-2`}
+                    >
+                      Requests
+                    </button>
+                  </div>
+
+                  {menuOpen == showFriendsMenu.showFriends && (
+                    <div className="mt-2 overflow-y-auto  h-full">
+                      {loading ? (
+                        <div>Loading...</div>
+                      ) : (
+                        filteredFriends.map((friend: any, index: number) => (
+                          <div
+                            className="cursor-pointer"
+                            key={index}
+                            onClick={() => openChat(friend)}
+                          >
+                            <MessageCard
+                              suggestion={false}
+                              name={friend.username || "Unknown"}
+                              location="Jaipur"
+                              avatar={friend.picture}
+                            />
+                          </div>
+                        ))
+                      )}
+                    </div>
+                  )}
+                  {menuOpen == showFriendsMenu.showRequests && (
+                    <div className="mt-2 overflow-y-auto h-[27vh]">
+                      {loading ? (
+                        <div>Loading...</div>
+                      ) : (
+                        friendRequests?.map((request: any, index: number) => (
+                          <div className="cursor-pointer" key={index}>
+                            <MessageCardForRequests
+                              acceptRequest={() =>
+                                acceptFriendRequest(
+                                  request.sender.id,
+                                  request.id,
+                                )
+                              }
+                              name={request.sender.username || "Unknown"}
+                              location="Jaipur"
+                              avatar={request.sender.picture}
+                            />
+                          </div>
+                        ))
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+  );
+}
