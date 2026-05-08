@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 const footerLinks = {
@@ -36,9 +37,7 @@ export function LandingFooter() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
           <div className="col-span-2">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <div className="w-6 h-6 rounded bg-white text-black flex items-center justify-center">
-                <span className="text-[10px] font-bold">U</span>
-              </div>
+              <Image src="/newlogo.svg" width={24} height={24} alt="logo" />
               <span className="text-white font-medium text-sm">UNIVO CHAT</span>
             </Link>
             <p className="text-white/30 text-xs mb-5 max-w-xs">
