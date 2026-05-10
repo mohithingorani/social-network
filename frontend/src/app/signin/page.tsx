@@ -1,16 +1,25 @@
 "use client";
 
 import { welcomeImageBlurDataUrl } from "@/data/base64images";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 
 export default function Signin() {
+  const { status } = useSession();
+  const router = useRouter();
   const [formState, setFormState] = useState<"signup" | "signin">("signin");
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push("/feed");
+    }
+  }, [status, router]);
 
   const handleGoogleAuth = async () => {
     const callbackUrl = process.env.NEXT_PUBLIC_APP_URL 
