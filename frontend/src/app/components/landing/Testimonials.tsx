@@ -4,10 +4,10 @@ import { GlassCard } from "./ui/GlassCard";
 import { Quote } from "lucide-react";
 
 const testimonials = [
-  { name: "Sarah Chen", role: "Senior Engineer", company: "Google", quote: "Found my current role through a community here. This platform transformed how I connect with developers." },
-  { name: "Marcus Johnson", role: "Full Stack Dev", company: "Vercel", quote: "The best community I've been part of. Collaboration features helped me ship my project 3x faster." },
-  { name: "Elena Rodriguez", role: "OSS Maintainer", company: "Linux Foundation", quote: "Found amazing contributors for my open source project. The community genuinely cares about building together." },
-  { name: "David Kim", role: "CTO", company: "Startup", quote: "My go-to place for hiring. The quality of developers here is unmatched. Built my entire team here." }
+  { name: "Jordan Kim", role: "Computer Science", company: "UC Berkeley", quote: "Finally a social platform built for students. The friend discovery feature helped me find study buddies from my classes!" },
+  { name: "Priya Sharma", role: "Engineering", company: "MIT", quote: "The real-time chat is incredibly smooth. I coordinate study groups and group projects without switching apps." },
+  { name: "Alex Rivera", role: "Data Science", company: "Stanford", quote: "The social graph visualization is awesome. It really shows me how my network is growing semester by semester." },
+  { name: "Sam Chen", role: "Design", company: "Parsons", quote: "Clean, fast, and actually feels designed for college life. My friends and I switched from the big platforms and never looked back." },
 ];
 
 function SectionBg() {
@@ -26,34 +26,34 @@ export function Testimonials() {
     <section className="py-20 px-4 relative">
       <SectionBg />
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <span className="text-white/40 font-medium tracking-wider uppercase text-sm">
             Testimonials
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-4 mb-6">
-            Loved by Developers
+            Loved by Students
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto">
-            See what developers from top companies are saying about their experience.
+            See what students from top universities are saying about their experience.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-3">
+        <div className="grid md:grid-cols-2 gap-4">
           {testimonials.map((testimonial) => (
             <GlassCard key={testimonial.name} className="h-full">
-              <div className="mb-3">
+              <div className="mb-4">
                 <Quote className="w-5 h-5 text-white/15" />
               </div>
-              <p className="text-white/50 text-sm mb-4 leading-relaxed">
+              <p className="text-white/50 text-sm mb-5 leading-relaxed">
                 {testimonial.quote}
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded bg-white/5 border border-white/5 flex items-center justify-center">
-                  <span className="text-white/20 text-xs">{testimonial.name.charAt(0)}</span>
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-white/10 to-white/5 border border-white/5 flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">{testimonial.name.charAt(0)}</span>
                 </div>
                 <div>
-                  <div className="text-white text-sm">{testimonial.name}</div>
-                  <div className="text-white/30 text-xs">{testimonial.role} at {testimonial.company}</div>
+                  <div className="text-white text-sm font-medium">{testimonial.name}</div>
+                  <div className="text-white/30 text-xs">{testimonial.role} · {testimonial.company}</div>
                 </div>
               </div>
             </GlassCard>

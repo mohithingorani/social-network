@@ -5,21 +5,18 @@ import Image from "next/image";
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 const footerLinks = {
-  product: [
-    { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#" },
+  platform: [
+    { label: "Feed", href: "#features" },
+    { label: "Messages", href: "#features" },
+    { label: "Discover", href: "#features" },
   ],
   company: [
     { label: "About", href: "#" },
     { label: "Blog", href: "#" },
   ],
   community: [
-    { label: "Discord", href: "#" },
-    { label: "GitHub", href: "#" },
-  ],
-  legal: [
-    { label: "Privacy", href: "#" },
-    { label: "Terms", href: "#" },
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms of Service", href: "#" },
   ],
 };
 
@@ -38,10 +35,10 @@ export function LandingFooter() {
           <div className="col-span-2">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
               <Image src="/newlogo.svg" width={24} height={24} alt="logo" />
-              <span className="text-white font-medium text-sm">UNIVO CHAT</span>
+              <span className="text-white font-medium text-sm">UNIVO</span>
             </Link>
             <p className="text-white/30 text-xs mb-5 max-w-xs">
-              The developer community platform for collaboration and growth.
+              A social network built for college students. Connect, share, and grow together.
             </p>
             <div className="flex gap-2">
               {socialLinks.map((social) => (
@@ -58,9 +55,9 @@ export function LandingFooter() {
           </div>
 
           <div>
-            <h4 className="text-white/60 font-medium mb-3 text-xs">Product</h4>
+            <h4 className="text-white/60 font-medium mb-3 text-xs">Platform</h4>
             <ul className="space-y-2">
-              {footerLinks.product.map((link) => (
+              {footerLinks.platform.map((link) => (
                 <li key={link.label}>
                   <a className="text-white/30 hover:text-white/50 transition-colors text-xs" href={link.href}>
                     {link.label}
@@ -84,7 +81,7 @@ export function LandingFooter() {
           </div>
 
           <div>
-            <h4 className="text-white/60 font-medium mb-3 text-xs">Community</h4>
+            <h4 className="text-white/60 font-medium mb-3 text-xs">Legal</h4>
             <ul className="space-y-2">
               {footerLinks.community.map((link) => (
                 <li key={link.label}>
@@ -101,13 +98,6 @@ export function LandingFooter() {
           <p className="text-white/20 text-xs">
             © {new Date().getFullYear()} UNIVO CHAT. All rights reserved.
           </p>
-          <div className="flex gap-4">
-            {footerLinks.legal.map((link) => (
-              <a key={link.label} href={link.href} className="text-white/20 hover:text-white/40 transition-colors text-xs">
-                {link.label}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

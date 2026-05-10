@@ -1,17 +1,13 @@
 "use client";
 
 import { GlassCard } from "./ui/GlassCard";
-import { Globe, Brain, Box, Server, Shield, Trophy, Rocket, Lightbulb } from "lucide-react";
+import { LayoutGrid, MessageCircle, Users, UserPlus } from "lucide-react";
 
-const communities = [
-  { icon: Globe, name: "Web Development", description: "Frontend, backend, full-stack" },
-  { icon: Brain, name: "AI/ML", description: "Machine learning & AI research" },
-  { icon: Box, name: "Open Source", description: "Contribute & discover projects" },
-  { icon: Server, name: "DevOps", description: "CI/CD & cloud infrastructure" },
-  { icon: Shield, name: "Cybersecurity", description: "Security research & hacking" },
-  { icon: Trophy, name: "Competitive Programming", description: "Algorithms & challenges" },
-  { icon: Rocket, name: "Startup Builders", description: "Founders & entrepreneurs" },
-  { icon: Lightbulb, name: "Indie Hackers", description: "Building solo projects" },
+const sections = [
+  { icon: LayoutGrid, name: "Feed", description: "Posts & photos from your network" },
+  { icon: MessageCircle, name: "Messages", description: "Real-time chat with friends" },
+  { icon: Users, name: "Friends", description: "Manage your connections" },
+  { icon: UserPlus, name: "Discover", description: "Find new people to connect with" },
 ];
 
 function SectionBg() {
@@ -30,28 +26,28 @@ export function Communities() {
     <section className="py-20 px-4 relative">
       <SectionBg />
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <span className="text-white/40 font-medium tracking-wider uppercase text-sm">
-            Communities
+            Platform Sections
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-4 mb-6">
-            Find Your Tribe
+            Everything in One Place
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto">
-            Join specialized communities of developers who share your interests, stack, and goals.
+            All the features you need to stay connected, discover new people, and share your world — seamlessly integrated.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          {communities.map((community) => (
-            <GlassCard key={community.name} className="h-full cursor-pointer">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded bg-white/5 border border-white/5 flex items-center justify-center">
-                  <community.icon className="w-4 h-4 text-white/50" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {sections.map((section) => (
+            <GlassCard key={section.name} className="h-full cursor-pointer group">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center mb-4 group-hover:bg-white/10 transition-colors">
+                  <section.icon className="w-5 h-5 text-white/40 group-hover:text-white/60 transition-colors" />
                 </div>
-                <h3 className="text-white font-medium text-sm truncate">{community.name}</h3>
+                <h3 className="text-white font-medium text-sm mb-2">{section.name}</h3>
+                <p className="text-white/30 text-xs">{section.description}</p>
               </div>
-              <p className="text-white/30 text-xs mt-2">{community.description}</p>
             </GlassCard>
           ))}
         </div>

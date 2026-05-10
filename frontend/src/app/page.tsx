@@ -11,7 +11,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
             <Image src="/newlogo.svg" width={28} height={28} alt="logo" />
-            <span className="text-white font-medium text-sm">UNIVO CHAT</span>
+            <span className="text-white font-medium text-sm">UNIVO</span>
           </a>
           <div className="flex items-center gap-2">
             <a href="/signin" className="px-3 py-1.5 text-white/50 hover:text-white text-sm transition-colors">
