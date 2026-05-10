@@ -5,13 +5,14 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
+import { Image as ImageIcon, Smile } from "lucide-react";
 
 export const AddPost = ({
   userId,
   refreshPosts,
 }: {
   userId: number;
-  refreshPosts: () => void;
+  refreshPosts: (newPost?: any) => void;
 }) => {
   const { data: session } = useSession();
   const [file, setFile] = useState<File | null>(null);
@@ -38,71 +39,67 @@ export const AddPost = ({
     };
   }, [preview]);
 
-const handleUpload = async () => {
-  if (!caption.trim() && !file) return;
+  const handleUpload = async () => {
+    if (!caption.trim() && !file) return;
 
-  try {
-    setIsUploading(true);
+    try {
+      setIsUploading(true);
 
-    let imageUrl: string | null = null;
+      let imageUrl: string | null = null;
 
-    if (file) {
-      const { data } = await axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/generateUploadUrl`,
-        { fileType: file.type }
-      );
+      if (file) {
+        const { data } = await axios.post(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/upload`,
+          { fileName: file.name, fileType: file.type },
+          { headers: { "Content-Type": "application/json" } }
+        );
 
-      const { signedUrl, publicUrl } = data;
+        await axios.put(data.url, file, {
+          headers: { "Content-Type": file.type },
+        });
 
-      await axios.put(signedUrl, file, {
-        headers: {
-          "Content-Type": file.type,
-        },
+        imageUrl = data.url.split("?")[0];
+      }
+
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/create`, {
+        userId,
+        image: imageUrl,
+        caption,
       });
 
-      imageUrl = publicUrl;
+      const newPost = {
+        ...response.data.post,
+        _count: { likes: 0, comments: 0 },
+        isLikedByUser: false,
+      };
+
+      setCaption("");
+      setFile(null);
+      setPreview(null);
+      refreshPosts(newPost);
+    } catch (error) {
+      console.error("Upload failed:", error);
+      toast.error("Upload failed");
+    } finally {
+      setIsUploading(false);
     }
-
-    await axios.post(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/uploadPost`,
-      {
-        caption,
-        userId,
-        imageUrl,
-      } 
-    );
-
-    toast("Uploaded successfully!");
-    refreshPosts();
-
-    setCaption("");
-    setFile(null);
-    setPreview(null);
-
-  } catch (error) {
-    console.error("Upload failed:", error);
-    toast.error("Upload failed");
-  } finally {
-    setIsUploading(false);
-  }
-};
+  };
 
   return (
-    <div className="bg-[#101010] p-6 rounded-3xl shadow-md w-full text-white">
+    <div className="p-4 rounded-2xl border border-white/10 bg-[#1a1a1a] w-full text-white shadow-lg shadow-black/20">
       {/* Profile and Input */}
-
-      <div className="flex justify-start items-center w-full">
+      <div className="flex items-center gap-3">
         {session?.user?.image && (
           <Image
             src={session.user.image}
             alt="profile"
-            width={35}
-            height={35}
-            className="rounded-full"
+            width={44}
+            height={44}
+            className="rounded-full w-11 h-11 ring-2 ring-white/10"
           />
         )}
 
-        <div className="ml-6 bg-[#161616] border text-sm md:text-lg border-white/20 rounded-[8px] w-full flex">
+        <div className="flex-1 bg-[#0f0f0f] rounded-xl px-4 py-3 border border-white/5">
           <input
             onKeyDown={(e) => {
               if (e.key === "Enter") {
@@ -112,94 +109,72 @@ const handleUpload = async () => {
             onChange={(e) => setCaption(e.target.value)}
             value={caption}
             type="text"
-            placeholder="What is happening?"
-            className="w-full py-3 px-4 md:py-3 md:px-6 bg-transparent outline-none"
+            placeholder="What's on your mind?"
+            className="w-full text-base bg-transparent outline-none placeholder-white/30"
           />
-          <button>
-            <Image
-              src="/mic_logo.png"
-              className="mr-6 w-4 md:w-6 opacity-50 hover:opacity-100"
-              width={25}
-              height={25}
-              alt="mic"
-            />
-          </button>
         </div>
       </div>
 
-      {/* Media + Actions */}
-      <div className="mt-4 flex justify-between items-center">
-        <div className="flex justify-start text-sm gap-4 md:gap-6">
-          <div
-            onClick={handleDivClick}
-            className="flex items-center gap-1 opacity-70 hover:opacity-100 cursor-pointer"
-          >
-            <input
-              type="file"
-              ref={fileInputRef}
-              style={{ display: "none" }}
-              onChange={handleFileChange}
-              accept="image/*"
-            />
-            <Image
-              src="/image_05.png"
-              alt="media image"
-              width={30}
-              height={30}
-              className="cursor-pointer"
-            />
-            <div className="hidden lg:block">Media Content</div>
+      {/* Image Preview & Actions */}
+      {(preview || file) && (
+        <div className="mt-3 relative">
+          <div className="relative inline-block">
+            {preview && (
+              <Image
+                src={preview}
+                alt="Preview"
+                width={200}
+                height={200}
+                className="rounded-lg max-h-40 object-contain"
+              />
+            )}
+            <button
+              onClick={() => {
+                setFile(null);
+                setPreview(null);
+              }}
+              className="absolute top-1 right-1 bg-black/60 rounded-full p-1 hover:bg-black/80"
+            >
+              <span className="text-white text-xs">✕</span>
+            </button>
           </div>
+        </div>
+      )}
 
-          
+      {/* Actions Row */}
+      <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
+        <div className="flex items-center gap-1">
+          <button
+            onClick={handleDivClick}
+            className="p-2.5 hover:bg-white/10 rounded-xl transition-colors text-white/50 hover:text-white"
+          >
+            <ImageIcon className="w-5 h-5" />
+          </button>
+          <button className="p-2.5 hover:bg-white/10 rounded-xl transition-colors text-white/50 hover:text-white">
+            <Smile className="w-5 h-5" />
+          </button>
         </div>
 
-        {/* Submit Button */}
         <button
           onClick={handleUpload}
-          disabled={!caption.trim() && !file}
-          className={`rounded-[10px] px-4 py-1 ${
+          disabled={isUploading || (!caption.trim() && !file)}
+          className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg ${
             caption.trim() || file
-              ? "bg-blue-400 hover:bg-blue-500"
-              : "bg-gray-500 cursor-not-allowed"
+              ? "bg-blue-600 text-white hover:bg-blue-500 shadow-blue-600/20"
+              : "bg-white/10 text-white/30 cursor-not-allowed"
           }`}
         >
           {isUploading ? "Posting..." : "Post"}
         </button>
       </div>
 
-      {/* Uploading State */}
-      {isUploading && (
-        <p className="text-sm mt-2 text-gray-400">Uploading...</p>
-      )}
-
-      {/* Optional Preview */}
-      {preview && (
-        <div className="mt-4">
-          <div className="relative">
-            <Image
-              src={preview}
-              alt="preview"
-              width={200}
-              height={200}
-              className="rounded-lg object-cover"
-            />
-            <div className="absolute top-0 right-0">
-              <button onClick={()=>{
-                setPreview(null);
-              }}>
-              <Image
-                src="/cross.png"
-                className="opacity-50 hover:opacity-100"
-                alt="close"
-                width={"20"}
-                height={"20"}
-              />
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <input
+        type="file"
+        ref={fileInputRef}
+        onChange={handleFileChange}
+        accept="image/*"
+        className="hidden"
+      />
     </div>
   );
 };
