@@ -57,3 +57,8 @@ export const selectedFileForStory = atom<StoryFile>({
   key : "storyFile",
   default : undefined
 })
+
+export const openCommentsPostIdAtom = atom<number | null>({
+  key: 'openCommentsPostId',
+  default: null,
+});
