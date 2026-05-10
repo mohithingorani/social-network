@@ -17,7 +17,6 @@ import {
 import { pageAtom, userDataAtom } from "../atoms";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { useFriends } from "@/hooks/useFriends";
-import { SignOutDialog } from "@/components/SignOutDialog";
 import axios from "axios";
 
 export default function NavBar({
@@ -329,8 +328,33 @@ export default function NavBar({
         </div>
         </div>
       )}
-      {/* Sign Out Dialog */}
-      <SignOutDialog open={signOutOpen} onOpenChange={setSignOutOpen} />
+      {/* Sign Out Confirmation Modal */}
+      {signOutOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
+            onClick={() => setSignOutOpen(false)}
+          />
+          <div className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 bg-[#181818] border border-white/10 rounded-2xl p-6 max-w-md w-full shadow-2xl">
+            <h2 className="text-white text-xl font-semibold mb-2">Sign Out</h2>
+            <p className="text-white/50 text-sm mb-6">Are you sure you want to sign out?</p>
+            <div className="flex gap-3 justify-end">
+              <button
+                onClick={() => setSignOutOpen(false)}
+                className="px-4 py-2 rounded-lg border border-white/10 text-white/70 hover:bg-white/5 hover:text-white transition-colors text-sm font-medium"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => signOut()}
+                className="px-4 py-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-white transition-colors text-sm font-medium"
+              >
+                Sign Out
+              </button>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }
