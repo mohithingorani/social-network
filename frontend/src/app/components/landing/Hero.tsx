@@ -5,15 +5,15 @@ import { ArrowRight, MessageCircle, Users, Image as ImageIcon } from "lucide-rea
 import Image from "next/image";
 
 const mockFeedPosts = [
-  { name: "Emma Wilson", handle: "@emma_w", time: "3m", content: "Does anyone know if the campus library is open 24/7 during finals week?", likes: 18, comments: 12 },
-  { name: "Liam Chen", handle: "@liamc", time: "20m", content: "The sunset from the quad tonight was absolutely beautiful. Spring semester hit different.", likes: 54, comments: 7 },
-  { name: "Sophia Park", handle: "@sophiap", time: "1h", content: "Study group at the coffee shop downtown — who's coming? We still have three chapters to cover.", likes: 31, comments: 15 },
+  { name: "Arjun Sharma", handle: "@arjun_s", time: "3m", content: "Does anyone know if the campus library is open 24/7 during finals week?", likes: 18, comments: 12 },
+  { name: "Priya Patel", handle: "@priya_p", time: "20m", content: "The sunset from the quad tonight was absolutely beautiful. Spring semester hit different.", likes: 54, comments: 7 },
+  { name: "Rahul Verma", handle: "@rahulv", time: "1h", content: "Study group at the chai stall near the mess — who's coming? We still have three chapters to cover.", likes: 31, comments: 15 },
 ];
 
 const mockMessages = [
-  { name: "Maya R.", last: "See you at the library!", time: "1m", unread: 2 },
-  { name: "Jake T.", last: "That was so funny lmao", time: "15m", unread: 0 },
-  { name: "Olivia K.", last: "Thanks for the notes!", time: "2h", unread: 0 },
+  { name: "Ananya R.", last: "See you at the library!", time: "1m", unread: 2 },
+  { name: "Vikram T.", last: "That was so funny lmao", time: "15m", unread: 0 },
+  { name: "Sneha K.", last: "Thanks for the notes!", time: "2h", unread: 0 },
 ];
 
 const container = {
