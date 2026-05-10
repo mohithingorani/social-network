@@ -157,56 +157,54 @@ export const searchUsers = async (req: Request, res: Response) => {
 }
 
 export const getSuggestions = async (req: Request, res: Response) => {
-  const username = req.body.username as string;
+  const username = req.body.username as string | undefined;
   const selfUsername = req.body.selfUsername as string;
   const userId = parseInt(req.body.userId);
-  logger.info("username is " + username);
-  logger.info("self username is " + selfUsername);
 
   try {
     const self = await prisma.user.findUnique({
-      where: {
-        id: userId,
-      },
+      where: { id: userId },
     });
 
     if (!self) {
       return res.status(404).json({ error: "User not found" });
     }
 
-    // Get all friends (both directions)
     const friendsList = await prisma.friend.findMany({
-      where: {
-        OR: [{ userId: userId }, { friendId: userId }],
-      },
+      where: { OR: [{ userId: userId }, { friendId: userId }] },
     });
-
-    // Properly extract the friend IDs
     const friendIds = friendsList.map((f) =>
       f.userId === userId ? f.friendId : f.userId
     );
 
-    // Find users matching username, excluding self and friends
+    const pendingRequests = await prisma.friendRequest.findMany({
+      where: {
+        status: "pending",
+        OR: [{ senderId: userId }, { receiverId: userId }],
+      },
+    });
+    const pendingUserIds = pendingRequests.flatMap((r) => [r.senderId, r.receiverId]);
+
+    const excludedIds = new Set([userId, ...friendIds, ...pendingUserIds]);
+
+    const usernameFilter = username && username.trim()
+      ? { contains: username.trim(), mode: "insensitive" as const }
+      : undefined;
+
     const users = await prisma.user.findMany({
       where: {
-        username: {
-          contains: username,
-          mode: "insensitive",
-        },
-        NOT: {
-          id: {
-            in: [userId, ...friendIds], // Exclude self + friends
-          },
-        },
+        id: { notIn: Array.from(excludedIds) },
+        ...(usernameFilter ? { username: usernameFilter } : {}),
       },
       select: {
         id: true,
         username: true,
+        name: true,
         picture: true,
       },
+      take: 20,
     });
 
-    logger.info("Users fetched successfully");
     res.status(200).send(users);
   } catch (err) {
     logger.error(err);
