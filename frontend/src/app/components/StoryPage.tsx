@@ -49,8 +49,8 @@ export default function StoryPage({
     }
   }
   return (
-    <div className="absolute z-50 backdrop-blur-sm   flex justify-center items-center h-full w-full   ">
-      <div className=" relative bg-gradient-to-t from-[#18181A] h-[800px] rounded-xl  to-[#202020] w-[500px]  border border-white ">
+    <div className="absolute z-50 bg-black/80 flex justify-center items-center h-full w-full">
+      <div className=" relative bg-[#151515] h-[800px] rounded-xl w-[500px] border border-white/10">
         <button onClick={onClickClose} className="absolute right-4 top-4">
           <Image
             className=" opacity-60 hover:opacity-100"
