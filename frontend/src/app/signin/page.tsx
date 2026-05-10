@@ -140,7 +140,7 @@ export default function Signin() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#151515]/80 via-transparent to-transparent" />
               <div className="absolute top-4 left-4">
-                <h2 className="text-black text-2xl font-bold mb-2">Connect. Chat. Build.</h2>
+                <h2 className="text-[#151515] text-2xl font-bold mb-2">Connect. Chat. Build.</h2>
               </div>
             </div>
           </div>
