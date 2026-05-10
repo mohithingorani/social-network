@@ -13,12 +13,16 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log("User connected");
 
-  socket.on("joinRoom", (room) => {
-    socket.join(room);
+  socket.on("joinRoom", (roomName, userName) => {
+    if (!userName || !roomName) return;
+    const parts = roomName.split("-");
+    if (!parts.includes(userName)) {
+      socket.disconnect();
+      return;
+    }
+    socket.join(roomName);
   });
 
-  // Forward message payload to everyone in the room.
-  // Clients may send: (message, roomName, id, time, userName)
   socket.on("message", (message, roomName, id, time, userName) => {
     io.to(roomName).emit("message", message, id, time, userName);
   });
