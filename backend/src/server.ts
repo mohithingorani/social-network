@@ -17,8 +17,10 @@ io.on("connection", (socket) => {
     socket.join(room);
   });
 
-  socket.on("message", (msg, room) => {
-    io.to(room).emit("message", msg);
+  // Forward message payload to everyone in the room.
+  // Clients may send: (message, roomName, id, time, userName)
+  socket.on("message", (message, roomName, id, time, userName) => {
+    io.to(roomName).emit("message", message, id, time, userName);
   });
 });
 
