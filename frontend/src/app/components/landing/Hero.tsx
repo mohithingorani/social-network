@@ -5,16 +5,26 @@ import { ArrowRight, MessageCircle, Users, Image as ImageIcon } from "lucide-rea
 import Image from "next/image";
 
 const mockFeedPosts = [
-  { name: "Alex Rivera", handle: "@arivera", time: "2m", content: "Just pushed a major update to my open-source project! 🚀 The new caching layer reduced API calls by 80%.", likes: 24, comments: 8 },
-  { name: "Priya Sharma", handle: "@priya_s", time: "15m", content: "Finally finished my portfolio redesign. Would love some feedback from the community! 🎨", likes: 41, comments: 12 },
-  { name: "Jordan Kim", handle: "@jkim_dev", time: "1h", content: "Hot take: Tailwind is better for rapid prototyping, but CSS modules scale better for large apps.", likes: 67, comments: 34 },
+  { name: "Emma Wilson", handle: "@emma_w", time: "3m", content: "Does anyone know if the campus library is open 24/7 during finals week?", likes: 18, comments: 12 },
+  { name: "Liam Chen", handle: "@liamc", time: "20m", content: "The sunset from the quad tonight was absolutely beautiful. Spring semester hit different.", likes: 54, comments: 7 },
+  { name: "Sophia Park", handle: "@sophiap", time: "1h", content: "Study group at the coffee shop downtown — who's coming? We still have three chapters to cover.", likes: 31, comments: 15 },
 ];
 
 const mockMessages = [
-  { name: "Sarah Chen", last: "See you at the meetup!", time: "2m", unread: 2 },
-  { name: "Marcus J.", last: "Thanks for the PR review!", time: "18m", unread: 0 },
-  { name: "Elena R.", last: "Let's collaborate on the API", time: "1h", unread: 0 },
+  { name: "Maya R.", last: "See you at the library!", time: "1m", unread: 2 },
+  { name: "Jake T.", last: "That was so funny lmao", time: "15m", unread: 0 },
+  { name: "Olivia K.", last: "Thanks for the notes!", time: "2h", unread: 0 },
 ];
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const } },
+};
 
 export function Hero() {
   return (
@@ -25,23 +35,28 @@ export function Hero() {
       <div className="absolute inset-0" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`, opacity: 0.03 }} />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/5 mb-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="text-center lg:text-left order-2 lg:order-1"
+          >
+            <motion.div variants={item} className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/5 mb-6">
               <MessageCircle className="w-3 h-3 text-white/40" />
-              <span className="text-white/40 text-xs tracking-wide">Connect with friends in real-time</span>
-            </div>
+              <span className="text-white/40 text-xs tracking-wide">Connect with your campus community</span>
+            </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Your Social World,<br />
-              <span className="text-white/60">Reimagined</span>
-            </h1>
+            <motion.h1 variants={item} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              Where Campus<br />
+              <span className="text-white/60">Comes Alive</span>
+            </motion.h1>
 
-            <p className="text-lg md:text-xl text-white/50 mb-8 max-w-xl mx-auto lg:mx-0">
-              Share moments, discover friends, and chat instantly — all in one beautifully crafted social experience built for college students.
-            </p>
+            <motion.p variants={item} className="text-lg md:text-xl text-white/50 mb-8 max-w-xl mx-auto lg:mx-0">
+              Share moments with friends, discover people on campus, and chat in real-time — all in one place built for college life.
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <motion.div variants={item} className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <a
                 href="/signin"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 font-medium text-sm rounded-lg bg-white text-black hover:bg-white/90 transition-colors"
@@ -55,16 +70,14 @@ export function Hero() {
                 Explore Features
                 <ArrowRight className="w-4 h-4" />
               </a>
-            </div>
-
-            
-          </div>
+            </motion.div>
+          </motion.div>
 
           <div className="order-1 lg:order-2">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
               <div className="bg-[#18181A] border border-white/5 rounded-2xl overflow-hidden shadow-2xl">
@@ -74,7 +87,6 @@ export function Hero() {
                     <div className="w-3 h-3 rounded-full bg-white/10" />
                     <div className="w-3 h-3 rounded-full bg-white/10" />
                   </div>
-                  <div className="text-white/30 text-xs font-mono">univo.chat</div>
                 </div>
 
                 <div className="flex">
@@ -97,7 +109,7 @@ export function Hero() {
                           key={post.name}
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.2 + i * 0.15 }}
+                          transition={{ delay: 0.4 + i * 0.15 }}
                           className="bg-[#0f0f10] border border-white/5 rounded-xl p-4"
                         >
                           <div className="flex items-center gap-2 mb-3">

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 const footerLinks = {
@@ -27,10 +28,20 @@ const socialLinks = [
   { icon: Mail, href: "#", label: "Email" },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const } },
+};
+
 export function LandingFooter() {
   return (
     <footer className="py-12 px-4 border-t border-white/5 bg-[#0a0a0a]">
-      <div className="max-w-7xl mx-auto">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-40px" }}
+        className="max-w-7xl mx-auto"
+      >
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
           <div className="col-span-2">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
@@ -96,10 +107,10 @@ export function LandingFooter() {
 
         <div className="pt-5 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-white/20 text-xs">
-            © {new Date().getFullYear()} UNIVO CHAT. All rights reserved.
+            &copy; {new Date().getFullYear()} UNIVO. All rights reserved.
           </p>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }
