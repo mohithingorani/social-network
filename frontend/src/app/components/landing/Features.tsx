@@ -61,25 +61,87 @@ export function Features() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4"
         >
-          {features.map((feature) => (
-            <motion.div key={feature.title} variants={fadeUp}>
-              <GlassCard className="h-full">
+          <motion.div variants={fadeUp} className="lg:col-span-7">
+            <GlassCard className="h-full p-7 relative overflow-hidden">
+              <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-[radial-gradient(closest-side,rgba(211,150,91,0.12),transparent)] blur-3xl" />
+              <div className="relative">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-5 h-5 text-white/40" />
+                  <div className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0">
+                    <MessageSquare className="w-6 h-6 text-white/65" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-white font-medium text-sm mb-2">{feature.title}</h3>
-                    <p className="text-white/30 text-xs leading-relaxed">
-                      {feature.description}
+                    <h3 className="text-white font-semibold text-lg mb-2">Real-time Chat</h3>
+                    <p className="text-white/45 text-sm leading-relaxed max-w-xl">
+                      Instant messaging that feels snappy. Typing indicators, read states, and smooth delivery so conversations stay fluid.
                     </p>
                   </div>
                 </div>
-              </GlassCard>
-            </motion.div>
-          ))}
+
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  {[
+                    { label: "Latency", value: "~" },
+                    { label: "Delivery", value: "Realtime" },
+                    { label: "Presence", value: "Online" },
+                    { label: "Rooms", value: "1:1 +" },
+                  ].map((s) => (
+                    <div
+                      key={s.label}
+                      className="rounded-2xl bg-white/[0.03] border border-white/10 px-4 py-3"
+                    >
+                      <div className="text-[11px] uppercase tracking-wider text-white/30">
+                        {s.label}
+                      </div>
+                      <div className="text-sm font-medium text-white/75 mt-1">{s.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </GlassCard>
+          </motion.div>
+
+          <motion.div variants={fadeUp} className="lg:col-span-5">
+            <GlassCard className="h-full p-7 relative overflow-hidden">
+              <div className="absolute -bottom-28 -right-24 w-72 h-72 rounded-full bg-[radial-gradient(closest-side,rgba(102,164,175,0.12),transparent)] blur-3xl" />
+              <div className="relative">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-6 h-6 text-white/65" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-white font-semibold text-lg mb-2">Social Graph</h3>
+                    <p className="text-white/45 text-sm leading-relaxed">
+                      See your connections evolve. A quick way to understand who you know, and who you should meet next.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </GlassCard>
+          </motion.div>
+
+          {features
+            .filter((f) => f.title !== "Real-time Chat" && f.title !== "Social Graph")
+            .slice(0, 4)
+            .map((feature) => (
+              <motion.div
+                key={feature.title}
+                variants={fadeUp}
+                className="sm:col-span-1 lg:col-span-3"
+              >
+                <GlassCard className="h-full">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0">
+                      <feature.icon className="w-5 h-5 text-white/55" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-white font-medium text-sm mb-2">{feature.title}</h3>
+                      <p className="text-white/35 text-xs leading-relaxed">{feature.description}</p>
+                    </div>
+                  </div>
+                </GlassCard>
+              </motion.div>
+            ))}
         </motion.div>
       </div>
     </section>

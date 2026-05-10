@@ -13,11 +13,13 @@ export function GlassCard({ children, className = "", hover = true, delay = 0 }:
   return (
     <div
       className={`
-        bg-[#151515]
-        border border-white/5
-        rounded-lg
+        bg-white/[0.03]
+        border border-white/10
+        backdrop-blur-xl
+        rounded-2xl
         p-5
-        ${hover ? "hover:border-white/10 hover:bg-[#181818] transition-all duration-200" : ""}
+        shadow-[0_1px_0_rgba(255,255,255,0.06)_inset]
+        ${hover ? "hover:border-white/16 hover:bg-white/[0.045] hover:-translate-y-0.5 transition-all duration-200" : ""}
         ${className}
       `}
     >

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { GlassCard } from "./ui/GlassCard";
 import { LayoutGrid, MessageCircle, Network } from "lucide-react";
 
@@ -84,7 +85,7 @@ const previews = [
           </div>
         </div>
         <div className="p-3 border-t border-white/5">
-          <div className="bg-[#0f0f10] border border-white/5 rounded-full px-4 py-2 text-white/30 text-xs">Type a message...</div>
+          <div className="bg-[#0f0f10] border border-white/5 rounded-lg p-4 text-white/30 text-xs ">Type a message...</div>
         </div>
       </div>
     ),
@@ -152,6 +153,21 @@ const fadeUp = {
 };
 
 export function Preview() {
+  const [active, setActive] = useState(0);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mql = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReducedMotion(mql.matches);
+    update();
+    if (typeof mql.addEventListener === "function") {
+      mql.addEventListener("change", update);
+      return () => mql.removeEventListener("change", update);
+    }
+    mql.addListener(update);
+    return () => mql.removeListener(update);
+  }, []);
+
   return (
     <section className="py-20 px-4 relative">
       <SectionBg />
@@ -178,26 +194,82 @@ export function Preview() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid md:grid-cols-3 gap-4"
+          className="grid lg:grid-cols-[320px_1fr] gap-4"
         >
-          {previews.map((preview) => (
-            <motion.div key={preview.title} variants={fadeUp} whileHover={{ y: -4 }}>
-              <GlassCard hover={false} className="p-0 overflow-hidden h-[380px] transition-shadow hover:shadow-2xl hover:shadow-black/20">
-                <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/5">
-                  <div className="w-6 h-6 rounded bg-white/5 flex items-center justify-center">
-                    <preview.icon className="w-3 h-3 text-white/30" />
-                  </div>
-                  <div>
-                    <div className="text-white text-xs font-medium">{preview.title}</div>
-                    <div className="text-white/20 text-[10px]">{preview.description}</div>
-                  </div>
+          <motion.div variants={fadeUp}>
+            <GlassCard className="p-3">
+              <div className="text-white/35 text-[11px] tracking-wider uppercase px-2 pt-1 pb-3">
+                Preview
+              </div>
+              <div className="space-y-1">
+                {previews.map((p, idx) => {
+                  const isActive = idx === active;
+                  return (
+                    <button
+                      key={p.title}
+                      type="button"
+                      onClick={() => setActive(idx)}
+                      className={`w-full text-left rounded-2xl px-3 py-3 border transition-colors ${
+                        isActive
+                          ? "bg-white/[0.06] border-white/16"
+                          : "bg-transparent border-transparent hover:bg-white/[0.04]"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div
+                          className={`w-10 h-10 rounded-2xl border flex items-center justify-center ${
+                            isActive
+                              ? "bg-white/[0.06] border-white/16"
+                              : "bg-white/[0.03] border-white/10"
+                          }`}
+                        >
+                          <p.icon className="w-4 h-4 text-white/55" />
+                        </div>
+                        <div className="min-w-0">
+                          <div className="text-sm font-medium text-white">{p.title}</div>
+                          <div className="text-xs text-white/40 truncate">{p.description}</div>
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </GlassCard>
+          </motion.div>
+
+          <motion.div variants={fadeUp}>
+            <GlassCard
+              hover={false}
+              className="p-0 overflow-hidden min-h-[420px] lg:min-h-[440px] shadow-[0_25px_80px_rgba(0,0,0,0.55)]"
+            >
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10">
+                <div className="w-7 h-7 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
+                  {(() => {
+                    const Icon = previews[active].icon;
+                    return <Icon className="w-3.5 h-3.5 text-white/55" />;
+                  })()}
                 </div>
-                <div className="p-3 h-[calc(100%-41px)] overflow-hidden">
-                  {preview.content}
+                <div>
+                  <div className="text-white text-sm font-medium">{previews[active].title}</div>
+                  <div className="text-white/30 text-xs">{previews[active].description}</div>
                 </div>
-              </GlassCard>
-            </motion.div>
-          ))}
+                <div className="ml-auto flex items-center gap-1.5">
+                  <div className="w-2 h-2 rounded-full bg-white/10" />
+                  <div className="w-2 h-2 rounded-full bg-white/10" />
+                  <div className="w-2 h-2 rounded-full bg-white/10" />
+                </div>
+              </div>
+              <motion.div
+                key={active}
+                initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="p-4 h-[calc(100%-52px)] overflow-hidden"
+              >
+                {previews[active].content}
+              </motion.div>
+            </GlassCard>
+          </motion.div>
         </motion.div>
       </div>
     </section>

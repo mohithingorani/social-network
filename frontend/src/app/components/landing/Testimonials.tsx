@@ -34,30 +34,62 @@ export function Testimonials() {
             Loved by Students
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto">
-            See what students from top universities are saying about their experience.
+            A campus-first network that feels fast, intentional, and actually designed.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          {testimonials.map((testimonial) => (
-            <GlassCard key={testimonial.name} className="h-full">
-              <div className="mb-4">
-                <Quote className="w-5 h-5 text-white/15" />
-              </div>
-              <p className="text-white/50 text-sm mb-5 leading-relaxed">
-                {testimonial.quote}
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-white/10 to-white/5 border border-white/5 flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">{testimonial.name.charAt(0)}</span>
+        <div className="grid lg:grid-cols-12 gap-4">
+          <div className="lg:col-span-7">
+            <GlassCard className="h-full p-8 relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-[radial-gradient(closest-side,rgba(211,150,91,0.16),transparent)] blur-3xl" />
+              <div className="relative">
+                <div className="mb-4">
+                  <Quote className="w-6 h-6 text-white/20" />
                 </div>
-                <div>
-                  <div className="text-white text-sm font-medium">{testimonial.name}</div>
-                  <div className="text-white/30 text-xs">{testimonial.role} · {testimonial.company}</div>
+                <p className="text-white/60 text-lg leading-relaxed mb-7">
+                  {testimonials[0].quote}
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">{testimonials[0].name.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <div className="text-white text-sm font-semibold">{testimonials[0].name}</div>
+                    <div className="text-white/35 text-sm">
+                      {testimonials[0].role} · {testimonials[0].company}
+                    </div>
+                  </div>
                 </div>
               </div>
             </GlassCard>
-          ))}
+          </div>
+
+          <div className="lg:col-span-5 grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
+            {testimonials.slice(1).map((testimonial, i) => (
+              <div
+                key={testimonial.name}
+                className={i === 0 ? "lg:rotate-[-0.6deg]" : i === 1 ? "lg:rotate-[0.6deg]" : ""}
+              >
+                <GlassCard className="h-full">
+                  <div className="mb-3">
+                    <Quote className="w-5 h-5 text-white/15" />
+                  </div>
+                  <p className="text-white/50 text-sm mb-5 leading-relaxed">
+                    {testimonial.quote}
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
+                      <span className="text-white text-sm font-bold">{testimonial.name.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <div className="text-white text-sm font-medium">{testimonial.name}</div>
+                      <div className="text-white/35 text-xs">{testimonial.role} · {testimonial.company}</div>
+                    </div>
+                  </div>
+                </GlassCard>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

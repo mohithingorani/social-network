@@ -14,11 +14,14 @@ import { useSession } from "next-auth/react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Image from "next/image";
+import { useRecoilState } from "recoil";
+import { pageAtom } from "../atoms";
 
 type SettingsTab = "profile" | "username";
 
 export default function SettingsPage() {
   const { data: session } = useSession();
+  const [, setCurrPage] = useRecoilState(pageAtom);
   const [activeTab, setActiveTab] = useState<SettingsTab>("profile");
   const [userId, setUserId] = useState<number>(0);
   const [currentPicture, setCurrentPicture] = useState<string>("");
@@ -140,6 +143,8 @@ export default function SettingsPage() {
       <div className="flex items-center gap-3 mb-2">
         <Link
           href="/feed"
+          onClick={() => setCurrPage("home")}
+          aria-label="Back"
           className="p-2 rounded-xl hover:bg-white/5 text-white/50 hover:text-white transition-all"
         >
           <ArrowLeft className="w-5 h-5" />

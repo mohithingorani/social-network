@@ -42,7 +42,7 @@ export default function LandingPage() {
       <BackgroundEffects />
 
       <div className="relative z-10">
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 border-b border-white/5">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur border-b border-white/5">
           <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
               <Image src="/newlogo.svg" width={28} height={28} alt="logo" />
@@ -62,7 +62,7 @@ export default function LandingPage() {
           </div>
         </nav>
 
-        <main>
+        <main className="pt-14">
           <Hero />
           <Features />
           <Preview />
