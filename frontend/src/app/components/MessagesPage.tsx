@@ -144,9 +144,9 @@ export default function MessagesPage({
 
   return (
     <div className="flex flex-col h-full min-h-0">
-      <div className="sticky top-0 z-20 bg-[#141414]/95 backdrop-blur border-b border-white/5 pb-3">
+      <div className=" bg-[#141414]/95 backdrop-blur border-b border-white/5 pb-3">
         <div className="flex items-center justify-between mb-3 gap-3">
-          <div className="min-w-0">
+          <div className="min-w-0 pl-2">
             <div className="text-base sm:text-lg font-semibold text-white">Messages</div>
             <div className="text-xs text-white/40">
               {inboxItems?.length ?? 0} conversations
