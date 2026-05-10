@@ -7,6 +7,45 @@ import { bucketName, s3 } from "../utils/s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import dotenv from "dotenv";
 dotenv.config();
+
+// create Post
+export const createPost = async (req: Request, res: Response) => {
+  const { userId, image, caption } = req.body;
+
+  if (!userId) {
+    return res.status(400).json({ message: "Missing userId" });
+  }
+
+  try {
+    const post = await prisma.post.create({
+      data: {
+        image: image || null,
+        caption: caption || "",
+        user: {
+          connect: { id: userId },
+        },
+      },
+      include: {
+        user: {
+          select: {
+            username: true,
+            picture: true,
+          },
+        },
+      },
+    });
+
+    logger.info(post);
+    res.status(200).json({
+      post,
+      message: "Post created successfully!",
+    });
+  } catch (error) {
+    console.error("Could not create post:", error);
+    res.status(500).json({ message: "Could not create post!" });
+  }
+};
+
 // get Post
 export const getPosts = async (req:Request, res:Response) => {
   const userId = parseInt(req.query.userId as string); // e.g., /getposts?userId=1

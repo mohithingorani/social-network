@@ -235,12 +235,13 @@ export const getFriends = async (req: Request, res: Response) => {
             id: true,
             name: true,
             onlineStatus: true,
+            lastOnline: true,
           },
         },
       },
     });
 
-    const formattedFriends = friends.map((friend) => friend.friend); // Extract the friend details
+    const formattedFriends = friends.map((friend) => friend.friend);
 
     res.status(200).send({
       message: "Friends fetched successfully",
