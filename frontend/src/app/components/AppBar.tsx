@@ -332,10 +332,11 @@ export default function NavBar({
       {signOutOpen && (
         <>
           <div
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm"
             onClick={() => setSignOutOpen(false)}
+            style={{ isolation: 'isolate' }}
           />
-          <div className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 bg-[#181818] border border-white/10 rounded-2xl p-6 max-w-md w-full shadow-2xl">
+          <div className="fixed left-1/2 top-1/2 z-[100] -translate-x-1/2 -translate-y-1/2 bg-[#181818] border border-white/10 rounded-2xl p-6 max-w-md w-full shadow-2xl">
             <h2 className="text-white text-xl font-semibold mb-2">Sign Out</h2>
             <p className="text-white/50 text-sm mb-6">Are you sure you want to sign out?</p>
             <div className="flex gap-3 justify-end">
