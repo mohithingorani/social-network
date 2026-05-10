@@ -36,16 +36,16 @@ export function Hero() {
       <div className="absolute inset-0" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`, opacity: 0.03 }} />
 
       {/* Subtle accent glows */}
-      <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-[radial-gradient(closest-side,rgba(211,150,91,0.11),transparent)] blur-3xl" />
+      <div className="hidden lg:absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-[radial-gradient(closest-side,rgba(211,150,91,0.11),transparent)] blur-3xl" />
       <div className="absolute -bottom-32 right-[-160px] w-[700px] h-[700px] rounded-full bg-[radial-gradient(closest-side,rgba(102,164,175,0.14),transparent)] blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div
             variants={container}
             initial="hidden"
             animate="show"
-            className="text-center lg:text-left order-2 lg:order-1"
+            className="text-center lg:text-left order-1"
           >
             <motion.div variants={item} className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/5 mb-6">
               <MessageCircle className="w-3 h-3 text-white/40" />
@@ -78,7 +78,7 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          <div className="order-1 lg:order-2">
+          <div className="order-2">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -99,101 +99,118 @@ export function Hero() {
                 </div>
               </div>
 
-              <TiltCard className="relative">
-                <div
-                  className="rounded-3xl hidden xl:inline-block overflow-hidden border border-white/20 bg-[#0f0f10]/70 backdrop-blur-xl shadow-[0_25px_90px_rgba(0,0,0,0.55)]"
-                
-                >
-                  <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
-                    <div className="flex gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-white/10" />
-                      <div className="w-3 h-3 rounded-full bg-white/10" />
-                      <div className="w-3 h-3 rounded-full bg-white/10" />
-                    </div>
-                    <div className="ml-auto text-[10px] text-white/35 tracking-wide">UNIVO PREVIEW</div>
-                  </div>
+             <TiltCard className="relative w-full">
+  <div className="rounded-3xl overflow-hidden border border-white/20 bg-[#0f0f10]/70 backdrop-blur-xl shadow-[0_25px_90px_rgba(0,0,0,0.55)] w-full max-w-[720px] mx-auto">
+    
+    {/* Top Bar */}
+    <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
+      <div className="flex gap-1.5">
+        <div className="w-3 h-3 rounded-full bg-white/10" />
+        <div className="w-3 h-3 rounded-full bg-white/10" />
+        <div className="w-3 h-3 rounded-full bg-white/10" />
+      </div>
 
-                  <div className="flex">
-                    <div className="w-14 border-r border-white/10 flex flex-col items-center py-4 gap-4">
-                      <div className="w-8 h-8 rounded-xl bg-blue-500/20 flex items-center justify-center">
-                        <ImageIcon className="w-4 h-4 text-blue-300" />
-                      </div>
-                      <div className="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center">
-                        <Users className="w-4 h-4 text-white/30" />
-                      </div>
-                      <div className="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center">
-                        <MessageCircle className="w-4 h-4 text-white/30" />
-                      </div>
-                    </div>
+      <div className="ml-auto text-[10px] text-white/35 tracking-wide">
+        UNIVO PREVIEW
+      </div>
+    </div>
 
-                    <div className="flex-1 flex">
-                      <div className="flex-1 p-4 space-y-4 max-w-sm mx-auto">
-                        {mockFeedPosts.map((post, i) => (
-                          <motion.div
-                            key={post.name}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.4 + i * 0.15 }}
-                            className="bg-white/[0.03] border border-white/10 rounded-2xl p-4"
-                          >
-                            <div className="flex items-center gap-2 mb-3">
-                              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center flex-shrink-0">
-                                <span className="text-white text-xs font-bold">
-                                  {post.name
-                                    .split(" ")
-                                    .map((n) => n[0])
-                                    .join("")}
-                                </span>
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="text-white text-xs font-medium">{post.name}</div>
-                                <div className="text-white/30 text-[10px]">
-                                  {post.handle} · {post.time}
-                                </div>
-                              </div>
-                            </div>
-                            <p className="text-white/55 text-xs leading-relaxed mb-3">{post.content}</p>
-                            <div className="flex items-center gap-4 text-white/30 text-[10px]">
-                              <span className="flex items-center gap-1">♥ {post.likes}</span>
-                              <span className="flex items-center gap-1">💬 {post.comments}</span>
-                            </div>
-                          </motion.div>
-                        ))}
-                      </div>
+    {/* Layout */}
+    <div className="flex flex-col md:flex-row">
+      
+      {/* Sidebar */}
+      <div className="hidden sm:flex md:w-14 border-b md:border-b-0 md:border-r border-white/10 flex-row md:flex-col items-center justify-center py-3 gap-4">
+        <div className="w-8 h-8 rounded-xl bg-blue-500/20 flex items-center justify-center">
+          <ImageIcon className="w-4 h-4 text-blue-300" />
+        </div>
 
-                      <div className="w-48 border-l border-white/10 p-3 space-y-2 bg-black/10">
-                        <div className="text-white/25 text-[10px] font-medium mb-2 px-1 tracking-wide">
-                          MESSAGES
-                        </div>
-                        {mockMessages.map((msg) => (
-                          <div
-                            key={msg.name}
-                            className="flex items-center gap-2 p-2 rounded-xl hover:bg-white/5 transition-colors cursor-pointer"
-                          >
-                            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
-                              <span className="text-white text-[10px] font-bold">
-                                {msg.name
-                                  .split(" ")
-                                  .map((n) => n[0])
-                                  .join("")}
-                              </span>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="text-white text-xs font-medium">{msg.name}</div>
-                              <div className="text-white/30 text-[10px] truncate">{msg.last}</div>
-                            </div>
-                            {msg.unread > 0 && (
-                              <div className="w-4 h-4 rounded-full bg-blue-500 text-white text-[10px] flex items-center justify-center">
-                                {msg.unread}
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+        <div className="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center">
+          <Users className="w-4 h-4 text-white/30" />
+        </div>
+
+        <div className="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center">
+          <MessageCircle className="w-4 h-4 text-white/30" />
+        </div>
+      </div>
+
+      {/* Feed */}
+      <div className="flex-1 p-3 sm:p-4 space-y-4">
+        {mockFeedPosts.slice(0, 2).map((post, i) => (
+          <motion.div
+            key={post.name}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 + i * 0.15 }}
+            className="bg-white/[0.03] border border-white/10 rounded-2xl p-4"
+          >
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-white text-xs font-bold">
+                  {post.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
+                </span>
+              </div>
+
+              <div className="flex-1 min-w-0">
+                <div className="text-white text-xs font-medium truncate">
+                  {post.name}
                 </div>
-              </TiltCard>
+
+                <div className="text-white/30 text-[10px] truncate">
+                  {post.handle} · {post.time}
+                </div>
+              </div>
+            </div>
+
+            <p className="text-white/55 text-xs leading-relaxed mb-3">
+              {post.content}
+            </p>
+
+            <div className="flex items-center gap-4 text-white/30 text-[10px]">
+              <span>♥ {post.likes}</span>
+              <span>💬 {post.comments}</span>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Messages */}
+      <div className="hidden lg:block w-48 border-l border-white/10 p-3 space-y-2 bg-black/10">
+        <div className="text-white/25 text-[10px] font-medium mb-2 px-1 tracking-wide">
+          MESSAGES
+        </div>
+
+        {mockMessages.map((msg) => (
+          <div
+            key={msg.name}
+            className="flex items-center gap-2 p-2 rounded-xl hover:bg-white/5 transition-colors cursor-pointer"
+          >
+            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+              <span className="text-white text-[10px] font-bold">
+                {msg.name
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")}
+              </span>
+            </div>
+
+            <div className="flex-1 min-w-0">
+              <div className="text-white text-xs font-medium truncate">
+                {msg.name}
+              </div>
+
+              <div className="text-white/30 text-[10px] truncate">
+                {msg.last}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</TiltCard> 
             </motion.div>
           </div>
         </div>

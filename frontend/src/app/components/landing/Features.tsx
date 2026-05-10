@@ -65,7 +65,7 @@ export function Features() {
         >
           <motion.div variants={fadeUp} className="lg:col-span-7">
             <GlassCard className="h-full p-7 relative overflow-hidden">
-              <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-[radial-gradient(closest-side,rgba(211,150,91,0.12),transparent)] blur-3xl" />
+              <div className="hidden lg:absolute -top-24 -left-24 w-72 h-72 rounded-full bg-[radial-gradient(closest-side,rgba(211,150,91,0.12),transparent)] blur-3xl" />
               <div className="relative">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0">
@@ -103,7 +103,7 @@ export function Features() {
 
           <motion.div variants={fadeUp} className="lg:col-span-5">
             <GlassCard className="h-full p-7 relative overflow-hidden">
-              <div className="absolute -bottom-28 -right-24 w-72 h-72 rounded-full bg-[radial-gradient(closest-side,rgba(102,164,175,0.12),transparent)] blur-3xl" />
+              <div className="hidden lg:absolute -bottom-28 -right-24 w-72 h-72 rounded-full bg-[radial-gradient(closest-side,rgba(102,164,175,0.12),transparent)] blur-3xl" />
               <div className="relative">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0">
