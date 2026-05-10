@@ -63,6 +63,7 @@ export default function Post({
   const userDataValue = useRecoilValue(userDataAtom);
   const [numLikes, setNumLikes] = useState(likesCount);
   const [liked, setLiked] = useState(isLikedByUser);
+  const [numComments, setNumComments] = useState(commentsCount);
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState("");
   const [isLoadingComments, setIsLoadingComments] = useState(false);
@@ -141,8 +142,9 @@ export default function Post({
       },
     };
     
-    setComments((prev) => [optimisticComment, ...prev]);
-    setNewComment("");
+      setComments((prev) => [optimisticComment, ...prev]);
+      setNewComment("");
+      setNumComments((prev) => prev + 1);
     
     try {
       await axios.post(
@@ -155,6 +157,7 @@ export default function Post({
       );
     } catch (error) {
       setComments((prev) => prev.filter((c) => c.commentId !== optimisticComment.commentId));
+      setNumComments((prev) => prev - 1);
       console.error("Error posting comment:", error);
     } finally {
       setIsPostingComment(false);
@@ -222,7 +225,7 @@ export default function Post({
             className={`flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-white/5 transition-all ${showComments ? 'bg-white/5' : ''}`}
           >
             <MessageCircle className={`w-5 h-5 transition-colors ${showComments ? 'text-white' : 'text-white/40'}`} />
-            <span className="text-sm text-white/40">{commentsCount}</span>
+            <span className="text-sm text-white/40">{numComments}</span>
           </button>
         </div>
       </div>
