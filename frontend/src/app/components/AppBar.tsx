@@ -1,15 +1,13 @@
 "use client";
 
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import { useEffect, useState, useCallback, useRef } from "react";
-import { ContactCard } from "./ContactCard";
 import {
   Menu,
   X,
   Home,
   MessageCircle,
-  LogOut,
   Settings,
   Plus,
   User,
@@ -19,6 +17,7 @@ import {
 import { pageAtom, userDataAtom } from "../atoms";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { useFriends } from "@/hooks/useFriends";
+import { SignOutDialog } from "@/components/SignOutDialog";
 import axios from "axios";
 
 export default function NavBar({
@@ -41,6 +40,7 @@ export default function NavBar({
   const [sheetTranslate, setSheetTranslate] = useState(0);
   const sheetRef = useRef<HTMLDivElement>(null);
   const startY = useRef(0);
+  const [signOutOpen, setSignOutOpen] = useState(false);
 
 
   const getNumPosts = async () => {
@@ -81,8 +81,6 @@ export default function NavBar({
       setCurrPage("home");
     } else if (key === 1) {
       setCurrPage("messages");
-    } else if (key === 2) {
-      signOut();
     } else if (key === 3) {
       setCurrPage("settings");
     }
@@ -113,7 +111,7 @@ export default function NavBar({
     <>
       {/* Mobile header */}
       {variant !== "desktop" && (
-        <div className="xl:hidden flex justify-between items-center p-4 text-white bg-[#18181A]">
+        <div className="xl:hidden flex justify-between items-center p-4 text-white bg-[#18181A] z-40 relative">
           <div className="font-semibold text-lg">{session.data?.user?.name}</div>
           <div className="flex items-center gap-2">
             {onFriendsClick && (
@@ -201,15 +199,14 @@ export default function NavBar({
                 {[
                   { name: "Feed", icon: Home, key: 0 },
                   { name: "Messages", icon: MessageCircle, key: 1 },
-                  { name: "Sign Out", icon: LogOut, key: 2 },
                   { name: "Settings", icon: Settings, key: 3 },
                 ].map((item) => (
                   <button
                     onClick={() => handleNavClick(item.key)}
                     key={item.key}
                     className={`w-full flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 ${
-                      currKey === item.key 
-                        ? "bg-white/10 text-white" 
+                      currKey === item.key
+                        ? "bg-white/10 text-white"
                         : "text-white/60 hover:bg-white/5 hover:text-white"
                     }`}
                   >
@@ -217,6 +214,17 @@ export default function NavBar({
                     <span className="font-medium">{item.name}</span>
                   </button>
                 ))}
+              </div>
+
+              {/* Sign Out */}
+              <div className="border-t border-white/5 mt-4 pt-4">
+                <button
+                  onClick={() => { setMenuOpen(false); setSheetTranslate(0); setSignOutOpen(true); }}
+                  className="w-full flex items-center gap-4 px-4 py-3 rounded-xl text-white/50 hover:bg-rose-500/10 hover:text-rose-400 transition-all duration-200"
+                >
+                  <LogOutIcon className="w-5 h-5" />
+                  <span className="font-medium">Sign Out</span>
+                </button>
               </div>
             </div>
           </div>
@@ -305,7 +313,7 @@ export default function NavBar({
 
               {/* Sign Out */}
               <button
-                onClick={() => signOut()}
+                onClick={() => setSignOutOpen(true)}
                 className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-white/50 hover:bg-rose-500/10 hover:text-rose-400 transition-all duration-200"
               >
                 <LogOutIcon className="w-5 h-5" />
@@ -321,6 +329,8 @@ export default function NavBar({
         </div>
         </div>
       )}
+      {/* Sign Out Dialog */}
+      <SignOutDialog open={signOutOpen} onOpenChange={setSignOutOpen} />
     </>
   );
 }
