@@ -3,12 +3,30 @@ import logger from "../utils/logger";
 import prisma from "../prisma/client";
 
 
-export const createMessage = async (req:Request, res:Response) => {
+function isUserInRoom(userName: string, roomName: string): boolean {
+  const parts = roomName.split("-");
+  return parts.includes(userName);
+}
+
+function unauthorizedResponse(res: Response, action: string) {
+  res.status(403).send({ message: `Unauthorized to ${action} this room` });
+}
+
+export const createMessage = async (req: Request, res: Response) => {
   const message = req.body.message;
   const userName = req.body.userName;
   const roomName = req.body.roomName;
   logger.info("create/message body:", req.body);
   const time = req.body.time;
+
+  if (!userName) {
+    return res.status(400).send({ message: "userName is required" });
+  }
+
+  if (!roomName || !isUserInRoom(userName, roomName)) {
+    return unauthorizedResponse(res, "create a message in");
+  }
+
   try {
     const chat = await prisma.chat.create({
       data: {
@@ -26,8 +44,18 @@ export const createMessage = async (req:Request, res:Response) => {
 };
 
 
-export const getAllMessages = async (req:Request, res:Response) => {
+export const getAllMessages = async (req: Request, res: Response) => {
   const roomName = req.query.roomName as string;
+  const userName = req.query.userName as string;
+
+  if (!userName) {
+    return res.status(400).send({ message: "userName is required" });
+  }
+
+  if (!roomName || !isUserInRoom(userName, roomName)) {
+    return unauthorizedResponse(res, "view messages in");
+  }
+
   try {
     const chats = await prisma.chat.findMany({
       where: {
@@ -201,8 +229,16 @@ export const markRead = async (req: Request, res: Response) => {
     lastReadChatId?: number;
   };
 
-  if (!userName || !roomName || typeof lastReadChatId !== "number") {
-    return res.status(400).send({ message: "Missing required fields" });
+  if (!userName) {
+    return res.status(400).send({ message: "userName is required" });
+  }
+
+  if (!roomName || !isUserInRoom(userName, roomName)) {
+    return unauthorizedResponse(res, "mark read in");
+  }
+
+  if (typeof lastReadChatId !== "number") {
+    return res.status(400).send({ message: "lastReadChatId must be a number" });
   }
 
   try {
