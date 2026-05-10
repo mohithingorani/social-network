@@ -17,7 +17,6 @@ export default function TextMessage({ messageObject, myUserName }: TextMessagePr
     
   // Checking against the messageObject.username to match the user
   const isMyMessage = messageObject.userName === myUserName;
-  console.log(myUserName);
   const textMessage = messageObject.message;
   const time = messageObject.time;
   
