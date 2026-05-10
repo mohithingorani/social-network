@@ -13,7 +13,10 @@ export default function Signin() {
   const [password, setPassword] = useState("");
 
   const handleGoogleAuth = async () => {
-    await signIn("google", { callbackUrl: "http://localhost:3001/feed" });
+    const callbackUrl = process.env.NEXT_PUBLIC_APP_URL 
+      ? `${process.env.NEXT_PUBLIC_APP_URL}/feed` 
+      : "http://localhost:3001/feed";
+    await signIn("google", { callbackUrl });
   };
 
   return (
