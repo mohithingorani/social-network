@@ -57,19 +57,7 @@ export function Hero() {
               </a>
             </div>
 
-            <div className="flex items-center gap-6 mt-8 justify-center lg:justify-start">
-              <div className="flex -space-x-2">
-                {["JM", "PS", "AR", "JK"].map((init, i) => (
-                  <div key={init} className="w-8 h-8 rounded-full bg-gradient-to-br from-white/20 to-white/5 border-2 border-[#0a0a0a] flex items-center justify-center">
-                    <span className="text-white text-xs font-medium">{init}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="text-left">
-                <div className="text-white text-sm font-medium">2,400+ active users</div>
-                <div className="text-white/30 text-xs">Growing every day</div>
-              </div>
-            </div>
+            
           </div>
 
           <div className="order-1 lg:order-2">
