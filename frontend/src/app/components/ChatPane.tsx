@@ -60,7 +60,7 @@ export default function ChatPane({
       const loaderTimer = setTimeout(() => setShowLoader(true), 200);
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/messages/allMessages?roomName=${roomName}`,
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/messages/allMessages?roomName=${roomName}&userName=${myUserName}`,
         );
         const chats = response.data.chats || [];
         setInbox(chats);
@@ -116,7 +116,7 @@ export default function ChatPane({
     socketInstance.on("connect", () => {
       setError(false);
       setSocket(socketInstance);
-      socketInstance.emit("joinRoom", roomName);
+      socketInstance.emit("joinRoom", roomName, myUserName);
     });
 
     socketInstance.on("message", (msg, id, time, userName) => {

@@ -62,15 +62,13 @@ export default function MessagesPage({
       return () => mql.removeEventListener("change", update);
     }
 
-    // eslint-disable-next-line deprecation/deprecation
     mql.addListener(update);
-    // eslint-disable-next-line deprecation/deprecation
     return () => mql.removeListener(update);
   }, []);
 
   const openChatRoom = (roomName: string) => {
     if (!roomName || !userName) return;
-    router.push(`/chat/?room=${roomName}&name=${userName}`);
+    router.push(`/chat/?room=${roomName}`);
   };
 
   async function getInbox() {
@@ -202,13 +200,47 @@ export default function MessagesPage({
             )}
 
             {inboxLoading ? (
-              <div className="space-y-2">
-                {Array.from({ length: 7 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="h-14 rounded-xl bg-white/[0.04] border border-white/5 animate-pulse"
-                  />
-                ))}
+              <div className="space-y-3">
+                <div>
+                  <div className="px-2 pt-1 pb-2 text-[11px] tracking-wide text-white/35 uppercase">Recent</div>
+                  <div className="space-y-2">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <div
+                        key={i}
+                        className="flex items-center gap-3 p-2.5 sm:p-3 rounded-xl bg-white/[0.04] border border-white/5 animate-pulse"
+                      >
+                        <div className="w-11 h-11 rounded-full bg-white/5 shrink-0" />
+                        <div className="flex-1 min-w-0 space-y-2">
+                          <div className="flex justify-between gap-3">
+                            <div className="h-3 w-24 rounded bg-white/5" />
+                            <div className="h-3 w-10 rounded bg-white/5" />
+                          </div>
+                          <div className="h-3 w-32 rounded bg-white/5" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <div className="px-2 pt-1 pb-2 text-[11px] tracking-wide text-white/35 uppercase">Friends</div>
+                  <div className="space-y-2">
+                    {Array.from({ length: 2 }).map((_, i) => (
+                      <div
+                        key={i}
+                        className="flex items-center gap-3 p-2.5 sm:p-3 rounded-xl bg-white/[0.04] border border-white/5 animate-pulse"
+                      >
+                        <div className="w-11 h-11 rounded-full bg-white/5 shrink-0" />
+                        <div className="flex-1 min-w-0 space-y-2">
+                          <div className="flex justify-between gap-3">
+                            <div className="h-3 w-24 rounded bg-white/5" />
+                            <div className="h-3 w-10 rounded bg-white/5" />
+                          </div>
+                          <div className="h-3 w-32 rounded bg-white/5" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             ) : !inboxItems || inboxItems.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-64 text-center px-6">
