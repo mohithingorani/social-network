@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 export const MessageCardForRequests = ({
   name,
   avatar,
@@ -8,33 +9,33 @@ export const MessageCardForRequests = ({
   name: string;
   avatar: string;
   location: string;
-  acceptRequest:()=>any
+  acceptRequest: () => any
 }) => {
   return (
-    <div className="flex border justify-between  border-x-0 border-y-1 border-gray-300/10  hover:bg-[#242627] w-full px-2 py-3 rounded-xl">
-      {" "}
-      <div className="flex ">
-        {" "}
+    <div className="flex items-center justify-between hover:bg-white/5 rounded-xl px-2 py-2 transition-colors">
+      <div className="flex items-center gap-3">
         <Image
-          className="rounded-full "
+          className="rounded-full w-9 h-9"
           src={avatar}
-          width="50"
-          height="50"
-          alt="profile image"
-        />{" "}
-        <div className="flex flex-col justify-center items-start pl-4">
-          {" "}
-          <div className="text-lg">{name}</div>{" "}
-          <div className="flex text-sm text-gray-300 gap-2">
-            {" "}
-            <div className="text-gray-400">{location}</div>{" "}
-          </div>{" "}
-        </div>{" "}
-      </div>{" "}
-      <div className="gap-4 flex justify-end h-full">
-        <button className="hover:scale-110"><Image src={"/requests/accept.png"} onClick={acceptRequest} alt="accept" width={"40"} height={"40"}/></button>
-        <button className="hover:scale-110"><Image src={"/requests/reject.png"} alt="accept" width={"40"} height={"40"}/></button>
-        
+          width={36}
+          height={36}
+          alt="profile"
+        />
+        <div>
+          <div className="text-sm text-white font-medium">{name}</div>
+          <div className="text-xs text-white/30">{location}</div>
+        </div>
+      </div>
+      <div className="flex gap-2">
+        <button 
+          onClick={acceptRequest} 
+          className="p-1.5 hover:bg-green-500/20 rounded-lg transition-colors"
+        >
+          <Image src="/requests/accept.png" width={20} height={20} alt="accept" />
+        </button>
+        <button className="p-1.5 hover:bg-red-500/20 rounded-lg transition-colors">
+          <Image src="/requests/reject.png" width={20} height={20} alt="reject" />
+        </button>
       </div>
     </div>
   );

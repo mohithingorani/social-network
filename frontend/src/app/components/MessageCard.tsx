@@ -14,26 +14,27 @@ export const MessageCard = ({
   sendRequest?:()=>void
 }) => {
   return (
-    <div className="flex border justify-between  border-x-0 border-y-1 border-gray-300/10  hover:bg-[#242627] w-full px-1 py-2 2xl:px-2 2xl:py-3 rounded-xl">
-      <div className="flex ">
+    <div className="flex items-center justify-between hover:bg-white/5 rounded-xl px-2 py-2 transition-colors cursor-pointer">
+      <div className="flex items-center gap-3">
         <Image
-          className="rounded-full w-10 h-10 2xl:w-12 2xl:h-12 "
+          className="rounded-full w-9 h-9"
           src={avatar}
-          width="50"
-          height="50"
-          alt="profile image"
+          width={36}
+          height={36}
+          alt="profile"
         />
-        <div className="flex flex-col justify-center items-start pl-4">
-          <div className="text-sm 2xl:text-lg">{name}</div>
-          <div className="flex text-xs 2xl:text-sm text-gray-300 gap-2">
-            <div className="text-gray-400">{location}</div>
-          </div>
+        <div>
+          <div className="text-sm text-white font-medium">{name}</div>
+          <div className="text-xs text-white/30">{location}</div>
         </div>
       </div>
       {suggestion && (
-        <button onClick={sendRequest} className="hover:scale-90">
-          <Image src={"/addFriendWhite.png"} width={"50"} height={"50"} alt="add friend"/>
-        </button >
+        <button 
+          onClick={sendRequest} 
+          className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+        >
+          <Image src={"/addFriendWhite.png"} width={20} height={20} alt="add friend"/>
+        </button>
       )}
     </div>
   );
