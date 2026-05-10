@@ -53,6 +53,17 @@ model Chat {
   time     String
   userName String
   roomName String
+  createdAt DateTime @default(now())
+}
+
+model ChatReadState {
+  id            Int      @id @default(autoincrement())
+  userName      String
+  roomName      String
+  lastReadChatId Int     @default(0)
+  updatedAt     DateTime @updatedAt
+
+  @@unique([userName, roomName])
 }
 
 model Post {
