@@ -1,4 +1,3 @@
-import { StoryFile, StoryPreview } from "@/types/types";
 import { atom } from "recoil";
 
 export const userNameAtom = atom({
@@ -46,17 +45,6 @@ export const pendingRequestsAtom = atom({
   default: 0,
 });
 
-
-export const storyPreviewAtom = atom<StoryPreview>({
-  key : "storyPreview",
-  default:undefined
-})
-
-
-export const selectedFileForStory = atom<StoryFile>({
-  key : "storyFile",
-  default : undefined
-})
 
 export const openCommentsPostIdAtom = atom<number | null>({
   key: 'openCommentsPostId',

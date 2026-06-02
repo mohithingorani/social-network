@@ -10,8 +10,6 @@ import {
   modalOpenAtom,
   pageAtom,
   selectedFileAtom,
-  selectedFileForStory,
-  storyPreviewAtom,
   userDataAtom,
   userNameAtom,
 } from "../atoms";
@@ -36,12 +34,10 @@ import Post from "../components/Post";
 import PostSkeleton from "../components/PostSkeleton";
 import { AddPost } from "../components/AddPost";
 import { MessageCard } from "../components/MessageCard";
-import { StoriesCard } from "../components/CircleStoriesCard";
 import { useFriends } from "@/hooks/useFriends";
-import { PostInterface, StoryInterface } from "@/types/types";
+import { PostInterface } from "@/types/types";
 import { toast } from "react-toastify";
 import Spinner from "../components/Spinner";
-import StoryPage from "../components/StoryPage";
 import MessagesPage from "../components/MessagesPage";
 import { Search, UserPlus, UserCheck, Loader2 } from "lucide-react";
 import SettingsPage from "../settings/page";
@@ -94,15 +90,9 @@ export default function Home() {
   const [discoverLoading, setDiscoverLoading] = useState(false);
   const [sentRequests, setSentRequests] = useState<Set<number>>(new Set());
   // Messages page is extracted into a dedicated component.
-  const [storyPreview, setStoryPreview] = useRecoilState(storyPreviewAtom);
   const filteredFriends = friends?.filter((f: any) =>
     f.username?.toLowerCase().includes(searchFriendsInput.toLowerCase()),
   );
-  const [storyFile, setStoryFile] = useRecoilState(selectedFileForStory);
-  const [groupedStories, setGroupedStories] = useState<Record<
-    number,
-    StoryInterface[]
-  > | null>(null);
   const filteredSuggestFriends = searchedFriends?.filter((f: any) => {
     return f.username
       ?.toLowerCase()
@@ -173,7 +163,6 @@ export default function Home() {
   };
   useEffect(() => {
     getPosts();
-    getStories();
   }, [userDataValue]);
 
   async function searchFriends(name: string) {
@@ -332,30 +321,6 @@ export default function Home() {
     refetch();
     return acceptFriendRequest;
   }
-
-  async function getStories() {
-    if (!userDataValue) return;
-
-    const response = await axios.post<{ stories: StoryInterface[] }>(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/stories/all`,
-      { userId: userDataValue.id },
-    );
-
-    const storiesData: StoryInterface[] = response.data.stories;
-
-    const grouped = storiesData.reduce(
-      (acc: Record<number, StoryInterface[]>, story: StoryInterface) => {
-        if (!acc[story.userId]) acc[story.userId] = [];
-        acc[story.userId].push(story);
-        return acc;
-      },
-      {},
-    );
-
-    setGroupedStories(grouped);
-  }
-
-
 
   return (
     
@@ -651,19 +616,6 @@ export default function Home() {
                 </div>
               </div>
             </>
-          )}
-          {storyPreview && storyFile && (
-            <StoryPage
-              storyFile={storyFile}
-              onClickClose={() => {
-                setStoryPreview(undefined);
-                setStoryFile(undefined);
-              }}
-              userName={userDataValue.username}
-              userId={userDataValue.id}
-              userImage={userDataValue.picture}
-              storyImage={storyPreview}
-            />
           )}
            <div className="hidden lg:block lg:sticky lg:top-0 lg:w-0 xl:w-64 overflow-hidden opacity-0 xl:opacity-100 transition-[width,opacity] duration-300 ease-out">
              <div className="w-64">

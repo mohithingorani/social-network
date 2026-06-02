@@ -7,7 +7,6 @@ import commentRoutes from "./routes/comment.routes";
 import postRoutes from "./routes/post.routes";
 import messageRoutes from "./routes/message.routes";
 import graphRoutes from "./routes/graph.routes";
-import storyRoutes from "./routes/story.routes";
 
 dotenv.config();
 
@@ -22,7 +21,6 @@ app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 app.use("/friends", friendRoutes);
 app.use("/comments", commentRoutes);
-app.use("/stories", storyRoutes);
 app.use("/messages", messageRoutes);
 app.use("/graph", graphRoutes);
 

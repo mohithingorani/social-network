@@ -17,35 +17,3 @@ export interface PostInterface {
   isLikedByUser: boolean;
 }
 
-export interface StoryInterface {
-  id: number;
-  image: string;
-  createdAt: string;
-  userId: number;
-  user: {
-    id: number;
-    name: string;
-    username: string;
-    picture: string;
-  };
-}
-
-export interface GroupedStory {
-  [key: string]: [StoryInterface];
-}
-
-export type StoryPreview = undefined | string;
-
-export type StoryFile = undefined | File;
-export interface UserStoriesInterface {
-  id: number;
-  image: string;
-  createdAt: string;
-  userId: number;
-  user: {
-    id: number;
-    name: string;
-    username: string;
-    picture: string;
-  };
-}
