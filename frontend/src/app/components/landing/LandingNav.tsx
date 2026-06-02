@@ -8,6 +8,11 @@ function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
 }
 
+const navLinks = [
+  { label: "Features", href: "#features" },
+  { label: "Product tour", href: "#tour" },
+];
+
 export function LandingNav() {
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -15,16 +20,10 @@ export function LandingNav() {
   useEffect(() => {
     const el = sentinelRef.current;
     if (!el) return;
-
     const obs = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        // When the sentinel is no longer visible at the top, we consider the page "scrolled".
-        setScrolled(!entry.isIntersecting);
-      },
+      ([entry]) => setScrolled(!entry.isIntersecting),
       { root: null, threshold: 0 },
     );
-
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
@@ -32,59 +31,56 @@ export function LandingNav() {
   const navClass = useMemo(
     () =>
       cx(
-        "sticky top-0 z-50",
-        "transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300",
+        "sticky top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300",
         scrolled
-          ? "bg-[#0a0a0a]/85 shadow-[0_10px_30px_rgba(0,0,0,0.45)] backdrop-blur-xl"
-          : "bg-[#0a0a0a]/55 backdrop-blur-md",
+          ? "border-b border-white/[0.07] bg-[#0a0a0a]/70 backdrop-blur-xl"
+          : "border-b border-transparent bg-[#0a0a0a]/30 backdrop-blur-md",
       ),
     [scrolled],
   );
 
-  const signInClass = cx(
-    "inline-flex items-center justify-center",
-    "h-10 px-3 rounded-xl",
-    "text-sm font-medium text-white/70",
-    "bg-white/[0.03] border border-white/10",
-    "hover:text-white hover:bg-white/[0.06] hover:border-white/15",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66A4AF]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]",
-    "transition-colors",
-  );
-
-  const ctaClass = cx(
-    "inline-flex items-center justify-center",
-    "h-10 px-4 rounded-xl",
-    "text-sm font-semibold",
-    "text-[#0a0a0a]",
-    "bg-gradient-to-b from-[#F0C796] to-[#D3965B]",
-    "hover:from-[#F6D2A6] hover:to-[#DDA06A]",
-    "border border-black/10",
-    "shadow-[0_12px_34px_rgba(211,150,91,0.18)] hover:shadow-[0_16px_44px_rgba(211,150,91,0.22)]",
-    "active:translate-y-px",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D3965B]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]",
-    "transition-[box-shadow,transform,background-image]",
-  );
-
   return (
     <>
-      {/* 1px sentinel used for scroll state */}
+      {/* 1px sentinel for scroll state */}
       <div ref={sentinelRef} className="h-px" aria-hidden="true" />
 
       <nav className={navClass}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+          {/* brand */}
           <Link href="/" className="flex items-center gap-2.5">
-            <span className="relative w-7 h-7">
+            <span className="relative h-7 w-7">
               <Image src="/newlogo.svg" fill alt="UNIVO" className="object-contain" />
             </span>
-            <span className="text-white font-semibold text-sm tracking-wide">UNIVO</span>
+            <span className="text-sm font-medium tracking-[0.14em] text-white">UNIVO</span>
           </Link>
 
-          <div className="flex items-center gap-2">
-            <Link href="/signin" className={signInClass}>
-              Sign In
+          {/* center links */}
+          <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 md:flex">
+            {navLinks.map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                className="group relative rounded-lg px-3 py-2 text-sm font-light text-white/55 transition-colors hover:text-white"
+              >
+                {l.label}
+                <span className="pointer-events-none absolute inset-x-3 -bottom-px h-px scale-x-0 bg-gradient-to-r from-transparent via-[#5B9DF0]/70 to-transparent transition-transform duration-300 group-hover:scale-x-100" />
+              </a>
+            ))}
+          </div>
+
+          {/* actions */}
+          <div className="flex items-center gap-1.5">
+            <Link
+              href="/signin"
+              className="inline-flex h-9 items-center justify-center rounded-lg px-3.5 text-sm font-medium text-white/60 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
+            >
+              Sign in
             </Link>
-            <Link href="/signin" className={ctaClass}>
-              Get Started
+            <Link
+              href="/signin"
+              className="inline-flex h-9 items-center justify-center rounded-lg bg-white px-4 text-sm font-medium text-[#0a0a0a] transition-colors hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
+            >
+              Get started
             </Link>
           </div>
         </div>

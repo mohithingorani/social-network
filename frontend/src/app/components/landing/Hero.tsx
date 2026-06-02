@@ -1,220 +1,130 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle, Users, Image as ImageIcon } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight, Heart, UserPlus } from "lucide-react";
+import { ProductMockup } from "./ProductMockup";
 import { TiltCard } from "./ui";
-
-const mockFeedPosts = [
-  { name: "Arjun Sharma", handle: "@arjun_s", time: "3m", content: "Does anyone know if the campus library is open 24/7 during finals week?", likes: 18, comments: 12 },
-  { name: "Priya Patel", handle: "@priya_p", time: "20m", content: "The sunset from the quad tonight was absolutely beautiful. Spring semester hit different.", likes: 54, comments: 7 },
-  { name: "Rahul Verma", handle: "@rahulv", time: "1h", content: "Study group at the chai stall near the mess — who's coming? We still have three chapters to cover.", likes: 31, comments: 15 },
-];
-
-const mockMessages = [
-  { name: "Ananya R.", last: "See you at the library!", time: "1m", unread: 2 },
-  { name: "Vikram T.", last: "That was so funny lmao", time: "15m", unread: 0 },
-  { name: "Sneha K.", last: "Thanks for the notes!", time: "2h", unread: 0 },
-];
 
 const container = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.12 } },
+  show: { transition: { staggerChildren: 0.09, delayChildren: 0.05 } },
 };
-
 const item = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 pb-12 px-4 overflow-hidden">
-      <div className="absolute inset-0 bg-[#0a0a0a]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0d0d0d] via-[#0a0a0a] to-[#080808]" />
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`, backgroundSize: '60px 60px' }} />
-      <div className="absolute inset-0" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`, opacity: 0.03 }} />
-
-      {/* Subtle accent glows */}
-      <div className="hidden lg:absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-[radial-gradient(closest-side,rgba(211,150,91,0.11),transparent)] blur-3xl" />
-      <div className="absolute -bottom-32 right-[-160px] w-[700px] h-[700px] rounded-full bg-[radial-gradient(closest-side,rgba(102,164,175,0.14),transparent)] blur-3xl" />
-
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <section className="relative overflow-hidden px-4 pt-20 pb-24 sm:pt-28">
+      <div className="mx-auto max-w-5xl text-center">
+        <motion.div variants={container} initial="hidden" animate="show">
+          {/* mono eyebrow */}
           <motion.div
-            variants={container}
-            initial="hidden"
-            animate="show"
-            className="text-center lg:text-left order-1"
+            variants={item}
+            className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-3.5 py-1.5"
           >
-            <motion.div variants={item} className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/5 mb-6">
-              <MessageCircle className="w-3 h-3 text-white/40" />
-              <span className="text-white/40 text-xs tracking-wide">Connect with your campus community</span>
-            </motion.div>
-
-            <motion.h1 variants={item} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Where Campus<br />
-              <span className="text-white/60">Comes Alive</span>
-            </motion.h1>
-
-            <motion.p variants={item} className="text-lg md:text-xl text-white/50 mb-8 max-w-xl mx-auto lg:mx-0">
-              Share moments with friends, discover people on campus, and chat in real-time — all in one place built for college life.
-            </motion.p>
-
-            <motion.div variants={item} className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <a
-                href="/signin"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 font-medium text-sm rounded-lg bg-white text-black hover:bg-white/90 transition-colors"
-              >
-                Get Started
-              </a>
-              <a
-                href="#features"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 font-medium text-sm rounded-xl bg-white/[0.03] border border-white/12 text-white/85 hover:bg-white/[0.06] hover:border-white/15 transition-colors"
-              >
-                Explore Features
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </motion.div>
+            <span className="h-1.5 w-1.5 rounded-full bg-[#5B9DF0] pulse-ring" />
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+              The campus social network
+            </span>
           </motion.div>
 
-          <div className="order-2">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+          {/* thin, dominant headline */}
+          <motion.h1
+            variants={item}
+            className="mx-auto max-w-4xl text-balance text-5xl font-light leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl"
+          >
+            Your whole campus,
+            <br />
+            <span className="text-white/45">in one place.</span>
+          </motion.h1>
+
+          <motion.p
+            variants={item}
+            className="mx-auto mt-7 max-w-2xl text-lg font-light leading-relaxed text-white/50 sm:text-xl"
+          >
+            Share moments, message friends in real time, and discover the people around
+            you — all in one place built for campus life.
+          </motion.p>
+
+          {/* CTAs — flat, minimal */}
+          <motion.div variants={item} className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href="/signin"
+              className="group inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-white px-6 text-sm font-medium text-[#0a0a0a] transition-colors hover:bg-white/90"
             >
-              {/* Floating badges */}
-              <div className="hidden md:block absolute -left-6 -top-6 z-20">
-                <div className="px-3 py-2 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
-                  <div className="text-[10px] uppercase tracking-wider text-white/35">Realtime</div>
-                  <div className="text-xs font-medium text-white/75">Chats + reactions</div>
-                </div>
-              </div>
-              <div className="hidden md:block absolute -right-6 bottom-10 z-20">
-                <div className="px-3 py-2 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
-                  <div className="text-[10px] uppercase tracking-wider text-white/35">Network</div>
-                  <div className="text-xs font-medium text-white/75">Discover friends</div>
-                </div>
-              </div>
-
-             <TiltCard className="relative w-full">
-  <div className="rounded-3xl overflow-hidden border border-white/20 bg-[#0f0f10]/70 backdrop-blur-xl shadow-[0_25px_90px_rgba(0,0,0,0.55)] w-full max-w-[720px] mx-auto">
-    
-    {/* Top Bar */}
-    <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
-      <div className="flex gap-1.5">
-        <div className="w-3 h-3 rounded-full bg-white/10" />
-        <div className="w-3 h-3 rounded-full bg-white/10" />
-        <div className="w-3 h-3 rounded-full bg-white/10" />
-      </div>
-
-      <div className="ml-auto text-[10px] text-white/35 tracking-wide">
-        UNIVO PREVIEW
-      </div>
-    </div>
-
-    {/* Layout */}
-    <div className="flex flex-col md:flex-row">
-      
-      {/* Sidebar */}
-      <div className="hidden sm:flex md:w-14 border-b md:border-b-0 md:border-r border-white/10 flex-row md:flex-col items-center justify-center py-3 gap-4">
-        <div className="w-8 h-8 rounded-xl bg-blue-500/20 flex items-center justify-center">
-          <ImageIcon className="w-4 h-4 text-blue-300" />
-        </div>
-
-        <div className="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center">
-          <Users className="w-4 h-4 text-white/30" />
-        </div>
-
-        <div className="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center">
-          <MessageCircle className="w-4 h-4 text-white/30" />
-        </div>
-      </div>
-
-      {/* Feed */}
-      <div className="flex-1 p-3 sm:p-4 space-y-4">
-        {mockFeedPosts.slice(0, 2).map((post, i) => (
-          <motion.div
-            key={post.name}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 + i * 0.15 }}
-            className="bg-white/[0.03] border border-white/10 rounded-2xl p-4"
-          >
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center flex-shrink-0">
-                <span className="text-white text-xs font-bold">
-                  {post.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </span>
-              </div>
-
-              <div className="flex-1 min-w-0">
-                <div className="text-white text-xs font-medium truncate">
-                  {post.name}
-                </div>
-
-                <div className="text-white/30 text-[10px] truncate">
-                  {post.handle} · {post.time}
-                </div>
-              </div>
-            </div>
-
-            <p className="text-white/55 text-xs leading-relaxed mb-3">
-              {post.content}
-            </p>
-
-            <div className="flex items-center gap-4 text-white/30 text-[10px]">
-              <span>♥ {post.likes}</span>
-              <span>💬 {post.comments}</span>
-            </div>
+              Get started
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </a>
+            <a
+              href="#features"
+              className="inline-flex h-11 items-center justify-center rounded-lg border border-white/12 px-6 text-sm font-medium text-white/75 transition-colors hover:border-white/20 hover:text-white"
+            >
+              See how it works
+            </a>
           </motion.div>
-        ))}
-      </div>
 
-      {/* Messages */}
-      <div className="hidden lg:block w-48 border-l border-white/10 p-3 space-y-2 bg-black/10">
-        <div className="text-white/25 text-[10px] font-medium mb-2 px-1 tracking-wide">
-          MESSAGES
-        </div>
-
-        {mockMessages.map((msg) => (
-          <div
-            key={msg.name}
-            className="flex items-center gap-2 p-2 rounded-xl hover:bg-white/5 transition-colors cursor-pointer"
+          {/* techy keyword line */}
+          <motion.div
+            variants={item}
+            className="mt-7 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-white/30"
           >
-            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
-              <span className="text-white text-[10px] font-bold">
-                {msg.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
-              </span>
-            </div>
+            <span>Realtime chat</span>
+            <span className="text-white/15">/</span>
+            <span>Social graph</span>
+            <span className="text-white/15">/</span>
+            <span>Discovery</span>
+            <span className="text-white/15">/</span>
+            <span>Live feed</span>
+          </motion.div>
+        </motion.div>
+      </div>
 
-            <div className="flex-1 min-w-0">
-              <div className="text-white text-xs font-medium truncate">
-                {msg.name}
-              </div>
-
-              <div className="text-white/30 text-[10px] truncate">
-                {msg.last}
-              </div>
+      {/* ---------- showcase ---------- */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        className="relative mx-auto mt-16 max-w-6xl"
+      >
+        {/* flat status pills */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9 }}
+          className="absolute -left-2 top-16 z-20 hidden md:block"
+        >
+          <div className="flex items-center gap-2.5 rounded-lg border border-white/[0.08] bg-[#0e0e10] px-3 py-2">
+            <Heart className="h-3.5 w-3.5 text-[#5B9DF0]" />
+            <div className="text-[11px] leading-tight">
+              <div className="font-medium text-white/85">Priya liked your post</div>
+              <div className="font-mono text-[9px] text-white/30">just now</div>
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</TiltCard> 
-            </motion.div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.05 }}
+          className="absolute -right-2 top-44 z-20 hidden md:block"
+        >
+          <div className="flex items-center gap-2.5 rounded-lg border border-white/[0.08] bg-[#0e0e10] px-3 py-2">
+            <UserPlus className="h-3.5 w-3.5 text-[#5B9DF0]" />
+            <div className="text-[11px] leading-tight">
+              <div className="font-medium text-white/85">3 new friend requests</div>
+              <div className="font-mono text-[9px] text-white/30">from your campus</div>
+            </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+
+        <TiltCard maxTilt={4}>
+          <ProductMockup />
+        </TiltCard>
+
+        <div className="pointer-events-none absolute -bottom-px inset-x-0 h-28 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+      </motion.div>
     </section>
   );
 }

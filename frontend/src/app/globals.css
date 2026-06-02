@@ -75,7 +75,7 @@ body {
   aspect-ratio: 1;
   border-radius: 50%;
   background: white;
-  --_m: 
+  --_m:
     conic-gradient(#0000 10%,#000),
     linear-gradient(#000 0 0) content-box;
   -webkit-mask: var(--_m);
@@ -134,4 +134,33 @@ body {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================================
+   Landing page — minimal / techy utilities (no glow)
+   Brand accents used sparingly: teal #66A4AF, amber #D3965B
+   ============================================================ */
+
+/* Marquee for the campus proof strip */
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee-x 34s linear infinite;
+}
+
+/* Quiet "live" dot — a faint expanding ring, no blur/glow */
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(102, 164, 175, 0.35); }
+  70%  { box-shadow: 0 0 0 5px rgba(102, 164, 175, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(102, 164, 175, 0); }
+}
+.pulse-ring { animation: pulse-ring 2.4s ease-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .pulse-ring {
+    animation: none !important;
+  }
 }
